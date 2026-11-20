@@ -161,9 +161,10 @@ IMG_ALT = {
     "poster-series.jpg": "Séries — saisons complètes en VOD",
     "poster-sport.jpg": "Sport — matchs et compétitions en direct",
     "installer-windows.jpg": "Installer l'IPTV sur Windows — ordinateur portable avec l'interface IPTV",
+    "choisir-fournisseur-iptv.jpg": "{brand} — sport, films, séries et chaînes TV sur votre télévision",
     "chaines-tv.jpg": "Plus de 32 000 chaînes TV en direct — grille des chaînes {brand}",
 }
-IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "hero-sunday-iptv-photo.jpg": (1920, 1280), "poster-action.jpg": (560, 1120), "poster-science-fiction.jpg": (560, 1120), "poster-series.jpg": (560, 1120), "poster-sport.jpg": (560, 1120), "blog-hero-iptv.jpg": (1920, 640), "a-propos-sunday-iptv.jpg": (1200, 600)}
+IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "hero-sunday-iptv-photo.jpg": (1920, 1280), "poster-action.jpg": (560, 1120), "poster-science-fiction.jpg": (560, 1120), "poster-series.jpg": (560, 1120), "poster-sport.jpg": (560, 1120), "blog-hero-iptv.jpg": (1920, 640), "a-propos-sunday-iptv.jpg": (1200, 600), "choisir-fournisseur-iptv.jpg": (1952, 806)}
 
 def img(name, cls="page-img", lazy=True):
     w, h = IMG_SIZE.get(name, (1200, 800))
@@ -331,7 +332,7 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=13">
+<link rel="stylesheet" href="{r}style.css?v=14">
 </head>
 <body id="top">
 {header(r, active)}
@@ -513,7 +514,7 @@ def build_home():
     <h2 class="h-xl">Comment choisir le bon fournisseur IPTV ?</h2>
     <p class="sub-h">Toute la saison en direct, et vos séries à la demande</p>
     <p class="lede">Avec autant de fournisseurs sur le marché, il est difficile de faire le bon choix. Vérifiez trois choses : la stabilité des serveurs pendant les grands événements, la réactivité du support et la possibilité de tester avant de payer. Chez {SITE["brand"]}, l’essai gratuit de 24 heures vous permet de juger sur pièce.</p>
-    <div class="showcase" aria-hidden="true"><div class="s-cards"><i></i><i></i><i></i><i></i><i></i></div></div>
+    {img("choisir-fournisseur-iptv.jpg", "page-img showcase-img")}
     <div class="stat-tabs">
       <div><strong>24/7</strong><span>Support client</span></div>
       <div><strong>32 000+</strong><span>Chaînes</span></div>
@@ -1008,7 +1009,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=13"', f'href="{BASE}style.css?v=13"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
+    txt = txt.replace('href="style.css?v=14"', f'href="{BASE}style.css?v=14"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')

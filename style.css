@@ -215,10 +215,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stat-tabs div:nth-child(3) { background: #333; }
 .stat-tabs strong { display: block; font: 800 clamp(26px, 4vw, 42px)/1 "Roboto", var(--font-head); color: #fff; }
 .stat-tabs span { display: block; margin-top: 10px; font: 700 11px/1.3 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: #cfd2d8; }
-.showcase { margin-top: 30px; border-radius: 6px; aspect-ratio: 21/8; background: linear-gradient(120deg, #6c2bd9 0%, #3b1a75 35%, #8a2387 70%, #e94057 100%); position: relative; overflow: hidden; }
-.showcase .s-cards { position: absolute; inset: 14% 6%; display: grid; grid-template-columns: repeat(5, 1fr); gap: 3%; }
-.showcase .s-cards i { border-radius: 10px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); backdrop-filter: blur(4px); }
-.showcase .s-cards i:nth-child(odd) { transform: translateY(10%); }
+.showcase-img { margin-top: 30px; border-radius: 6px; border: 0; }
 
 /* Devices */
 .dev-icons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
