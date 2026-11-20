@@ -284,8 +284,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .f-chips span.c { border: 1px solid #262626; border-radius: 4px; padding: 6px 10px; color: #bfc2c8; font-weight: 600; }
 .f-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 18px; border-top: 1px solid #1d1d1d; color: #666; font-size: 12px; }
 
-.to-top { position: fixed; right: 18px; bottom: 18px; width: 38px; height: 38px; border-radius: 6px; background: #1a73e8; color: #fff; display: grid; place-items: center; text-decoration: none; z-index: 40; font-size: 18px; }
-.wa-float { position: fixed; right: 18px; bottom: 66px; width: 54px; height: 54px; border-radius: 50%; background: #25d366; color: #fff; display: grid; place-items: center; z-index: 40; box-shadow: 0 10px 24px rgba(0,0,0,.4); }
+.wa-float { position: fixed; right: 18px; bottom: 18px; width: 54px; height: 54px; border-radius: 50%; background: #25d366; color: #fff; display: grid; place-items: center; z-index: 40; box-shadow: 0 10px 24px rgba(0,0,0,.4); }
 .wa-float svg { width: 28px; height: 28px; }
 
 /* ---------- Inner pages ---------- */
