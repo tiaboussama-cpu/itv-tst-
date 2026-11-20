@@ -275,7 +275,39 @@ def footer(r):
 </footer>
 <a class="wa-float" href="#" {wa_attr(msg_question())} aria-label="Nous écrire sur WhatsApp">{WA_SVG}</a>"""
 
-def page(path, title, desc, body, active="", depth=None):
+def home_jsonld():
+    """Données structurées de l'accueil, générées à partir des mêmes données que la page
+    (SITE, PLANS, FAQ_HOME) : aucune note, aucun avis, rien d'inventé."""
+    import json
+    base = site_url()
+    org = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": SITE["brand"],
+        "url": base,
+        "logo": base + "icon-512.png",
+    }
+    faq_ld = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{"@type": "Question", "name": q,
+                        "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ_HOME],
+    }
+    product = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": f"Abonnement IPTV {SITE['brand']}",
+        "description": "Abonnement IPTV : 32 000+ chaînes en direct, 220 000+ films et séries, 4K, Full HD et HD, replay et EPG, sans engagement.",
+        "image": og_image_url(),
+        "brand": {"@type": "Brand", "name": SITE["brand"]},
+        "offers": [{"@type": "Offer", "name": f"Abonnement {name} — {dur}", "price": price,
+                    "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
+                    "url": base + "#offres"} for name, dur, price, per, tag in PLANS],
+    }
+    return "".join(f'\n<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>'
+                   for x in (org, faq_ld, product))
+
+def page(path, title, desc, body, active="", depth=None, head_extra=""):
     depth = path.count("/") if depth is None else depth
     r = "../" * depth
     doc = f"""<!doctype html>
@@ -291,7 +323,7 @@ def page(path, title, desc, body, active="", depth=None):
 <meta property="og:type" content="website">
 <meta property="og:image" content="{og_image_url()}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{og_image_url()}">
+<meta name="twitter:image" content="{og_image_url()}">{head_extra}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" rel="stylesheet">
@@ -552,7 +584,7 @@ def build_home():
 """
     page("index.html", f"Abonnement IPTV France : meilleure offre IPTV 2026 | {SITE['brand']}",
          "Abonnement IPTV dès 5 € par mois : 32 000+ chaînes, 220 000+ films et séries, 4K, essai gratuit 24 h, sans engagement.",
-         body, active="Accueil", depth=0)
+         body, active="Accueil", depth=0, head_extra=home_jsonld())
 
 # ---------------------------------------------------------------- article générique
 # ---------------------------------------------------------------- guides par appareil
@@ -1006,8 +1038,8 @@ def build_seo_files():
             prio = "0.6"
         urls.append((loc, prio))
     urls.sort(key=lambda u: (-float(u[1]), u[0]))
-    body = "".join(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>{prio}</priority>\n  </url>\n"
-                   for loc, prio in urls)
+    # <loc> uniquement : la date de génération n'est pas une vraie date de modification
+    body = "".join(f"  <url>\n    <loc>{loc}</loc>\n  </url>\n" for loc, prio in urls)
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n", encoding="utf-8")
