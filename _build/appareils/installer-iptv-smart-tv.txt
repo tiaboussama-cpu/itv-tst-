@@ -14,6 +14,8 @@ Toutes les Smart TV ne se valent pourtant pas. Le système d’exploitation du t
 
 ## Identifier le système de votre téléviseur
 
+![installer-iptv-smart-tv-1.jpg]
+
 Avant d’installer quoi que ce soit, il faut savoir sur quel système tourne votre Smart TV. C’est lui qui décide des applications auxquelles vous avez accès. Voici les cas les plus fréquents en France :
 
 - **Samsung** : système **Tizen**. Les applications s’installent depuis le Smart Hub, rubrique Applications.
@@ -89,6 +91,8 @@ La plupart de ces applications offrent une période d’essai, puis demandent un
 [[cta]]
 
 ## Ajouter votre abonnement : Xtream Codes ou lien M3U
+
+![installer-iptv-smart-tv-2.jpg]
 
 Lors de votre commande, nous vous envoyons vos accès sous deux formes. Il suffit d’en utiliser une seule.
 

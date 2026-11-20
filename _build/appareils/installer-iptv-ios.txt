@@ -35,6 +35,8 @@ Le catalogue de l’App Store évolue : certaines applications changent de nom, 
 
 ## Installer et configurer sur iPhone ou iPad
 
+![installer-iptv-ios-1.jpg]
+
 ### Étape 1 : installer l’application
 
 1. Ouvrez l’**App Store** et touchez **Rechercher**.
@@ -74,6 +76,8 @@ Taper une longue adresse avec la télécommande de l’Apple TV est fastidieux. 
 [[cta]]
 
 ## Diffuser sur votre téléviseur avec AirPlay
+
+![installer-iptv-ios-2.jpg]
 
 Vous n’avez pas d’Apple TV ? Si votre téléviseur est compatible AirPlay (c’est le cas de nombreux modèles Samsung, LG, Sony et Philips récents), vous pouvez y envoyer la vidéo depuis votre iPhone ou votre iPad.
 

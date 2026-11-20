@@ -12,6 +12,8 @@ Bonne nouvelle : quelques réglages et bonnes habitudes suffisent à retrouver u
 
 ## Le réseau : la première source de coupures
 
+![iptv-fire-stick-1.jpg]
+
 Avant de toucher aux réglages de l’appareil, regardez votre connexion. La grande majorité des coupures IPTV sur Fire TV viennent du Wi-Fi.
 
 - **Testez votre débit** depuis le Fire TV : Paramètres, puis Réseau, puis appuyez sur le bouton lecture/pause sur votre réseau pour vérifier la connexion. Comptez 10 Mb/s pour la HD et 25 Mb/s pour la 4K.
@@ -21,6 +23,8 @@ Avant de toucher aux réglages de l’appareil, regardez votre connexion. La gra
 - **Utilisez la rallonge HDMI** fournie : derrière la télé, le Stick est entouré de métal qui affaiblit le signal Wi-Fi.
 
 ## Libérer de l’espace et de la mémoire
+
+![iptv-fire-stick-2.jpg]
 
 ### Désinstaller ce que vous n’utilisez pas
 

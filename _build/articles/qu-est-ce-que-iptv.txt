@@ -14,6 +14,8 @@ En France, le terme désigne aussi bien la télévision des box opérateurs, qui
 
 ## Comment fonctionne l’IPTV ?
 
+![qu-est-ce-que-iptv-1.jpg]
+
 Le principe est simple, même si la technique derrière est sophistiquée :
 
 1. Le fournisseur reçoit les chaînes et les **encode** dans un format adapté à internet, en plusieurs qualités (SD, HD, Full HD, 4K).
@@ -56,6 +58,8 @@ L’IPTV se distingue surtout par sa souplesse : un seul abonnement, utilisable 
 [[cta]]
 
 ## Sur quels appareils regarder l’IPTV ?
+
+![qu-est-ce-que-iptv-2.jpg]
 
 Presque tous les écrans connectés sont compatibles. Voici nos guides d’installation pas à pas pour chacun :
 

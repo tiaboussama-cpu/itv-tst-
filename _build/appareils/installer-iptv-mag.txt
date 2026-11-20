@@ -37,6 +37,8 @@ L’activation se fait donc en deux temps :
 
 ## Étape 1 : trouver l’adresse MAC de votre boîtier
 
+![installer-iptv-mag-1.jpg]
+
 Vous la trouverez à deux endroits :
 
 - sur l’**étiquette collée sous le boîtier**, à côté du numéro de série ;
@@ -69,6 +71,8 @@ Le boîtier se connecte au portail, affiche brièvement un écran de chargement,
 [[cta]]
 
 ## Naviguer dans le portail
+
+![installer-iptv-mag-2.jpg]
 
 L’interface du portail ressemble à celle d’une box opérateur :
 

@@ -18,6 +18,8 @@ Un boîtier coûte entre 40 et 200 euros selon le modèle, et il est généralem
 
 ## Les critères qui comptent vraiment
 
+![boitier-iptv-1.jpg]
+
 Avant de comparer les modèles, voici ce qui fait la différence pour l’IPTV :
 
 - **La puissance et la mémoire vive** : au moins 2 Go de RAM pour une navigation fluide dans un guide de milliers de chaînes.
@@ -66,6 +68,8 @@ La configuration est expliquée dans notre guide [configurer l’IPTV sur un bo�
 [[cta]]
 
 ## Comparatif des boîtiers IPTV
+
+![boitier-iptv-2.jpg]
 
 <table><tr><th>Boîtier</th><th>Prix indicatif</th><th>Atout principal</th><th>Pour qui ?</th></tr><tr><td>Fire TV Stick 4K / 4K Max</td><td>40–70 €</td><td>Rapport qualité-prix</td><td>La plupart des foyers</td></tr><tr><td>Fire TV Cube</td><td>130–150 €</td><td>Puissance et Ethernet</td><td>Les exigeants</td></tr><tr><td>Box Android TV / Google TV</td><td>50–200 €</td><td>Polyvalence, TiviMate</td><td>Ceux qui veulent tout faire</td></tr><tr><td>Apple TV 4K</td><td>150–200 €</td><td>Fluidité, qualité d’image</td><td>Les utilisateurs Apple</td></tr><tr><td>Boîtier MAG</td><td>60–150 €</td><td>Simplicité</td><td>La télé sans prise de tête</td></tr></table>
 

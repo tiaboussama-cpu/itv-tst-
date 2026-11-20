@@ -12,6 +12,8 @@ Dans la grande majorité des cas, le problème se situe chez vous, dans le rése
 
 ## Le diagnostic en 5 minutes
 
+![panne-iptv-1.jpg]
+
 Procédez dans l’ordre, en testant une chaîne après chaque étape :
 
 1. **Testez une autre chaîne.** Si une seule chaîne coupe, le problème vient probablement de cette chaîne : signalez-la au support.
@@ -32,6 +34,8 @@ Procédez dans l’ordre, en testant une chaîne après chaque étape :
 - **Une maintenance ponctuelle** du serveur, rare et généralement annoncée.
 
 ## Améliorer votre réseau
+
+![panne-iptv-2.jpg]
 
 ### Passer en Ethernet
 

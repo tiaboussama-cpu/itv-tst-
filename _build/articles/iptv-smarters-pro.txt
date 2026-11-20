@@ -30,6 +30,8 @@ Sur certaines Smart TV Samsung et LG, Smarters est proposé dans la boutique d�
 
 ## Connexion avec Xtream Codes
 
+![iptv-smarters-pro-1.jpg]
+
 1. Ouvrez l’application et acceptez les conditions d’utilisation.
 2. Choisissez **Login with Xtream Codes API**.
 3. Remplissez les quatre champs décrits ci-dessous.
@@ -49,6 +51,8 @@ Les champs à remplir :
 Choisissez **Load Your Playlist or File/URL**, sélectionnez **M3U URL**, puis collez le lien reçu. La méthode Xtream Codes reste préférable, car elle charge mieux le guide des programmes et les catégories.
 
 ## Découvrir l’interface
+
+![iptv-smarters-pro-2.jpg]
 
 - **Live TV** : les chaînes en direct, classées par catégories. Sélectionnez une catégorie, puis une chaîne.
 - **Movies** et **Series** : la vidéo à la demande, avec affiches, résumés et reprise de lecture.

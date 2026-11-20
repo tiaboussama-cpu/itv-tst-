@@ -38,6 +38,8 @@ Rassemblez ces éléments pour une installation sans accroc :
 
 ## Étape 1 : activer les options pour les développeurs
 
+![installer-iptv-fire-tv-1.jpg]
+
 Par défaut, le Fire TV n’autorise que les applications de l’Appstore. Pour installer TiviMate ou IPTV Smarters, il faut d’abord afficher un menu caché.
 
 1. Depuis l’écran d’accueil, ouvrez **Paramètres** (l’icône en forme d’engrenage, à droite).
@@ -82,6 +84,8 @@ Pour l’installer :
 > Téléchargez toujours vos applications depuis une source de confiance. Ne tapez pas dans Downloader des adresses trouvées au hasard sur internet : un fichier modifié peut contenir des logiciels indésirables.
 
 ## Étape 5 : connecter votre abonnement {brand}
+
+![installer-iptv-fire-tv-2.jpg]
 
 ### Dans TiviMate
 

@@ -12,6 +12,8 @@ Les lecteurs IPTV ne fournissent aucun contenu : ils lisent simplement l’accè
 
 ## Les critères pour bien choisir
 
+![meilleures-applications-iptv-1.jpg]
+
 Avant de comparer les applications, posez-vous quelques questions :
 
 - **Sur quel appareil ?** Toutes les applications n’existent pas partout. TiviMate, par exemple, n’est disponible que sur Android TV et Google TV.
@@ -59,6 +61,8 @@ L’App Store propose plusieurs lecteurs de qualité : **IPTV Smarters Player Li
 - **Les portails MAG** : sur les boîtiers MAG, il n’y a pas d’application à choisir ; l’interface est fournie par le portail. Voir notre guide [boîtier MAG]({R}installer-iptv-mag/).
 
 ## Notre comparatif
+
+![meilleures-applications-iptv-2.jpg]
 
 <table><tr><th>Application</th><th>Appareils</th><th>Points forts</th><th>Prix</th></tr><tr><td>TiviMate</td><td>Android TV, Google TV, Fire TV</td><td>Guide des programmes, interface type box</td><td>Gratuit, Premium payant</td></tr><tr><td>IPTV Smarters Pro</td><td>Android, Fire TV, iOS (Lite), certaines Smart TV</td><td>Simplicité, multiplateforme</td><td>Gratuit</td></tr><tr><td>IBO Player, Smart IPTV</td><td>Smart TV Samsung et LG</td><td>Sans boîtier, activation par MAC</td><td>Essai puis licence</td></tr><tr><td>GSE Smart IPTV, iPlayTV</td><td>iPhone, iPad, Apple TV</td><td>Intégration Apple</td><td>Gratuit ou payant</td></tr><tr><td>VLC</td><td>Tous</td><td>Universel, gratuit</td><td>Gratuit</td></tr></table>
 

@@ -39,6 +39,8 @@ La version Windows d’IPTV Smarters Pro se télécharge **uniquement sur le sit
 
 ## Se connecter avec Xtream Codes API
 
+![installer-iptv-windows-1.jpg]
+
 1. Au premier lancement, acceptez les conditions d’utilisation.
 2. Choisissez **Login with Xtream Codes API**.
 3. Remplissez les champs : un **nom** de votre choix (par exemple « {brand} »), votre **nom d’utilisateur**, votre **mot de passe** et l’**URL du serveur**, avec http:// ou https:// et le numéro de port s’il y en a un.
@@ -63,6 +65,8 @@ Retrouvez toutes les fonctions de l’application dans notre [guide IPTV Smarter
 - **Gardez l’application à jour** en téléchargeant les nouvelles versions depuis le site officiel.
 
 ## Regarder sur la télé depuis votre PC
+
+![installer-iptv-windows-2.jpg]
 
 Votre ordinateur peut aussi afficher l’IPTV sur le grand écran du salon :
 

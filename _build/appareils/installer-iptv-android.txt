@@ -33,6 +33,8 @@ Pour vérifier votre version, ouvrez **Paramètres**, puis **À propos du télé
 
 ## Quelle application choisir ?
 
+![installer-iptv-android-1.jpg]
+
 Voici les lecteurs que nous recommandons avec {brand}, selon l’appareil :
 
 - **TiviMate** (box Android TV, téléviseurs Android TV et Google TV) : le lecteur le plus complet sur grand écran, avec un guide des programmes très lisible, des favoris, l’enregistrement et le replay. Il est conçu pour la télécommande et ne s’installe pas sur les smartphones.
@@ -103,6 +105,8 @@ Retrouvez toutes les astuces dans notre [guide IPTV Smarters Pro]({R}iptv-smarte
 Si vous préférez le lien M3U, ou si votre lecteur ne gère pas Xtream Codes, choisissez l’option **Playlist M3U** ou **Ajouter une URL**, puis collez le lien que nous vous avons envoyé. Sur un smartphone, copiez-collez le lien depuis WhatsApp plutôt que de le taper à la main : il est long et la moindre erreur empêche le chargement.
 
 ## Regarder sur la télé depuis votre téléphone
+
+![installer-iptv-android-2.jpg]
 
 Votre smartphone Android peut aussi servir à afficher l’IPTV sur un grand écran :
 

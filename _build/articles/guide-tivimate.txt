@@ -36,6 +36,8 @@ Sur Fire TV, TiviMate s’installe avec l’application Downloader, après avoir
 
 ## Configurer le guide des programmes (EPG)
 
+![guide-tivimate-1.jpg]
+
 Avec une connexion Xtream Codes, TiviMate récupère automatiquement le guide. Le premier chargement peut prendre quelques minutes. Pour vérifier ou ajuster :
 
 1. Ouvrez les **Paramètres** (icône en forme d’engrenage).
@@ -46,6 +48,8 @@ Avec une connexion Xtream Codes, TiviMate récupère automatiquement le guide. L
 [[cta]]
 
 ## Organiser vos chaînes
+
+![guide-tivimate-2.jpg]
 
 ### Masquer les groupes inutiles
 

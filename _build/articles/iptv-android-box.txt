@@ -12,6 +12,8 @@ Ce guide vous aide à choisir la bonne box, puis à la préparer correctement av
 
 ## Box certifiée ou box générique ?
 
+![iptv-android-box-1.jpg]
+
 C’est le premier critère, et le plus important.
 
 - Une box **certifiée Android TV ou Google TV** (Nvidia Shield, Xiaomi Mi Box, Chromecast avec Google TV, box d’opérateurs, etc.) dispose du vrai Google Play Store, d’une interface pensée pour la télécommande, de mises à jour de sécurité et d’une bonne compatibilité avec les applications.
@@ -34,6 +36,8 @@ Pour comparer la box Android aux autres solutions (Fire TV, Apple TV, MAG), cons
 [[cta]]
 
 ## Préparer votre box avant d’installer l’IPTV
+
+![iptv-android-box-2.jpg]
 
 ### 1. Brancher correctement
 
