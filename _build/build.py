@@ -140,6 +140,7 @@ NAV = [
 # ---------------------------------------------------------------- images
 IMG_ALT = {
     "hero-sunday-iptv.jpg": "Abonnement IPTV France — famille regardant la télévision avec l’interface {brand}",
+    "blog-hero-salon.jpg": "Blog IPTV {brand} — homme regardant l’interface IPTV sur une grande télé dans un salon éclairé en rouge",
     "blog-hero-iptv.jpg": "Blog IPTV {brand} — guides et astuces pour regarder l’IPTV en France",
     "guide-qu-est-ce-que-iptv.jpg": "Qu’est-ce que l’IPTV ? — télévision avec des centaines de chaînes en streaming",
     "guide-meilleures-applications-iptv.jpg": "Meilleures applications IPTV en 2026 — lecteurs IPTV sur TV",
@@ -194,7 +195,7 @@ IMG_ALT = {
     "installer-iptv-windows-2.jpg": "IPTV sur Windows — ordinateur portable relié à la télévision en HDMI",
     "chaines-tv.jpg": "Plus de 32 000 chaînes TV en direct — grille des chaînes {brand}",
 }
-IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "hero-sunday-iptv-photo.jpg": (1920, 1280), "poster-action.jpg": (560, 1120), "poster-science-fiction.jpg": (560, 1120), "poster-series.jpg": (560, 1120), "poster-sport.jpg": (560, 1120), "blog-hero-iptv.jpg": (1920, 640), "a-propos-sunday-iptv.jpg": (1200, 600), "choisir-fournisseur-iptv.jpg": (1952, 806)}
+IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "hero-sunday-iptv-photo.jpg": (1920, 1280), "poster-action.jpg": (560, 1120), "poster-science-fiction.jpg": (560, 1120), "poster-series.jpg": (560, 1120), "poster-sport.jpg": (560, 1120), "blog-hero-iptv.jpg": (1920, 640), "blog-hero-salon.jpg": (2400, 790), "a-propos-sunday-iptv.jpg": (1200, 600), "choisir-fournisseur-iptv.jpg": (1952, 806)}
 
 # Versions WebP plus légères (générées automatiquement dans images/) pour les téléphones.
 RESP_WIDTHS = (480, 800, 1200, 1920)
@@ -397,7 +398,7 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=18">
+<link rel="stylesheet" href="{r}style.css?v=19">
 </head>
 <body id="top">
 {header(r, active)}
@@ -925,11 +926,13 @@ def build_blog():
         chunk = "".join(cards[(n - 1) * BLOG_PER_PAGE: n * BLOG_PER_PAGE])
         if n == 1:
             hero = f"""
-<section class="section">
-  <div class="wrap center">
-    <h1 class="h-xl">Blog IPTV : tout savoir sur l’IPTV en France</h1>
-    <p class="lede" style="color:#fff;font-weight:600">Bienvenue sur le blog {SITE["brand"]}, le point de départ pour regarder la télé par internet. Guides d’installation, comparatifs d’applications et solutions aux problèmes courants : tout pour profiter pleinement de votre abonnement.</p>
-    {img("blog-hero-iptv.jpg", "page-img banner-img", lazy=False)}
+<section class="hero hero-has-photo hero-blog">
+  <div class="hero-bg">
+    {img("blog-hero-salon.jpg", "hero-photo", lazy=False)}
+  </div>
+  <div class="wrap hero-content">
+    <h1>Blog IPTV : tout savoir sur l’IPTV en France</h1>
+    <p>Bienvenue sur le blog {SITE["brand"]}, le point de départ pour regarder la télé par internet. Guides d’installation, comparatifs d’applications et solutions aux problèmes courants : tout pour profiter pleinement de votre abonnement.</p>
   </div>
 </section>"""
             heading = '<h2 class="h-md" style="margin-bottom:24px">Tous les articles</h2>'
@@ -1134,7 +1137,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=18"', f'href="{BASE}style.css?v=18"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
+    txt = txt.replace('href="style.css?v=19"', f'href="{BASE}style.css?v=19"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')

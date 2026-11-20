@@ -437,3 +437,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .pager a.pg:hover { border-color: var(--red); }
 .pager .is-current { background: var(--red); border-color: var(--red); }
 .pager .is-disabled { opacity: .35; }
+
+/* Bandeau photo du blog (image très large, ≈ 3:1) */
+.hero-blog { min-height: clamp(440px, 40vw, 640px); }
+.hero-blog .hero-photo { object-position: center 40%; }
+@media (max-width: 700px) {
+  .hero-blog { min-height: 0; padding: 44vw 0 32px; }
+  .hero-blog .hero-photo { height: 44vw; object-position: 55% center; }
+  .hero-blog .hero-bg::after { height: 44vw; }
+}
