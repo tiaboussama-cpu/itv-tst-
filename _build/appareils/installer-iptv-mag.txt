@@ -1,5 +1,9 @@
 ## Qu’est-ce qu’un boîtier MAG ?
 
+> **En bref :** Un boîtier MAG s’active par son adresse MAC : envoyez-nous l’adresse MAC indiquée sous le boîtier, branchez-le, saisissez l’adresse du portail dans les réglages, puis redémarrez. Vos chaînes s’affichent comme sur une box opérateur, sans application à installer.
+
+Dernière vérification : 20 novembre 2026.
+
 Les boîtiers MAG, fabriqués par la société Infomir, sont des décodeurs conçus spécialement pour l’IPTV. Contrairement à une box Android ou à un Fire TV Stick, ils n’ont pas de boutique d’applications : ils se connectent à un **portail** fourni par votre service IPTV, qui affiche directement une interface de télévision avec les chaînes, la vidéo à la demande et le guide des programmes. Résultat : une expérience très proche d’une box d’opérateur, avec une télécommande dédiée et un zapping rapide.
 
 Ce fonctionnement a un grand avantage : la simplicité au quotidien. Une fois configuré, le boîtier s’allume directement sur vos chaînes, sans application à ouvrir ni mise à jour à surveiller. C’est une solution idéale pour un parent, une résidence secondaire ou toute personne qui veut une télé « qui marche » sans se poser de questions.
@@ -9,6 +13,8 @@ Les boîtiers MAG ont aussi la réputation d’être robustes. Ils sont conçus 
 Ce guide vous explique comment fonctionne l’activation par adresse MAC, comment entrer l’adresse du portail {brand}, comment régler l’image et comment résoudre les messages d’erreur les plus courants.
 
 > Vous avez un boîtier MAG ? Envoyez-nous sur WhatsApp une photo de l’étiquette sous le boîtier : nous préparons votre accès et vous envoyons l’adresse du portail.
+
+[[cta]]
 
 ## Les modèles de boîtiers MAG
 
@@ -59,6 +65,8 @@ Si vous devez utiliser le Wi-Fi, configurez-le dans **Paramètres**, puis **Rés
 Le boîtier se connecte au portail, affiche brièvement un écran de chargement, puis l’interface {brand} apparaît avec vos chaînes. Selon la version du logiciel, les menus peuvent porter des noms légèrement différents, mais la logique reste la même : **Paramètres**, **Serveurs**, **Portails**.
 
 > Sur les boîtiers à interface récente, un écran « Sélection du portail » peut s’afficher au démarrage. Choisissez simplement le portail {brand} que vous venez de créer.
+
+[[cta]]
 
 ## Naviguer dans le portail
 
@@ -140,6 +148,8 @@ Passez en Ethernet si vous êtes en Wi-Fi, redémarrez la box internet et le bo�
 ### Le guide des programmes est vide
 
 Attendez quelques minutes après le démarrage, puis redémarrez le portail. Vérifiez que la date, l’heure et le fuseau horaire du boîtier sont corrects dans les paramètres.
+
+[[cta]]
 
 ## MAG ou box Android : que choisir ?
 

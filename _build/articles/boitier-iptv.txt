@@ -1,5 +1,9 @@
 ## Faut-il vraiment un boîtier pour l’IPTV ?
 
+> **En bref :** Quel boîtier IPTV choisir ? Le Fire TV Stick offre le meilleur rapport qualité-prix, la box Android TV la plus grande polyvalence, l’Apple TV 4K le haut de gamme et le boîtier MAG la simplicité. Vérifiez surtout la certification, la mémoire, la prise en charge de la 4K et le réseau.
+
+Dernière vérification : 20 novembre 2026.
+
 Pas forcément. Si votre téléviseur est une Smart TV récente, une application installée directement dessus peut suffire : c’est ce que nous expliquons dans notre guide [installer l’IPTV sur Smart TV]({R}installer-iptv-smart-tv/). Un boîtier devient pourtant intéressant dans plusieurs cas :
 
 - votre téléviseur n’est **pas connecté**, ou il est trop ancien pour recevoir les applications récentes ;
@@ -9,6 +13,8 @@ Pas forcément. Si votre téléviseur est une Smart TV récente, une application
 - vous souhaitez un appareil **transportable** pour les vacances.
 
 Un boîtier coûte entre 40 et 200 euros selon le modèle, et il est généralement beaucoup plus fluide que les applications intégrées aux téléviseurs.
+
+[[cta]]
 
 ## Les critères qui comptent vraiment
 
@@ -57,6 +63,8 @@ Les boîtiers **MAG** d’Infomir sont conçus uniquement pour l’IPTV. Il n’
 
 La configuration est expliquée dans notre guide [configurer l’IPTV sur un boîtier MAG]({R}installer-iptv-mag/).
 
+[[cta]]
+
 ## Comparatif des boîtiers IPTV
 
 <table><tr><th>Boîtier</th><th>Prix indicatif</th><th>Atout principal</th><th>Pour qui ?</th></tr><tr><td>Fire TV Stick 4K / 4K Max</td><td>40–70 €</td><td>Rapport qualité-prix</td><td>La plupart des foyers</td></tr><tr><td>Fire TV Cube</td><td>130–150 €</td><td>Puissance et Ethernet</td><td>Les exigeants</td></tr><tr><td>Box Android TV / Google TV</td><td>50–200 €</td><td>Polyvalence, TiviMate</td><td>Ceux qui veulent tout faire</td></tr><tr><td>Apple TV 4K</td><td>150–200 €</td><td>Fluidité, qualité d’image</td><td>Les utilisateurs Apple</td></tr><tr><td>Boîtier MAG</td><td>60–150 €</td><td>Simplicité</td><td>La télé sans prise de tête</td></tr></table>
@@ -68,6 +76,8 @@ Les prix sont indicatifs et varient selon les promotions et les générations de
 Pour la grande majorité des foyers, un **Fire TV Stick 4K Max** ou une **box Google TV** récente offre le meilleur équilibre entre prix, fluidité et compatibilité avec TiviMate. Choisissez l’**Apple TV 4K** si vous êtes déjà équipé Apple et voulez le meilleur confort, et un **boîtier MAG** si la priorité absolue est la simplicité.
 
 Quel que soit votre choix, branchez l’appareil en **Ethernet** si possible : c’est le réglage qui améliore le plus la stabilité. Et avant d’acheter, profitez de notre [essai gratuit de 24 heures]({R}essai-gratuit/) sur l’appareil que vous avez déjà : vous verrez s’il suffit.
+
+[[cta]]
 
 ## Les erreurs à éviter
 
@@ -82,4 +92,10 @@ Q: Puis-je utiliser un boîtier sur plusieurs téléviseurs ?
 R: Oui, il suffit de le débrancher et de le brancher sur un autre téléviseur. Un Fire TV Stick tient même dans une poche et vous suit en vacances.
 
 Q: Quel boîtier pour la 4K ?
-R: Fire TV Stick 4K Max, Fire TV Cube, box Google TV récente, Apple TV 4K ou boîtier MAG de la série 4xx ou 5xx. Vérifiez la prise en charge du HEVC et prévoyez au moins 40 Mb/s de connexion.
+R: Fire TV Stick 4K Max, Fire TV Cube, box Google TV récente, Apple TV 4K ou boîtier MAG de la série 4xx ou 5xx. Vérifiez la prise en charge du HEVC et prévoyez au moins 25 Mb/s de connexion.
+
+Q: Faut-il un boîtier IPTV si j’ai une Smart TV ?
+R: Pas forcément : une application installée sur la télé peut suffire. Un boîtier devient utile si la télé est lente, ancienne ou si l’application voulue n’y existe pas.
+
+Q: Quel boîtier IPTV pour un petit budget ?
+R: Le Fire TV Stick, autour de 40 à 70 €, offre le meilleur rapport qualité-prix et suffit à la plupart des foyers.

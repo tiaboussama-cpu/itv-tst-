@@ -96,21 +96,21 @@ PLAN_FEATURES = [
 GUIDES = [
     # slug, titre, catégorie, icône, résumé
     ("qu-est-ce-que-iptv", "Qu’est-ce que l’IPTV ? Explication complète (2026)", "Bases", "book",
-     "Comment fonctionne la télévision par internet, ce qu’il faut pour la regarder et en quoi elle diffère du satellite ou de la box."),
+     "Qu’est-ce que l’IPTV ? Fonctionnement de la télé par internet, matériel nécessaire, Xtream Codes et M3U, appareils compatibles et différences avec le satellite."),
     ("meilleures-applications-iptv", "Les meilleures applications IPTV en 2026", "Applications", "play",
-     "TiviMate, IPTV Smarters, IBO Player et les autres : quelle application choisir selon votre appareil."),
+     "Les meilleures applications IPTV en 2026 : TiviMate, IPTV Smarters Pro et les lecteurs pour Smart TV et Apple, comparés selon votre appareil et votre usage."),
     ("iptv-android-box", "Box Android IPTV : bien la choisir et la préparer", "Matériel", "box",
-     "Certification, mémoire, codecs, réseau : comment choisir une box Android pour l’IPTV, puis la préparer avant d’installer votre application."),
+     "Choisir une box Android IPTV : box certifiée ou générique, caractéristiques à vérifier, préparation avant l’installation et réglages pour garder une box rapide."),
     ("guide-tivimate", "Guide TiviMate : installation et configuration", "Applications", "monitor",
-     "Ajouter une playlist, régler l’EPG, créer des favoris et profiter des fonctions Premium de TiviMate."),
+     "Guide TiviMate complet : installation sur Android TV et Fire TV, ajout de la playlist, guide des programmes (EPG), favoris, replay et fonctions Premium."),
     ("iptv-smarters-pro", "IPTV Smarters Pro : installer et configurer", "Applications", "phone",
-     "Connexion Xtream Codes, réglages du lecteur et astuces pour une lecture fluide sur IPTV Smarters Pro."),
+     "IPTV Smarters Pro : installation sur Android, Fire TV, iPhone et Windows, connexion Xtream Codes, réglages recommandés et solutions aux erreurs fréquentes."),
     ("iptv-fire-stick", "Fire TV Stick et IPTV : astuces pour une lecture fluide", "Optimisation", "stick",
-     "Mémoire, réseau, réglages cachés et bonnes habitudes : comment rendre votre Fire TV Stick rapide et stable pour l’IPTV."),
+     "Fire TV Stick lent ou qui coupe ? Réseau, mémoire, réglages cachés et bonnes habitudes pour rendre votre Fire TV Stick rapide et stable pour l’IPTV."),
     ("panne-iptv", "Panne IPTV : résoudre les coupures et le buffering", "Dépannage", "wrench",
-     "Les causes les plus fréquentes des coupures et la méthode pour les corriger soi-même."),
+     "Panne IPTV, buffering ou chaîne qui coupe ? Diagnostic en 5 minutes, causes fréquentes, réglages réseau et appareil pour retrouver une lecture fluide."),
     ("boitier-iptv", "Quel boîtier IPTV choisir en 2026 ?", "Matériel", "box",
-     "Fire TV, box Android, Apple TV, boîtier MAG : comparatif des options et de leurs points forts."),
+     "Quel boîtier IPTV choisir en 2026 ? Fire TV Stick, box Android TV, Apple TV 4K ou boîtier MAG : comparatif, critères qui comptent et erreurs à éviter."),
 ]
 
 CITIES = [
@@ -424,7 +424,7 @@ FAQ_HOME = [
     ("Quels moyens de paiement acceptez-vous ?", "Le paiement se fait par carte bancaire (Visa, Mastercard) via une page de paiement sécurisée Stripe. Demandez le lien de paiement sur WhatsApp."),
     ("Puis-je tester avant d’acheter ?", "Oui, un essai gratuit de 24 heures est disponible. Il vous permet de vérifier la qualité et les chaînes sur votre propre connexion."),
     ("Combien d’écrans puis-je utiliser en même temps ?", "Un abonnement correspond à une connexion simultanée. Pour plusieurs écrans en même temps, demandez une offre multi-connexions."),
-    ("Quelle vitesse internet faut-il ?", "Environ 10 Mb/s pour la HD, 25 Mb/s pour la Full HD et 40 Mb/s ou plus pour la 4K. Le câble Ethernet donne les meilleurs résultats."),
+    ("Quelle vitesse internet faut-il ?", "Environ 10 Mb/s pour la HD et 25 Mb/s pour la 4K. Le câble Ethernet donne les meilleurs résultats."),
     ("Quelle application IPTV est la meilleure ?", "TiviMate et IPTV Smarters sont les plus utilisées sur Android et Fire Stick. Sur Smart TV et iPhone, nous vous indiquons l’application adaptée."),
     ("Y a-t-il un renouvellement automatique ?", "Non. Vous payez une seule fois pour la durée choisie. À la fin de la période, vous décidez librement de renouveler ou non."),
     ("Que faire si une chaîne ne fonctionne pas ?", "Contactez le support sur WhatsApp en précisant la chaîne et votre appareil. Nous répondons 24 h/24."),
@@ -517,7 +517,7 @@ def build_home():
 <section class="section-tight" id="offres-4k">
   <div class="wrap center">
     <h2 class="h-lg">La 4K incluse dans chaque abonnement</h2>
-    <p class="lede">Pas d’option « 4K » à payer en plus : chaque formule comprend les chaînes et les films disponibles en Ultra HD, en plus de la Full HD et de la HD. Il suffit d’une connexion de 40 Mb/s et d’un appareil compatible 4K.</p>
+    <p class="lede">Pas d’option « 4K » à payer en plus : chaque formule comprend les chaînes et les films disponibles en Ultra HD, en plus de la Full HD et de la HD. Il suffit d’une connexion de 25 Mb/s et d’un appareil compatible 4K.</p>
   </div>
 </section>
 
@@ -631,27 +631,27 @@ DEVICE_GUIDES = [
     ("installer-iptv-smart-tv", "Smart TV", "tv",
      'Installer l’IPTV sur <span class="red">Smart TV</span>', "Installer l’IPTV sur Smart TV Samsung, LG et Android TV",
      "hero-sunday-iptv-photo.jpg",
-     "Samsung, LG, Sony, Philips, TCL : le guide complet pour installer une application IPTV sur votre téléviseur, ajouter votre abonnement et régler l’EPG, sans boîtier."),
+     "Installer l’IPTV sur Smart TV Samsung, LG, Sony, Philips ou TCL : choisir l’application, ajouter votre abonnement, régler l’EPG et résoudre les problèmes."),
     ("installer-iptv-fire-tv", "Fire TV", "stick",
      'Installer l’IPTV sur <span class="red">Fire TV Stick</span>', "Installer l’IPTV sur Amazon Fire TV Stick",
      "guide-iptv-fire-stick.jpg",
-     "Options pour les développeurs, Downloader, installation de l’application et connexion : toutes les étapes pour regarder l’IPTV sur Fire TV Stick et Fire TV Cube."),
+     "Installer l’IPTV sur Fire TV Stick et Fire TV Cube : options développeurs, Downloader, installation de l’application et connexion de votre abonnement."),
     ("installer-iptv-android", "Android", "android",
      'Installer l’IPTV sur <span class="red">Android</span>', "Installer l’IPTV sur Android : smartphone, tablette et box",
      "guide-iptv-android-box.jpg",
-     "Smartphone, tablette, box Android ou Android TV : quelle application choisir, comment l’installer et comment configurer votre abonnement IPTV pas à pas."),
+     "Installer l’IPTV sur Android : smartphone, tablette, box ou téléviseur Android TV. Quelle application choisir, installation et configuration pas à pas."),
     ("installer-iptv-ios", "iOS", "apple",
      'Installer l’IPTV sur <span class="red">iPhone, iPad</span> et Apple TV', "Installer l’IPTV sur iPhone, iPad et Apple TV",
      "contact-sunday-iptv.jpg",
-     "Les applications IPTV de l’App Store, la configuration sur iPhone, iPad et Apple TV, et la diffusion sur votre télé avec AirPlay."),
+     "Installer l’IPTV sur iPhone, iPad et Apple TV : applications de l’App Store, configuration de votre abonnement et diffusion sur la télé avec AirPlay."),
     ("installer-iptv-mag", "MAG", "box",
      'Configurer l’IPTV sur un <span class="red">boîtier MAG</span>', "Configurer l’IPTV sur un boîtier MAG",
      "guide-boitier-iptv.jpg",
-     "Adresse MAC, URL du portail, réglages vidéo et dépannage : le guide complet pour configurer un boîtier MAG (Infomir) avec votre abonnement IPTV."),
+     "Configurer l’IPTV sur un boîtier MAG : adresse MAC, URL du portail, navigation, réglages image et son, dépannage et comparaison avec une box Android."),
     ("installer-iptv-windows", "Windows", "laptop",
      'Installer l’IPTV sur <span class="red">Windows</span>', "Installer l’IPTV sur un PC Windows",
      "installer-windows.jpg",
-     "Téléchargement d’IPTV Smarters Pro sur le site officiel, connexion Xtream Codes, réglages recommandés et dépannage : regarder l’IPTV sur un ordinateur Windows."),
+     "Installer l’IPTV sur Windows : téléchargement d’IPTV Smarters Pro sur le site officiel, connexion Xtream Codes, réglages recommandés et dépannage."),
 ]
 
 def device_chips(r):
@@ -727,7 +727,7 @@ def parse_guide(text):
     return sections, faq_items
 
 TRIAL_ARTICLE = ("essai-gratuit", "Essai IPTV gratuit sans risque", "Essai", "essai-gratuit-iptv.jpg",
-                 "Comment tester l’IPTV pendant 24 heures, ce qu’il faut vérifier et comment choisir ensuite la bonne formule.")
+                 "Essai IPTV gratuit de 24 heures : comment le demander, préparer votre appareil, ce qu’il faut vérifier pendant le test et comment choisir ensuite votre formule.")
 
 def article_meta(slug):
     """slug -> (titre court, catégorie, image, résumé) pour tous les articles du blog."""
@@ -846,7 +846,7 @@ def OL(*items):
 def build_trial():
     slug, title, cat, image, summary = TRIAL_ARTICLE
     build_txt_article(slug, "Essai IPTV gratuit", 'Essai IPTV <span class="red">gratuit</span><br>sans risque',
-                      f"Vous voulez savoir si l’IPTV vous convient avant de payer ? Avec un essai de 24 heures, vous testez la qualité, la stabilité et les chaînes sur votre propre connexion, avec l’aide du support {SITE['brand']}.",
+                      "Essai IPTV gratuit de 24 heures : testez la qualité, la stabilité et les chaînes sur votre propre connexion avant de payer, avec l’aide de notre support.",
                       image, "articles")
 
 def device_cards(r="{R}"):

@@ -1,8 +1,14 @@
 ## Pourquoi une box Android pour l’IPTV ?
 
+> **En bref :** Une box Android IPTV transforme n’importe quelle télé en écran complet, avec les meilleurs lecteurs comme TiviMate. Choisissez une box certifiée Android TV ou Google TV plutôt qu’une box générique, de préférence avec Ethernet, puis préparez-la avant d’installer votre application.
+
+Dernière vérification : 20 novembre 2026.
+
 Une box Android branchée en HDMI transforme n’importe quel téléviseur en écran IPTV complet. Elle donne accès aux meilleurs lecteurs, dont **TiviMate**, souvent à un port Ethernet, et à toutes les applications de streaming. C’est la solution la plus polyvalente, à condition de bien choisir son modèle : entre une box certifiée et une box générique à bas prix, l’écart de qualité est énorme.
 
 Ce guide vous aide à choisir la bonne box, puis à la préparer correctement avant d’installer votre application IPTV. Pour l’installation de l’application elle-même, suivez ensuite notre guide [installer l’IPTV sur Android]({R}installer-iptv-android/).
+
+[[cta]]
 
 ## Box certifiée ou box générique ?
 
@@ -24,6 +30,8 @@ Pour l’IPTV, une box certifiée est presque toujours le meilleur investissemen
 - **Télécommande** : idéalement avec boutons de navigation clairs et télécommande vocale.
 
 Pour comparer la box Android aux autres solutions (Fire TV, Apple TV, MAG), consultez notre comparatif [quel boîtier IPTV choisir]({R}boitier-iptv/).
+
+[[cta]]
 
 ## Préparer votre box avant d’installer l’IPTV
 
@@ -60,6 +68,8 @@ Sur une box Android TV, nous recommandons **TiviMate** pour son interface proche
 
 En cas de coupures, notre guide [panne IPTV]({R}panne-iptv/) vous aide à trouver la cause.
 
+[[cta]]
+
 Q: Une box Android à 30 euros suffit-elle ?
 R: Elle peut fonctionner, mais elle sera souvent lente, rarement mise à jour et limitée sur les applications. Une box certifiée Android TV ou Google TV offre une bien meilleure expérience pour un surcoût modéré.
 
@@ -68,3 +78,9 @@ R: Le Fire TV Stick est plus compact et moins cher ; la box Android offre souven
 
 Q: Puis-je enregistrer des programmes avec une box Android ?
 R: Oui, avec TiviMate Premium par exemple. Prévoyez un stockage suffisant ou une clé USB.
+
+Q: Faut-il brancher la box Android en Ethernet ?
+R: Ce n’est pas obligatoire, mais c’est la meilleure garantie contre les coupures, surtout en 4K ou si la box internet est loin du téléviseur.
+
+Q: Quel débit faut-il pour une box Android IPTV en 4K ?
+R: Environ 25 Mb/s, avec une box et un téléviseur compatibles 4K. Pour la HD, 10 Mb/s suffisent.

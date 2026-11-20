@@ -1,10 +1,16 @@
 ## L’IPTV sur Android : la plateforme la plus souple
 
+> **En bref :** Pour regarder l’IPTV sur Android, installez un lecteur depuis le Play Store (TiviMate sur box et télé Android TV, IPTV Smarters Pro sur smartphone et tablette), connectez votre abonnement avec Xtream Codes ou M3U, puis activez le décodage matériel pour une lecture fluide.
+
+Dernière vérification : 20 novembre 2026.
+
 Android est la plateforme la plus ouverte et la plus complète pour regarder l’IPTV. Smartphone, tablette, box Android, téléviseur Android TV ou Google TV : tous ces appareils donnent accès au Google Play Store, aux meilleurs lecteurs IPTV et à de nombreux réglages pour adapter la lecture à votre connexion. Avec un seul abonnement {brand}, vous pouvez regarder vos chaînes sur le téléviseur du salon, puis continuer sur votre téléphone dans le train.
 
 Ce guide vous explique comment choisir la bonne application selon votre appareil, comment l’installer depuis le Play Store ou à partir d’un fichier APK, comment connecter votre abonnement et comment obtenir une lecture fluide, même avec une connexion moyenne.
 
 > Vous ne savez pas quelle application choisir ? Envoyez-nous sur WhatsApp la marque et le modèle de votre appareil : nous vous répondons avec l’application la plus adaptée.
+
+[[cta]]
 
 ## Android, Android TV ou Google TV : quelles différences ?
 
@@ -21,7 +27,7 @@ Pour vérifier votre version, ouvrez **Paramètres**, puis **À propos du télé
 
 - un appareil Android **à jour** (lancez les mises à jour système et celles du Play Store) ;
 - un **compte Google** configuré sur l’appareil ;
-- une connexion internet : **10 Mb/s** pour la HD, **25 Mb/s** pour la Full HD, **40 Mb/s** pour la 4K ;
+- une connexion internet : **10 Mb/s** pour la HD et **25 Mb/s** pour la 4K ;
 - vos **identifiants {brand}** : adresse du serveur, nom d’utilisateur et mot de passe (Xtream Codes), ou lien de playlist M3U ;
 - sur une box, une **connexion Ethernet** si possible, pour une stabilité maximale.
 
@@ -68,6 +74,8 @@ Si l’application n’est pas disponible sur le Play Store de votre appareil, v
 4. Installez l’application, puis supprimez le fichier d’installation pour libérer de l’espace.
 
 > Après l’installation, vous pouvez retirer l’autorisation accordée au navigateur ou à Downloader. L’application installée continue de fonctionner.
+
+[[cta]]
 
 ## Configurer TiviMate sur une box ou une télé Android TV
 
@@ -154,6 +162,8 @@ Testez votre débit, passez en Ethernet ou rapprochez-vous de la box internet, p
 ### Le guide des programmes est vide
 
 Lancez une mise à jour de l’EPG dans les réglages de l’application et vérifiez le fuseau horaire de l’appareil. Le premier chargement peut prendre quelques minutes.
+
+[[cta]]
 
 Q: Puis-je installer TiviMate sur mon smartphone ?
 R: Non, TiviMate est conçu pour Android TV et Google TV. Sur smartphone et tablette, utilisez IPTV Smarters Pro ou un autre lecteur compatible Xtream Codes.

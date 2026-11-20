@@ -1,10 +1,16 @@
 ## L’IPTV sur Windows : votre ordinateur devient une télé
 
+> **En bref :** Pour regarder l’IPTV sur Windows, téléchargez IPTV Smarters Pro uniquement sur le site officiel iptvsmarters.com, installez-la, puis connectez-vous avec Xtream Codes (nom d’utilisateur, mot de passe, URL du serveur). Comptez environ 10 Mb/s pour la HD et 25 Mb/s pour la 4K.
+
+Dernière vérification : 20 novembre 2026.
+
 Un ordinateur portable ou un PC de bureau sous Windows suffit pour regarder l’IPTV : chaînes en direct, films, séries et guide des programmes, sans boîtier ni décodeur. C’est la solution idéale pour regarder un match dans votre bureau, profiter de votre abonnement {brand} dans une chambre sans télévision, ou relier l’ordinateur au téléviseur avec un simple câble HDMI.
 
 Ce guide vous explique comment télécharger IPTV Smarters Pro depuis son site officiel, comment l’installer sur Windows, comment vous connecter avec vos identifiants Xtream Codes et quels réglages choisir pour une lecture fluide.
 
 > Besoin d’aide pendant l’installation ? Écrivez-nous sur WhatsApp : nous vous guidons étape par étape, 24 h/24.
+
+[[cta]]
 
 ## Ce qu’il vous faut avant de commencer
 
@@ -42,6 +48,8 @@ La version Windows d’IPTV Smarters Pro se télécharge **uniquement sur le sit
 > Copiez-collez vos identifiants depuis WhatsApp ou depuis l’e-mail reçu plutôt que de les retaper : une seule lettre en trop, un espace ou une majuscule oubliée suffit à bloquer la connexion.
 
 Retrouvez toutes les fonctions de l’application dans notre [guide IPTV Smarters Pro]({R}iptv-smarters-pro/).
+
+[[cta]]
 
 ## Réglages recommandés
 
@@ -86,6 +94,8 @@ Lancez une mise à jour du guide dans l’application, puis vérifiez la date, l
 ### Ça fonctionnait sur un autre appareil et plus sur le PC
 
 Un abonnement fonctionne sur un appareil à la fois. Fermez l’application sur votre télé, votre box ou votre téléphone, puis relancez la lecture sur l’ordinateur.
+
+[[cta]]
 
 Q: Où télécharger IPTV Smarters Pro pour Windows ?
 R: Uniquement sur le site officiel iptvsmarters.com. Évitez les fichiers proposés sur d’autres sites : ils peuvent être modifiés ou contenir un logiciel malveillant.

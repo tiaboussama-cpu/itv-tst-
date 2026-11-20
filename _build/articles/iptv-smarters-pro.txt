@@ -1,8 +1,14 @@
 ## IPTV Smarters Pro en bref
 
+> **En bref :** IPTV Smarters Pro est une application IPTV simple, avec des rubriques séparées pour le direct, les films, les séries et le replay. Elle fonctionne sur Android, Fire TV, iPhone, certaines Smart TV et Windows. Connectez-vous avec Xtream Codes (nom d’utilisateur, mot de passe, URL), puis ajustez quelques réglages.
+
+Dernière vérification : 20 novembre 2026.
+
 IPTV Smarters Pro est l’une des applications IPTV les plus connues. Son interface en grandes tuiles sépare clairement le **direct**, les **films**, les **séries** et le **replay**, ce qui la rend très accessible aux débutants. Elle est disponible sur de nombreuses plateformes : smartphones et tablettes Android, box Android, Fire TV, certaines Smart TV, ordinateurs Windows et, sous le nom **IPTV Smarters Player Lite**, sur iPhone et iPad.
 
 Comme tous les lecteurs IPTV, Smarters ne fournit aucun contenu : il affiche l’abonnement que vous lui indiquez. Si vous comparez encore les lecteurs, notre article sur les [meilleures applications IPTV]({R}meilleures-applications-iptv/) vous aidera à choisir.
+
+[[cta]]
 
 ## Installation
 
@@ -50,6 +56,8 @@ Choisissez **Load Your Playlist or File/URL**, sélectionnez **M3U URL**, puis c
 - **EPG** : le guide des programmes en grille.
 - **Settings** : les réglages du lecteur, du format d’heure, du contrôle parental et de l’EPG.
 
+[[cta]]
+
 ## Les réglages recommandés
 
 ### Le lecteur vidéo
@@ -91,6 +99,8 @@ L’adresse du serveur est probablement mal saisie : vérifiez le préfixe http:
 
 Mettez-la à jour, videz le cache, puis redémarrez l’appareil. Sur une ancienne box, une autre application comme TiviMate peut être plus stable : voir notre [guide TiviMate]({R}guide-tivimate/).
 
+[[cta]]
+
 Q: IPTV Smarters Pro est-elle gratuite ?
 R: Oui, l’application est gratuite. Certaines versions proposent des options payantes, mais elles ne sont pas nécessaires pour regarder votre abonnement.
 
@@ -99,3 +109,9 @@ R: TiviMate est plus confortable sur une télé avec télécommande, notamment p
 
 Q: Puis-je ajouter plusieurs comptes ?
 R: Oui. L’écran de sélection des utilisateurs permet d’enregistrer plusieurs profils et de passer de l’un à l’autre.
+
+Q: IPTV Smarters Pro fonctionne-t-elle sur Windows ?
+R: Oui. La version Windows se télécharge sur le site officiel iptvsmarters.com ; notre guide [installer l’IPTV sur Windows]({R}installer-iptv-windows/) détaille chaque étape.
+
+Q: Pourquoi IPTV Smarters Pro indique « identifiants incorrects » ?
+R: Vérifiez chaque caractère du nom d’utilisateur et du mot de passe, ainsi que l’URL avec http:// ou https:// et le port. Copiez-collez vos identifiants plutôt que de les retaper.

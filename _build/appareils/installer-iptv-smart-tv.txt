@@ -1,10 +1,16 @@
 ## Pourquoi regarder l’IPTV directement sur votre Smart TV ?
 
+> **En bref :** Pour regarder l’IPTV sur Smart TV, installez une application compatible depuis la boutique de votre téléviseur (Samsung, LG, Android TV), ajoutez votre abonnement avec Xtream Codes ou un lien M3U, puis réglez le guide des programmes. Pas besoin de boîtier si votre télé est récente et fluide.
+
+Dernière vérification : 20 novembre 2026.
+
 La Smart TV est souvent l’écran le plus simple pour profiter de l’IPTV : pas de boîtier supplémentaire, pas de câble HDMI en plus, une seule télécommande. Vous installez une application depuis la boutique de votre téléviseur, vous ajoutez votre abonnement {brand} et vous retrouvez vos chaînes en direct, le catalogue de films et séries et le guide des programmes directement sur votre écran principal.
 
 Toutes les Smart TV ne se valent pourtant pas. Le système d’exploitation du téléviseur détermine les applications disponibles, la façon de les activer et parfois même la fluidité de lecture. Une télé Samsung ne se configure pas comme une LG, et une télé sous Google TV offre encore d’autres possibilités. Ce guide vous accompagne pas à pas, quel que soit votre modèle, et vous explique aussi comment résoudre les problèmes les plus courants.
 
 > Vous préférez être guidé en direct ? Écrivez-nous sur WhatsApp en indiquant la marque et le modèle de votre téléviseur : nous vous indiquons l’application la plus adaptée et nous vous aidons à la configurer.
+
+[[cta]]
 
 ## Identifier le système de votre téléviseur
 
@@ -22,7 +28,7 @@ Pour vérifier, ouvrez le menu **Paramètres** de votre téléviseur puis la rub
 
 Quelques minutes de préparation vous éviteront la plupart des blocages. Assurez-vous d’avoir :
 
-- une **connexion internet stable** : au moins 10 Mb/s pour la HD, 25 Mb/s pour la Full HD et 40 Mb/s ou plus pour la 4K ;
+- une **connexion internet stable** : au moins 10 Mb/s pour la HD et 25 Mb/s pour la 4K ;
 - de préférence un **câble Ethernet** entre la box internet et le téléviseur, plus fiable que le Wi-Fi pour le direct ;
 - vos **identifiants {brand}** : soit un accès Xtream Codes (adresse du serveur, nom d’utilisateur et mot de passe), soit un lien de playlist M3U ;
 - un **téléviseur à jour** : allez dans les paramètres et lancez la mise à jour du logiciel avant d’installer une application ;
@@ -80,6 +86,8 @@ La plupart de ces applications offrent une période d’essai, puis demandent un
 
 > Notez l’adresse MAC de votre application quelque part. Si vous réinstallez l’application ou changez de téléviseur, c’est elle qui permet de retrouver votre configuration.
 
+[[cta]]
+
 ## Ajouter votre abonnement : Xtream Codes ou lien M3U
 
 Lors de votre commande, nous vous envoyons vos accès sous deux formes. Il suffit d’en utiliser une seule.
@@ -132,6 +140,8 @@ Les boutiques Samsung et LG retirent parfois des applications. Si elle est déj�
 ### Le son est décalé par rapport à l’image
 
 Dans les réglages du téléviseur, désactivez les traitements audio avancés ou réglez le décalage audio. Si vous utilisez une barre de son, essayez la sortie optique ou HDMI eARC.
+
+[[cta]]
 
 ## Quand ajouter un boîtier à votre Smart TV ?
 

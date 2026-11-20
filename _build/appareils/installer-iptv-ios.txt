@@ -1,5 +1,9 @@
 ## L’IPTV sur iPhone, iPad et Apple TV
 
+> **En bref :** Pour regarder l’IPTV sur iPhone, iPad ou Apple TV, installez une application IPTV depuis l’App Store, ajoutez votre abonnement avec Xtream Codes ou un lien M3U, puis diffusez sur votre téléviseur avec AirPlay si besoin. L’Apple TV offre la meilleure expérience sur grand écran.
+
+Dernière vérification : 20 novembre 2026.
+
 Les appareils Apple sont parfaits pour profiter de l’IPTV : écrans de grande qualité, processeurs puissants et applications soignées. Votre iPhone devient une télé de poche, votre iPad un écran confortable pour les séries au lit, et l’Apple TV transforme le téléviseur du salon en centre multimédia fluide et silencieux. Avec un seul abonnement {brand}, vous passez de l’un à l’autre en quelques secondes.
 
 L’écosystème Apple fonctionne toutefois différemment d’Android : toutes les applications viennent de l’App Store, et il n’est pas possible d’installer un lecteur depuis un autre site. Ce guide vous aide à choisir une application fiable, à la configurer sur iPhone, iPad et Apple TV, puis à diffuser vos chaînes sur votre téléviseur avec AirPlay.
@@ -8,11 +12,13 @@ La bonne nouvelle, c’est que cette rigueur a aussi des avantages. Les applicat
 
 > Une hésitation sur l’application à choisir ? Écrivez-nous sur WhatsApp en précisant votre appareil : iPhone, iPad ou Apple TV, et sa version d’iOS ou de tvOS.
 
+[[cta]]
+
 ## Ce qu’il vous faut avant de commencer
 
 - un **iPhone**, un **iPad** ou une **Apple TV HD ou 4K**, avec la dernière mise à jour installée (Réglages, puis Général, puis Mise à jour logicielle) ;
 - un **identifiant Apple** connecté à l’App Store ;
-- une connexion internet : **10 Mb/s** pour la HD, **25 Mb/s** pour la Full HD et **40 Mb/s** pour la 4K ;
+- une connexion internet : **10 Mb/s** pour la HD et **25 Mb/s** pour la 4K ;
 - vos **identifiants {brand}** : adresse du serveur, nom d’utilisateur et mot de passe (Xtream Codes), ou lien de playlist M3U ;
 - pour l’Apple TV, idéalement un **câble Ethernet** branché sur la box internet.
 
@@ -64,6 +70,8 @@ Taper une longue adresse avec la télécommande de l’Apple TV est fastidieux. 
 - Dans **Réglages**, puis **Vidéo et audio**, activez **Ajuster la plage dynamique** et **Ajuster la fréquence d’images** : l’Apple TV adapte alors l’affichage à chaque chaîne, pour une image plus naturelle et sans saccades.
 - Branchez l’Apple TV en **Ethernet** si possible : le direct est beaucoup plus stable qu’en Wi-Fi.
 - Laissez les **mises à jour automatiques** des applications activées pour profiter des corrections de lecture.
+
+[[cta]]
 
 ## Diffuser sur votre téléviseur avec AirPlay
 
@@ -136,6 +144,8 @@ Certains formats vidéo sont mieux pris en charge par un lecteur que par un autr
 Vérifiez que l’iPhone et la télé sont sur le même réseau Wi-Fi, que la fonction AirPlay est activée dans les réglages du téléviseur, puis redémarrez les deux appareils.
 
 Pour les autres cas, consultez notre guide [panne IPTV]({R}panne-iptv/) ou contactez le support {brand} sur WhatsApp, 24 heures sur 24.
+
+[[cta]]
 
 Q: Peut-on installer TiviMate ou IPTV Smarters Pro sur iPhone ?
 R: TiviMate n’existe pas sur iOS. La gamme Smarters est présente sur l’App Store sous le nom IPTV Smarters Player Lite. D’autres lecteurs comme GSE Smart IPTV ou iPlayTV offrent des fonctions équivalentes.

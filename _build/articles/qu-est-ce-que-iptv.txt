@@ -1,10 +1,16 @@
 ## Définition de l’IPTV
 
+> **En bref :** Qu’est-ce que l’IPTV ? C’est la télévision transmise par internet : chaînes en direct, replay, guide des programmes et films à la demande sur votre télé, votre box ou votre téléphone. Il suffit d’une connexion d’environ 10 Mb/s pour la HD (25 Mb/s pour la 4K) et d’une application compatible.
+
+Dernière vérification : 20 novembre 2026.
+
 IPTV signifie **Internet Protocol Television**, autrement dit la télévision transmise par internet. Au lieu de recevoir les chaînes par une antenne râteau, une parabole ou le câble, votre appareil reçoit des flux vidéo à travers votre connexion internet, exactement comme lorsque vous regardez une vidéo en ligne.
 
 La différence avec une simple plateforme de streaming, c’est l’organisation : l’IPTV reproduit l’expérience d’une vraie télévision. Vous retrouvez des chaînes en direct classées par numéro et par thème, un guide des programmes qui indique ce qui passe maintenant et plus tard, le replay des émissions déjà diffusées et un catalogue de films et de séries à la demande. Le tout s’affiche dans une application, sur la télé du salon comme sur un téléphone.
 
 En France, le terme désigne aussi bien la télévision des box opérateurs, qui utilise la même technologie, que les services IPTV indépendants comme {brand}, qui fonctionnent sur n’importe quel appareil connecté, sans box ni engagement.
+
+[[cta]]
 
 ## Comment fonctionne l’IPTV ?
 
@@ -25,7 +31,7 @@ Un abonnement IPTV regroupe en général trois types de contenus. Le **direct** 
 
 Pas besoin de matériel spécial ni d’installation par un technicien. Il vous faut :
 
-- une **connexion internet** : 10 Mb/s pour la HD, 25 Mb/s pour la Full HD, 40 Mb/s ou plus pour la 4K. La fibre est idéale, mais une bonne ADSL suffit pour la HD ;
+- une **connexion internet** : 10 Mb/s pour la HD et 25 Mb/s pour la 4K. La fibre est idéale, mais une bonne ADSL suffit pour la HD ;
 - un **appareil compatible** : Smart TV, Fire TV Stick, box Android, Apple TV, smartphone, tablette, ordinateur ou boîtier MAG ;
 - une **application IPTV**, aussi appelée lecteur, qui affiche les chaînes et le guide ;
 - un **abonnement IPTV** qui fournit les identifiants de connexion.
@@ -46,6 +52,8 @@ Les boîtiers MAG utilisent une troisième méthode, l’activation par adresse 
 <table><tr><th></th><th>IPTV</th><th>Satellite</th><th>Box opérateur</th></tr><tr><td>Matériel</td><td>Aucun, ou un petit boîtier</td><td>Parabole et décodeur</td><td>Box et décodeur TV</td></tr><tr><td>Multi-écrans</td><td>Télé, téléphone, tablette</td><td>Limité</td><td>Limité</td></tr><tr><td>Engagement</td><td>Non</td><td>Souvent</td><td>Souvent 12 mois</td></tr><tr><td>Chaînes internationales</td><td>Très nombreuses</td><td>Selon le bouquet</td><td>En option</td></tr><tr><td>Films et séries</td><td>Inclus</td><td>En option</td><td>En option</td></tr><tr><td>Fonctionne en voyage</td><td>Oui</td><td>Non</td><td>Rarement</td></tr></table>
 
 L’IPTV se distingue surtout par sa souplesse : un seul abonnement, utilisable sur l’écran de votre choix, sans installation ni durée d’engagement. Son point faible est sa dépendance à la connexion internet : si votre réseau est instable, l’image peut couper. Notre guide [panne IPTV]({R}panne-iptv/) explique comment éviter et corriger ces coupures.
+
+[[cta]]
 
 ## Sur quels appareils regarder l’IPTV ?
 
@@ -74,12 +82,14 @@ Presque tous les écrans connectés sont compatibles. Voici nos guides d’insta
 - **La qualité variable d’un fournisseur à l’autre** : serveurs, support et stabilité ne se valent pas.
 - **Une petite phase d’installation** : quelques minutes pour installer l’application et saisir les identifiants.
 
+[[cta]]
+
 ## Comment bien choisir son fournisseur IPTV ?
 
 Avant de vous abonner, vérifiez quatre points : la **possibilité de tester** gratuitement, la **stabilité pendant les grands matchs**, la **réactivité du support** et la **transparence des prix** (pas de frais cachés ni de renouvellement automatique). Méfiez-vous des offres anormalement bon marché qui disparaissent du jour au lendemain. Chez {brand}, vous pouvez [demander un essai de 24 heures]({R}essai-gratuit/), puis choisir parmi nos [formules sans engagement]({R}#offres).
 
 Q: L’IPTV nécessite-t-elle une box internet particulière ?
-R: Non. N’importe quelle box internet fonctionne, en fibre comme en ADSL. Seul le débit compte : 10 Mb/s pour la HD, 40 Mb/s pour la 4K.
+R: Non. N’importe quelle box internet fonctionne, en fibre comme en ADSL. Seul le débit compte : 10 Mb/s pour la HD, 25 Mb/s pour la 4K.
 
 Q: Peut-on regarder l’IPTV sans télévision connectée ?
 R: Oui. Un Fire TV Stick ou une box Android branchée en HDMI rend n’importe quel téléviseur compatible. Vous pouvez aussi regarder sur un téléphone, une tablette ou un ordinateur.
@@ -89,3 +99,6 @@ R: Oui, partout où vous disposez d’une connexion internet stable. C’est l�
 
 Q: Combien d’écrans peut-on utiliser ?
 R: Un abonnement standard permet une connexion à la fois. Vous pouvez installer l’application sur plusieurs appareils et les utiliser à tour de rôle, ou demander une offre multi-connexions.
+
+Q: Quel débit faut-il pour regarder l’IPTV en 4K ?
+R: Environ 25 Mb/s pour la 4K et 10 Mb/s pour la HD. Branchez si possible votre appareil en Ethernet pour une lecture plus stable.

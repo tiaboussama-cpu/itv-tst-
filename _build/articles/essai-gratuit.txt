@@ -1,8 +1,14 @@
 ## Qu’est-ce qu’un essai IPTV ?
 
+> **En bref :** Un essai IPTV gratuit vous donne 24 heures d’accès complet (chaînes en direct, films, séries, replay) sur votre propre appareil. Demandez-le sur WhatsApp en indiquant votre appareil, installez l’application conseillée, puis testez la qualité et la stabilité aux heures où vous regardez vraiment.
+
+Dernière vérification : 20 novembre 2026.
+
 Un essai IPTV est un accès temporaire au service, identique à l’abonnement payant. Pendant 24 heures, vous profitez des chaînes en direct, du catalogue de films et séries, du replay et du guide des programmes, exactement comme un abonné.
 
 C’est la meilleure façon de vérifier, chez vous et sur votre propre matériel, que le service vous convient. Chaque foyer est différent : la qualité de la connexion, la distance entre la box et la télé, l’appareil utilisé, tout cela influence l’expérience. Un essai vous permet de juger sur pièce plutôt que sur des promesses. Si vous découvrez l’IPTV, lisez d’abord [qu’est-ce que l’IPTV]({R}qu-est-ce-que-iptv/) pour comprendre le principe.
+
+[[cta]]
 
 ## Comment demander votre essai
 
@@ -28,6 +34,8 @@ Vous hésitez sur l’application ? Notre sélection des [meilleures application
 ## Avantages et limites d’un essai
 
 <div class="pros-cons"><div><h4>✓ Avantages</h4><ul><li>Aucun paiement demandé</li><li>Test sur votre propre connexion</li><li>Accès complet aux chaînes et à la VOD</li><li>Aide à l’installation incluse</li></ul></div><div><h4>✗ Limites</h4><ul><li>Durée limitée à 24 heures</li><li>Un essai par personne</li><li>Une seule connexion à la fois</li></ul></div></div>
+
+[[cta]]
 
 ## Que vérifier pendant l’essai ?
 
@@ -59,6 +67,8 @@ Si votre appareil le permet, branchez-le en Ethernet. Vous jugerez le service, p
 
 Si vous avez le temps, testez deux lecteurs, par exemple TiviMate et IPTV Smarters, et gardez celui qui vous convient le mieux. Voir nos guides [TiviMate]({R}guide-tivimate/) et [IPTV Smarters Pro]({R}iptv-smarters-pro/).
 
+[[cta]]
+
 ## Après l’essai : choisir sa formule
 
 Si l’essai vous convient, choisissez la durée qui vous arrange parmi nos [formules sans engagement]({R}#offres). Toutes donnent accès au même contenu ; seule la durée change, et plus elle est longue, plus le prix mensuel baisse, jusqu’à 5 € par mois sur 12 mois. Il n’y a ni frais d’activation ni renouvellement automatique.
@@ -76,3 +86,6 @@ R: L’essai permet une connexion à la fois, mais vous pouvez changer d’appar
 
 Q: Combien de temps faut-il pour recevoir l’essai ?
 R: En général quelques minutes après votre message sur WhatsApp.
+
+Q: Faut-il installer l’application avant l’essai ?
+R: C’est conseillé : installez l’application avant de recevoir vos identifiants pour profiter des 24 heures complètes. Nos guides par appareil vous accompagnent pas à pas.

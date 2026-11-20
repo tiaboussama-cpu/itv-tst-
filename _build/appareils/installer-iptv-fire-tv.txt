@@ -1,5 +1,9 @@
 ## Pourquoi le Fire TV Stick est idéal pour l’IPTV
 
+> **En bref :** Pour installer l’IPTV sur Fire TV Stick, activez les options pour les développeurs, installez Downloader, autorisez-le à installer des applications, puis installez votre lecteur IPTV et connectez votre abonnement. Comptez une quinzaine de minutes, étape par étape.
+
+Dernière vérification : 20 novembre 2026.
+
 L’Amazon Fire TV Stick est l’un des moyens les plus simples et les moins chers de transformer n’importe quel téléviseur en écran IPTV complet. Il se branche sur un port HDMI, se pilote avec une télécommande vocale et donne accès aux meilleurs lecteurs IPTV du marché, comme TiviMate ou IPTV Smarters. Même sur une télé récente, il apporte souvent plus de fluidité et de choix que les applications intégrées.
 
 Ce guide couvre les Fire TV Stick, Fire TV Stick 4K, 4K Max et Fire TV Cube fonctionnant sous Fire OS. Nous détaillons chaque étape : préparation, activation des options pour les développeurs, installation de Downloader, installation de l’application IPTV, connexion à votre abonnement {brand} et réglages pour une lecture sans coupure.
@@ -7,6 +11,8 @@ Ce guide couvre les Fire TV Stick, Fire TV Stick 4K, 4K Max et Fire TV Cube fonc
 Autre avantage : le Fire TV Stick se transporte facilement. Glissez-le dans votre valise avec sa télécommande et son alimentation, branchez-le sur le téléviseur d’un hôtel ou d’une location de vacances, connectez-le au Wi-Fi, et vous retrouvez instantanément vos chaînes, vos favoris et votre guide des programmes, exactement comme à la maison. C’est aussi une excellente solution pour un parent ou un proche peu à l’aise avec la technologie : une fois configuré, il suffit d’allumer la télé et d’ouvrir une seule application. Enfin, son prix modeste en fait un investissement rapidement amorti par rapport à la location d’un décodeur.
 
 > Besoin d’aide pendant l’installation ? Envoyez-nous une photo de votre écran sur WhatsApp : nous vous indiquons exactement où cliquer.
+
+[[cta]]
 
 ## Quel modèle de Fire TV avez-vous ?
 
@@ -27,7 +33,7 @@ Rassemblez ces éléments pour une installation sans accroc :
 - un **Fire TV branché et connecté à internet**, avec la dernière mise à jour installée (Paramètres, puis Ma Fire TV, puis À propos, puis Rechercher des mises à jour) ;
 - un **compte Amazon** déjà configuré sur l’appareil ;
 - vos **identifiants {brand}** : adresse du serveur, nom d’utilisateur et mot de passe (connexion Xtream Codes), ou lien M3U ;
-- une **connexion d’au moins 10 Mb/s** pour la HD et 40 Mb/s pour la 4K ;
+- une **connexion d’au moins 10 Mb/s** pour la HD et 25 Mb/s pour la 4K ;
 - idéalement, l’**adaptateur Ethernet** officiel d’Amazon si votre box internet est loin du téléviseur.
 
 ## Étape 1 : activer les options pour les développeurs
@@ -92,6 +98,8 @@ Pour l’installer :
 3. Sélectionnez **Add User** : l’application charge vos chaînes, films et séries.
 
 Pour plus de détails sur chaque application, consultez nos guides [TiviMate]({R}guide-tivimate/) et [IPTV Smarters Pro]({R}iptv-smarters-pro/).
+
+[[cta]]
 
 ## Placer l’application sur l’écran d’accueil
 
@@ -161,6 +169,8 @@ L’espace de stockage est probablement plein. Supprimez des applications inutil
 ### Les chaînes coupent ou chargent en boucle
 
 Passez en Ethernet si possible, redémarrez la box internet et le Fire TV, puis changez de lecteur vidéo dans les réglages de l’application. Notre guide [panne IPTV]({R}panne-iptv/) détaille toutes les solutions.
+
+[[cta]]
 
 Q: Est-ce que l’installation abîme ou bloque mon Fire TV ?
 R: Non. Activer les options pour les développeurs et installer une application avec Downloader ne modifie pas le système. Vous pouvez tout annuler à tout moment, et une réinitialisation d’usine remet l’appareil à zéro.

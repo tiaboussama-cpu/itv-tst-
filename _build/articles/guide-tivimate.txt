@@ -1,8 +1,14 @@
 ## Pourquoi choisir TiviMate ?
 
+> **En bref :** TiviMate est un lecteur IPTV pensé pour la télécommande : guide des programmes en grille, favoris, replay et enregistrement. Il fonctionne sur Android TV, Google TV et Fire TV, mais pas sur iPhone, Apple TV ni Smart TV Samsung et LG. Ce guide couvre l’installation, la playlist, l’EPG et les réglages.
+
+Dernière vérification : 20 novembre 2026.
+
 TiviMate est l’un des lecteurs IPTV les plus appréciés sur grand écran. Il transforme votre abonnement en une véritable interface de télévision : liste des chaînes à gauche, aperçu en direct, guide des programmes en grille, zapping instantané avec les flèches de la télécommande. Pour ceux qui regardent surtout le direct et le sport, c’est souvent le meilleur choix, comme nous l’expliquons dans notre sélection des [meilleures applications IPTV]({R}meilleures-applications-iptv/).
 
 TiviMate fonctionne sur **Android TV**, **Google TV** et **Fire TV**. Il n’existe pas sur iPhone, iPad, Apple TV, ni sur les Smart TV Samsung et LG. Si votre téléviseur n’est pas compatible, un Fire TV Stick ou une box Android TV fera l’affaire : voir notre comparatif [quel boîtier IPTV choisir]({R}boitier-iptv/).
+
+[[cta]]
 
 ## Installer TiviMate
 
@@ -36,6 +42,8 @@ Avec une connexion Xtream Codes, TiviMate récupère automatiquement le guide. L
 2. Allez dans **EPG** : la source fournie par la playlist doit apparaître.
 3. Réglez la **fréquence de mise à jour** (une fois par jour suffit) et la durée de conservation du guide.
 4. Si le guide est décalé, vérifiez le **fuseau horaire** de l’appareil et, si besoin, ajustez le décalage EPG dans les paramètres.
+
+[[cta]]
 
 ## Organiser vos chaînes
 
@@ -73,6 +81,8 @@ Le paiement de TiviMate Premium revient à l’éditeur de l’application ; il 
 
 Si les coupures persistent, la cause est souvent le réseau : consultez notre guide [panne IPTV]({R}panne-iptv/). Sur Fire TV, appliquez aussi nos [astuces pour un Fire TV Stick fluide]({R}iptv-fire-stick/).
 
+[[cta]]
+
 ## Utiliser le replay et l’enregistrement
 
 Les chaînes compatibles affichent une petite icône d’horloge. Dans le guide, revenez en arrière sur la ligne de la chaîne et sélectionnez une émission déjà diffusée : elle démarre depuis le début. Pour enregistrer, sélectionnez une émission future dans le guide et choisissez **Enregistrer**. Les enregistrements sont stockés sur l’appareil ou sur une clé USB, selon votre configuration.
@@ -93,3 +103,9 @@ R: Non. Sur iPhone et iPad, utilisez IPTV Smarters Player Lite ou GSE Smart IPTV
 
 Q: Mes favoris sont-ils conservés après une mise à jour ?
 R: Oui, une mise à jour installée par-dessus l’ancienne version conserve vos playlists, favoris et réglages. TiviMate Premium permet aussi de sauvegarder la configuration.
+
+Q: TiviMate fonctionne-t-il sur Fire TV Stick ?
+R: Oui. TiviMate fonctionne sur Fire TV ; suivez notre guide [installer l’IPTV sur Fire TV Stick]({R}installer-iptv-fire-tv/) pour l’installation pas à pas.
+
+Q: Puis-je utiliser TiviMate sur une Smart TV Samsung ou LG ?
+R: Non, TiviMate n’existe pas sur ces téléviseurs. Branchez un Fire TV Stick ou une box Android TV, ou utilisez une application compatible avec votre télé.

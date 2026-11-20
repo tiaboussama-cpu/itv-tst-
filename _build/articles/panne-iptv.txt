@@ -1,8 +1,14 @@
 ## Comprendre d’où viennent les coupures
 
+> **En bref :** Une panne IPTV (image figée, chargement, chaîne qui ne démarre pas) vient presque toujours de chez vous : Wi-Fi, débit, appareil ou application. Faites le diagnostic en 5 minutes, passez en Ethernet si possible, puis optimisez l’appareil. Si rien ne change, notre support vous aide 24 h/24.
+
+Dernière vérification : 20 novembre 2026.
+
 Une image qui se fige, un rond de chargement qui tourne en plein match, une chaîne qui refuse de démarrer : les coupures IPTV sont frustrantes, mais elles ont presque toujours une cause identifiable. Pour la trouver, il faut se souvenir du trajet de l’image : elle part des **serveurs** du fournisseur, traverse **internet** et votre **fournisseur d’accès**, arrive à votre **box**, passe par votre **réseau local** (Wi-Fi ou câble) et termine dans votre **appareil** et son **application**. Un maillon faible suffit à provoquer des coupures.
 
 Dans la grande majorité des cas, le problème se situe chez vous, dans le réseau local ou l’appareil, et se corrige en quelques minutes. Si vous découvrez l’IPTV, notre article [qu’est-ce que l’IPTV]({R}qu-est-ce-que-iptv/) explique ce fonctionnement plus en détail.
+
+[[cta]]
 
 ## Le diagnostic en 5 minutes
 
@@ -19,7 +25,7 @@ Procédez dans l’ordre, en testant une chaîne après chaque étape :
 ## Les causes les plus fréquentes
 
 - **Un Wi-Fi faible ou saturé** : box éloignée, murs épais, appareils nombreux, voisins sur le même canal.
-- **Un débit insuffisant** : 10 Mb/s sont nécessaires pour la HD, 40 Mb/s pour la 4K, et davantage si d’autres personnes utilisent internet en même temps.
+- **Un débit insuffisant** : 10 Mb/s sont nécessaires pour la HD, 25 Mb/s pour la 4K, et davantage si d’autres personnes utilisent internet en même temps.
 - **Un appareil saturé** : mémoire pleine, cache volumineux, trop d’applications ouvertes.
 - **Un mauvais réglage du lecteur** : décodeur inadapté, mémoire tampon trop faible.
 - **Un ralentissement du fournisseur d’accès** aux heures de pointe, sur certains réseaux.
@@ -41,6 +47,8 @@ C’est la solution la plus efficace. Un câble entre la box et le téléviseur 
 ### Vérifier la box internet
 
 Redémarrez-la de temps en temps, installez ses mises à jour et vérifiez qu’aucun appareil ne sature la connexion (sauvegarde en ligne, téléchargement, mises à jour de console).
+
+[[cta]]
 
 ## Optimiser l’appareil et l’application
 
@@ -87,6 +95,8 @@ Si votre réseau est bon et que les coupures persistent sur un seul appareil, ce
 
 Si rien ne fonctionne, écrivez au support {brand} sur WhatsApp, 24 heures sur 24, en précisant : l’appareil et l’application utilisés, la ou les chaînes concernées, l’heure du problème et le résultat de votre test de débit. Ces informations nous permettent de trouver la solution beaucoup plus vite.
 
+[[cta]]
+
 Q: Pourquoi ça coupe seulement le soir ?
 R: Le soir, les réseaux sont les plus chargés, chez vous comme chez votre fournisseur d’accès. Passez en Ethernet, choisissez la HD plutôt que la 4K et essayez le VPN si votre fournisseur ralentit le streaming.
 
@@ -95,3 +105,9 @@ R: Parfois, mais le plus souvent c’est le Wi-Fi entre la box et la télé qui 
 
 Q: Le problème peut-il venir du service IPTV ?
 R: C’est possible lors d’une maintenance ou sur une chaîne précise. Si toutes les chaînes coupent sur tous vos appareils malgré un bon débit, contactez-nous : nous vérifions immédiatement.
+
+Q: Le Wi-Fi peut-il provoquer une panne IPTV ?
+R: Oui, c’est la cause la plus fréquente. Rapprochez l’appareil de la box internet ou, mieux, branchez-le avec un câble Ethernet.
+
+Q: Quel débit faut-il pour éviter les coupures ?
+R: Environ 10 Mb/s pour la HD et 25 Mb/s pour la 4K, et davantage si d’autres personnes utilisent internet en même temps.

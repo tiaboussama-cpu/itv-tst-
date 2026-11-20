@@ -27,8 +27,7 @@ Never hand-edit the generated HTML: the next build overwrites it.
   - Plans: 1 mois 12 €, 3 mois 25 €, 6 mois 30 €, 12 mois 60 € (`PLANS` in build.py — re-read it, prices may change).
   - 32 000+ chaînes, 220 000+ films et séries, essai gratuit 24 h, support WhatsApp 24/7.
   - One subscription = **one device at a time**.
-  - Bandwidth: 10 Mb/s for HD. ⚠ 4K is inconsistent on the site (most guides: 40 Mb/s; Windows guide: ~25 Mb/s).
-    Ask the owner which figure to use until this is resolved, and note the answer here.
+  - Bandwidth (owner decision): **10 Mb/s for HD, 25 Mb/s for 4K**. No separate Full HD figure.
 
 ## 3. Write the article (French)
 
