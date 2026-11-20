@@ -18,6 +18,8 @@ SITE = {
     "year": "2026",
     # domaine personnalisé ; laissez vide pour servir le site sur tiaboussama-cpu.github.io/itv-tst-/
     "domain": "sundayiptv.com",
+    # balise de validation Google Search Console (laisser vide pour la retirer)
+    "google_verification": "6YEZ3rljmLphqxpY0IRQoS5vIjbv-8T_cDWH_3QAwfA",
 }
 
 # ---------------------------------------------------------------- icônes
@@ -161,6 +163,10 @@ def img(name, cls="page-img", lazy=True):
     load = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"'
     return f'<img class="{cls}" src="{{R}}images/{name}" alt="{alt}" width="{w}" height="{h}"{load}>'
 
+def gsv_meta():
+    v = SITE.get("google_verification")
+    return f'\n<meta name="google-site-verification" content="{html.escape(v, quote=True)}">' if v else ""
+
 def og_image_url():
     base = f"https://{SITE['domain']}/" if SITE["domain"] else "https://tiaboussama-cpu.github.io/itv-tst-/"
     return base + "images/hero-aurora-tv.jpg"
@@ -254,7 +260,7 @@ def page(path, title, desc, body, active="", depth=None):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc, quote=True)}">
-<meta name="theme-color" content="#111111">
+<meta name="theme-color" content="#111111">{gsv_meta()}
 <meta property="og:title" content="{html.escape(title, quote=True)}">
 <meta property="og:description" content="{html.escape(desc, quote=True)}">
 <meta property="og:type" content="website">
