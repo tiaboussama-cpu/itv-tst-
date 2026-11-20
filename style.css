@@ -185,6 +185,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .f-chips .pay { display: inline-flex; gap: 6px; }
 .f-chips .pay-logo { width: 32px; height: 20px; }
 .plan .btn { align-self: center; }
+@media (max-width: 640px) {
+  .plan .btn { align-self: stretch; padding: 16px 24px; font-size: 16px; min-height: 52px; }
+}
 .plan.hot { background: var(--red); color: #fff; border-color: #3a3a3a; }
 .plan.hot .p-name, .plan.hot .p-dur, .plan.hot .p-price, .plan.hot li, .plan.hot li svg, .plan.hot .p-per { color: #fff; }
 .plan.hot li { font-weight: 600; }

@@ -298,7 +298,7 @@ def page(path, title, desc, body, active="", depth=None):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=10">
+<link rel="stylesheet" href="{r}style.css?v=11">
 </head>
 <body id="top">
 {header(r, active)}
@@ -970,7 +970,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=10"', f'href="{BASE}style.css?v=10"').replace('src="script.js?v=2"', f'src="{BASE}script.js?v=2"')
+    txt = txt.replace('href="style.css?v=11"', f'href="{BASE}style.css?v=11"').replace('src="script.js?v=2"', f'src="{BASE}script.js?v=2"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')
