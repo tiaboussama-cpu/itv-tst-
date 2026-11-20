@@ -188,7 +188,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 640px) {
   .plan .btn { align-self: stretch; padding: 16px 24px; font-size: 16px; min-height: 52px; }
 }
-.plan.hot { background: var(--red); color: #fff; border-color: #3a3a3a; }
+.plan.hot { background: var(--red); color: #fff; border-color: #3a3a3a; box-shadow: 0 22px 44px -18px rgba(230, 57, 70, .55); }
 .plan.hot .p-name, .plan.hot .p-dur, .plan.hot .p-price, .plan.hot li, .plan.hot li svg, .plan.hot .p-per { color: #fff; }
 .plan.hot li { font-weight: 600; }
 .plan .tag { align-self: center; background: #111; color: #fff; font: 700 10px/1 var(--font-body); padding: 6px 10px; border-radius: 99px; margin: -8px 0 12px; letter-spacing: .05em; text-transform: uppercase; }
