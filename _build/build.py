@@ -64,14 +64,13 @@ PAY_MC = ('<svg class="pay-logo" viewBox="0 0 60 38" role="img" aria-label="Mast
           '<rect width="60" height="38" rx="5" fill="#fff" stroke="#d9d9d9"/>'
           '<circle cx="24" cy="19" r="10.5" fill="#eb001b"/><circle cx="36" cy="19" r="10.5" fill="#f79e1b"/>'
           '<path d="M30 10.4a10.5 10.5 0 0 1 0 17.2 10.5 10.5 0 0 1 0-17.2Z" fill="#ff5f00"/></svg>')
-PAY_CB = ('<svg class="pay-logo" viewBox="0 0 60 38" role="img" aria-label="Carte Bancaire (CB)">'
-          '<defs><linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">'
-          '<stop offset="0" stop-color="#1fa64a"/><stop offset=".55" stop-color="#1b6fb8"/><stop offset="1" stop-color="#173b8c"/>'
-          '</linearGradient></defs>'
-          '<rect width="60" height="38" rx="5" fill="url(#cbg)"/>'
-          '<text x="30" y="26" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" '
-          'font-size="17" fill="#fff">CB</text></svg>')
-PAY_LOGOS = PAY_VISA + PAY_MC + PAY_CB
+PAY_STRIPE = ('<svg class="pay-logo" viewBox="0 0 60 38" role="img" aria-label="Stripe">'
+              '<rect width="60" height="38" rx="5" fill="#635bff"/>'
+              '<text x="30" y="24.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" '
+              'font-size="14" letter-spacing="-.3" fill="#fff">stripe</text></svg>')
+# taille fixée dans le SVG lui-même pour rester petit même si le CSS n'est pas chargé
+PAY_LOGOS = "".join(s.replace('<svg class="pay-logo"', '<svg class="pay-logo" width="34" height="22"', 1)
+                    for s in (PAY_VISA, PAY_MC, PAY_STRIPE))
 
 # ---------------------------------------------------------------- données partagées
 PLANS = [
@@ -230,7 +229,7 @@ def page(path, title, desc, body, active="", depth=None):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e63946'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='19' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="{r}style.css">
+<link rel="stylesheet" href="{r}style.css?v=3">
 </head>
 <body id="top">
 {header(r, active)}
@@ -280,7 +279,7 @@ def guide_cards(r="{R}", cls="g-card"):
 
 FAQ_HOME = [
     ("Combien de temps faut-il pour la livraison ?", "En général moins d’une heure après le paiement. Vous recevez vos identifiants et un guide d’installation adapté à votre appareil par WhatsApp ou par e-mail."),
-    ("Quels moyens de paiement acceptez-vous ?", "Le paiement se fait par carte bancaire (Visa, Mastercard, CB) via une page sécurisée. Demandez le lien de paiement sur WhatsApp."),
+    ("Quels moyens de paiement acceptez-vous ?", "Le paiement se fait par carte bancaire (Visa, Mastercard) via une page de paiement sécurisée Stripe. Demandez le lien de paiement sur WhatsApp."),
     ("Puis-je tester avant d’acheter ?", "Oui, un essai gratuit de 24 heures est disponible. Il vous permet de vérifier la qualité et les chaînes sur votre propre connexion."),
     ("Combien d’écrans puis-je utiliser en même temps ?", "Un abonnement correspond à une connexion simultanée. Pour plusieurs écrans en même temps, demandez une offre multi-connexions."),
     ("Quelle vitesse internet faut-il ?", "Environ 10 Mb/s pour la HD, 25 Mb/s pour la Full HD et 40 Mb/s ou plus pour la 4K. Le câble Ethernet donne les meilleurs résultats."),
@@ -771,7 +770,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css"', 'href="/itv-tst-/style.css"').replace('src="script.js"', 'src="/itv-tst-/script.js"')
+    txt = txt.replace('href="style.css?v=3"', 'href="/itv-tst-/style.css?v=3"').replace('src="script.js"', 'src="/itv-tst-/script.js"')
     txt = txt.replace('href="index.html', 'href="/itv-tst-/index.html')
     for prefix in ["blog/", "a-propos/", "contact/", "essai-gratuit/"] + [f"{s}/" for s, *_ in GUIDES] + [f"{s}/" for s, _ in CITIES] + [f"{s}/" for s, _ in LEGAL]:
         txt = txt.replace(f'href="{prefix}', f'href="/itv-tst-/{prefix}')

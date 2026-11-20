@@ -167,9 +167,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .pay-chip { font: 800 10px/1 var(--font-body); padding: 6px 8px; border-radius: 4px; border: 1px solid #ddd; color: #1a1f71; background: #fff; }
 .pay-chip.mc { color: #eb001b; }
 .pay-chip.cb { color: #0b6e4f; }
-.pay-logo { width: 46px; height: 29px; flex: none; }
+.pay-logo { width: 34px; height: 22px; flex: none; }
 .f-chips .pay { display: inline-flex; gap: 6px; }
-.f-chips .pay-logo { width: 40px; height: 25px; }
+.f-chips .pay-logo { width: 32px; height: 20px; }
 .plan .btn { align-self: center; }
 .plan.hot { background: var(--red); color: #fff; border-color: #3a3a3a; }
 .plan.hot .p-name, .plan.hot .p-dur, .plan.hot .p-price, .plan.hot li, .plan.hot li svg, .plan.hot .p-per { color: #fff; }
