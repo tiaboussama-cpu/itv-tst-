@@ -16,6 +16,8 @@ SITE = {
     "email": "contact@example.com",
     "whatsapp": "",                # ex. "33612345678" (chiffres uniquement)
     "year": "2026",
+    # domaine personnalisé ; laissez vide pour servir le site sur tiaboussama-cpu.github.io/itv-tst-/
+    "domain": "sundayiptv.com",
 }
 
 # ---------------------------------------------------------------- icônes
@@ -765,20 +767,27 @@ def build_404():
   <p class="big">404</p>
   <h1 class="h-lg">Page introuvable</h1>
   <p style="margin-top:14px">La page que vous cherchez n’existe pas ou a été déplacée.</p>
-  <a class="btn btn-red" style="margin-top:20px" href="/itv-tst-/">Retour à l’accueil</a>
+  <a class="btn btn-red" style="margin-top:20px" href="{BASE}">Retour à l’accueil</a>
 </div></section>"""
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=3"', 'href="/itv-tst-/style.css?v=3"').replace('src="script.js"', 'src="/itv-tst-/script.js"')
-    txt = txt.replace('href="index.html', 'href="/itv-tst-/index.html')
+    txt = txt.replace('href="style.css?v=3"', f'href="{BASE}style.css?v=3"').replace('src="script.js"', f'src="{BASE}script.js"')
+    txt = txt.replace('href="index.html', f'href="{BASE}index.html')
     for prefix in ["blog/", "a-propos/", "contact/", "essai-gratuit/"] + [f"{s}/" for s, *_ in GUIDES] + [f"{s}/" for s, _ in CITIES] + [f"{s}/" for s, _ in LEGAL]:
-        txt = txt.replace(f'href="{prefix}', f'href="/itv-tst-/{prefix}')
+        txt = txt.replace(f'href="{prefix}', f'href="{BASE}{prefix}')
     out.write_text(txt, encoding="utf-8")
+
+BASE = "/" if SITE["domain"] else "/itv-tst-/"
 
 if __name__ == "__main__":
     build_home(); build_trial(); build_blog(); build_contact(); build_about()
     build_guides(); build_cities(); build_legal(); build_404()
+    cname = ROOT / "CNAME"
+    if SITE["domain"]:
+        cname.write_text(SITE["domain"] + "\n", encoding="utf-8")
+    elif cname.exists():
+        cname.unlink()
     pages = sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*.html") if "_build" not in p.parts)
     print(f"{len(pages)} pages générées :")
     for p in pages:
