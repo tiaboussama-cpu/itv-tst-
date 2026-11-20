@@ -10,9 +10,9 @@ import html
 ROOT = Path(__file__).resolve().parent.parent
 
 SITE = {
-    "brand": "Aurora TV",          # nom de marque (placeholder)
-    "brand_a": "Aurora",           # partie rouge du logo
-    "brand_b": "TV",               # partie blanche du logo
+    "brand": "Sunday IPTV",        # nom de marque
+    "brand_a": "Sunday",           # partie rouge du logo
+    "brand_b": "IPTV",             # partie blanche du logo
     "email": "contact@example.com",
     "whatsapp": "",                # ex. "33612345678" (chiffres uniquement)
     "year": "2026",
@@ -138,7 +138,7 @@ NAV = [
 
 # ---------------------------------------------------------------- images
 IMG_ALT = {
-    "hero-aurora-tv.jpg": "Abonnement IPTV France — famille regardant la télévision avec l’interface {brand}",
+    "hero-sunday-iptv.jpg": "Abonnement IPTV France — famille regardant la télévision avec l’interface {brand}",
     "blog-hero-iptv.jpg": "Blog IPTV {brand} — guides et astuces pour regarder l’IPTV en France",
     "guide-qu-est-ce-que-iptv.jpg": "Qu’est-ce que l’IPTV ? — télévision avec des centaines de chaînes en streaming",
     "guide-meilleures-applications-iptv.jpg": "Meilleures applications IPTV en 2026 — lecteurs IPTV sur TV",
@@ -152,10 +152,10 @@ IMG_ALT = {
     "ville-iptv-lyon.jpg": "IPTV Lyon — abonnement IPTV à Lyon dès 5 € par mois",
     "ville-iptv-marseille.jpg": "IPTV Marseille — abonnement IPTV à Marseille, Vieux-Port en arrière-plan",
     "essai-gratuit-iptv.jpg": "Essai IPTV gratuit 24 heures — tester {brand} sans engagement",
-    "a-propos-aurora-tv.jpg": "À propos de {brand} — fournisseur IPTV pour la France",
-    "contact-aurora-tv.jpg": "Contact {brand} — support WhatsApp 24/7",
+    "a-propos-sunday-iptv.jpg": "À propos de {brand} — fournisseur IPTV pour la France",
+    "contact-sunday-iptv.jpg": "Contact {brand} — support WhatsApp 24/7",
 }
-IMG_SIZE = {"hero-aurora-tv.jpg": (1920, 1280), "blog-hero-iptv.jpg": (1920, 640)}
+IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "blog-hero-iptv.jpg": (1920, 640), "a-propos-sunday-iptv.jpg": (1200, 600)}
 
 def img(name, cls="page-img", lazy=True):
     w, h = IMG_SIZE.get(name, (1200, 800))
@@ -169,7 +169,7 @@ def gsv_meta():
 
 def og_image_url():
     base = f"https://{SITE['domain']}/" if SITE["domain"] else "https://tiaboussama-cpu.github.io/itv-tst-/"
-    return base + "images/hero-aurora-tv.jpg"
+    return base + "images/hero-sunday-iptv.jpg"
 
 # ---------------------------------------------------------------- gabarit
 def wa_attr(msg):
@@ -270,7 +270,7 @@ def page(path, title, desc, body, active="", depth=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e63946'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='19' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e63946'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='19' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="{r}style.css?v=5">
 </head>
 <body id="top">
@@ -351,7 +351,7 @@ def build_home():
     body = f"""
 <section class="hero hero-has-photo">
   <div class="hero-bg">
-    {img("hero-aurora-tv.jpg", "hero-photo", lazy=False)}
+    {img("hero-sunday-iptv.jpg", "hero-photo", lazy=False)}
   </div>
   <div class="wrap hero-content">
     <h1>Abonnement IPTV : la meilleure offre IPTV en France</h1>
@@ -620,7 +620,7 @@ def build_contact():
     <p class="kicker kicker-red">Contact</p>
     <h1 class="h-xl" style="max-width:520px">Comment pouvons-nous vous aider ?</h1>
     <p class="intro" style="color:#a9adb5;font-size:16px;margin-top:20px;max-width:520px">Remplissez le formulaire : votre message s’ouvre directement dans WhatsApp pour une réponse rapide, 24 h/24.</p>
-    {img("contact-aurora-tv.jpg", "page-img wide-img", lazy=False)}
+    {img("contact-sunday-iptv.jpg", "page-img wide-img", lazy=False)}
     <div class="contact-grid" style="margin-top:50px">
       <form class="form" id="contact-form">
         <p class="kicker kicker-red">Envoyer un message</p>
@@ -655,7 +655,7 @@ def build_about():
     <p class="kicker kicker-red">À propos</p>
     <h1 class="h-xl" style="max-width:640px">Nous construisons une IPTV plus stable pour la France.</h1>
     <p style="color:#a9adb5;font-size:16px;margin-top:20px;max-width:560px">{SITE["brand"]} propose un service IPTV simple et fiable pour les foyers francophones. Notre priorité : la stabilité technique, des prix clairs et un service personnalisé.</p>
-    {img("a-propos-aurora-tv.jpg", "page-img wide-img", lazy=False)}
+    {img("a-propos-sunday-iptv.jpg", "page-img wide-img", lazy=False)}
     <div class="stats4"><div><strong>32 000+</strong><span>Chaînes</span></div><div><strong>220 000+</strong><span>Films &amp; séries</span></div><div><strong>4K</strong><span>Ultra HD</span></div><div><strong>24/7</strong><span>Support</span></div></div>
 
     <div class="prose" style="margin-top:60px">
