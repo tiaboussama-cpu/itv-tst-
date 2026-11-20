@@ -1,0 +1,178 @@
+## Pourquoi le Fire TV Stick est idéal pour l’IPTV
+
+L’Amazon Fire TV Stick est l’un des moyens les plus simples et les moins chers de transformer n’importe quel téléviseur en écran IPTV complet. Il se branche sur un port HDMI, se pilote avec une télécommande vocale et donne accès aux meilleurs lecteurs IPTV du marché, comme TiviMate ou IPTV Smarters. Même sur une télé récente, il apporte souvent plus de fluidité et de choix que les applications intégrées.
+
+Ce guide couvre les Fire TV Stick, Fire TV Stick 4K, 4K Max et Fire TV Cube fonctionnant sous Fire OS. Nous détaillons chaque étape : préparation, activation des options pour les développeurs, installation de Downloader, installation de l’application IPTV, connexion à votre abonnement {brand} et réglages pour une lecture sans coupure.
+
+Autre avantage : le Fire TV Stick se transporte facilement. Glissez-le dans votre valise avec sa télécommande et son alimentation, branchez-le sur le téléviseur d’un hôtel ou d’une location de vacances, connectez-le au Wi-Fi, et vous retrouvez instantanément vos chaînes, vos favoris et votre guide des programmes, exactement comme à la maison. C’est aussi une excellente solution pour un parent ou un proche peu à l’aise avec la technologie : une fois configuré, il suffit d’allumer la télé et d’ouvrir une seule application. Enfin, son prix modeste en fait un investissement rapidement amorti par rapport à la location d’un décodeur.
+
+> Besoin d’aide pendant l’installation ? Envoyez-nous une photo de votre écran sur WhatsApp : nous vous indiquons exactement où cliquer.
+
+## Quel modèle de Fire TV avez-vous ?
+
+Tous les Fire TV ne se valent pas pour l’IPTV. Le modèle détermine la qualité maximale et la rapidité de l’interface.
+
+- **Fire TV Stick (HD)** : suffisant pour la HD et la Full HD, idéal pour un téléviseur secondaire.
+- **Fire TV Stick 4K et 4K Max** : le meilleur choix pour la plupart des foyers. Ils gèrent la 4K, le HDR, et le 4K Max dispose du Wi-Fi 6 ou 6E, très utile pour le direct.
+- **Fire TV Cube** : le plus puissant, avec un port Ethernet intégré. Parfait si vous voulez la meilleure stabilité possible.
+
+Pour connaître votre modèle, ouvrez **Paramètres**, puis **Ma Fire TV** (ou **Appareil et logiciels** sur certaines versions), puis **À propos**.
+
+> Attention : certains modèles très récents d’Amazon fonctionnent sous un nouveau système appelé **Vega OS**, qui n’autorise pas l’installation d’applications en dehors de l’Appstore. Si les options décrites plus bas n’apparaissent pas, cherchez un lecteur IPTV directement dans l’Appstore (voir la section « Alternative ») ou contactez-nous avant d’acheter un nouvel appareil.
+
+## Ce qu’il vous faut avant de commencer
+
+Rassemblez ces éléments pour une installation sans accroc :
+
+- un **Fire TV branché et connecté à internet**, avec la dernière mise à jour installée (Paramètres, puis Ma Fire TV, puis À propos, puis Rechercher des mises à jour) ;
+- un **compte Amazon** déjà configuré sur l’appareil ;
+- vos **identifiants {brand}** : adresse du serveur, nom d’utilisateur et mot de passe (connexion Xtream Codes), ou lien M3U ;
+- une **connexion d’au moins 10 Mb/s** pour la HD et 40 Mb/s pour la 4K ;
+- idéalement, l’**adaptateur Ethernet** officiel d’Amazon si votre box internet est loin du téléviseur.
+
+## Étape 1 : activer les options pour les développeurs
+
+Par défaut, le Fire TV n’autorise que les applications de l’Appstore. Pour installer TiviMate ou IPTV Smarters, il faut d’abord afficher un menu caché.
+
+1. Depuis l’écran d’accueil, ouvrez **Paramètres** (l’icône en forme d’engrenage, à droite).
+2. Sélectionnez **Ma Fire TV**.
+3. Si vous voyez déjà **Options pour les développeurs**, passez à l’étape 2.
+4. Sinon, ouvrez **À propos**, placez-vous sur le **nom de votre appareil** (par exemple « Fire TV Stick 4K ») et appuyez **sept fois de suite** sur le bouton central de la télécommande.
+5. Un message confirme que vous êtes désormais développeur. Revenez en arrière : le menu **Options pour les développeurs** apparaît dans Ma Fire TV.
+
+Cette manipulation ne modifie rien d’autre sur votre appareil et ne fait pas sauter la garantie. Elle rend simplement visibles des réglages avancés.
+
+## Étape 2 : installer l’application Downloader
+
+Downloader est une application gratuite, disponible dans l’Appstore officiel, qui permet de télécharger des fichiers sur le Fire TV. C’est l’outil standard pour installer un lecteur IPTV.
+
+1. Revenez à l’écran d’accueil et sélectionnez la **loupe** (Rechercher).
+2. Tapez **Downloader** et choisissez l’application à l’icône orange, éditée par AFTVnews.
+3. Sélectionnez **Télécharger** ou **Obtenir**, puis attendez la fin de l’installation.
+4. Ouvrez Downloader une première fois et autorisez l’accès aux fichiers si la question vous est posée.
+
+## Étape 3 : autoriser Downloader à installer des applications
+
+1. Retournez dans **Paramètres**, puis **Ma Fire TV**, puis **Options pour les développeurs**.
+2. Sélectionnez **Installer des applications inconnues** (ou **Applications de sources inconnues** sur les anciennes versions).
+3. Dans la liste, activez **Downloader** : l’interrupteur passe sur **ACTIVÉ**.
+
+Votre Fire TV n’accepte cette autorisation que pour Downloader. Les autres applications restent bloquées, ce qui limite les risques.
+
+## Étape 4 : installer votre application IPTV
+
+Nous recommandons deux lecteurs, qui fonctionnent parfaitement avec {brand} :
+
+- **TiviMate** : interface proche d’une box opérateur, guide des programmes très lisible, favoris, enregistrement et rappels avec la version Premium. C’est notre premier choix sur Fire TV.
+- **IPTV Smarters Pro** : plus simple, idéale pour débuter, avec des rubriques claires pour le direct, les films et les séries.
+
+Pour l’installer :
+
+1. Ouvrez **Downloader**.
+2. Dans le champ d’adresse, tapez le lien ou le code court que nous vous envoyons sur WhatsApp avec vos identifiants, puis sélectionnez **Go**.
+3. Le téléchargement démarre. À la fin, sélectionnez **Installer**, puis **Terminé**.
+4. Downloader vous propose de supprimer le fichier d’installation : choisissez **Supprimer**, puis confirmez. Cela libère de l’espace, l’application reste installée.
+
+> Téléchargez toujours vos applications depuis une source de confiance. Ne tapez pas dans Downloader des adresses trouvées au hasard sur internet : un fichier modifié peut contenir des logiciels indésirables.
+
+## Étape 5 : connecter votre abonnement {brand}
+
+### Dans TiviMate
+
+1. Ouvrez TiviMate et sélectionnez **Ajouter une playlist**.
+2. Choisissez **Code Xtream**.
+3. Entrez l’**adresse du serveur**, votre **nom d’utilisateur** et votre **mot de passe**, puis sélectionnez **Suivant**.
+4. TiviMate vérifie la connexion et affiche le nombre de chaînes, de films et de séries. Donnez un nom à la playlist et validez.
+5. Le guide des programmes se charge automatiquement en quelques minutes.
+
+### Dans IPTV Smarters Pro
+
+1. Ouvrez l’application et choisissez **Login with Xtream Codes API**.
+2. Remplissez le nom de votre choix, votre nom d’utilisateur, votre mot de passe et l’URL du serveur.
+3. Sélectionnez **Add User** : l’application charge vos chaînes, films et séries.
+
+Pour plus de détails sur chaque application, consultez nos guides [TiviMate]({R}guide-tivimate/) et [IPTV Smarters Pro]({R}iptv-smarters-pro/).
+
+## Placer l’application sur l’écran d’accueil
+
+Les applications installées hors Appstore n’apparaissent pas toujours en évidence. Pour les retrouver facilement :
+
+1. Maintenez le bouton **Accueil** de la télécommande, puis choisissez **Applications**.
+2. Placez-vous sur TiviMate ou IPTV Smarters et appuyez sur le bouton **Menu** (trois traits).
+3. Sélectionnez **Déplacer** et placez l’application en tête de liste, ou ajoutez-la à la barre de favoris.
+
+## Alternative : un lecteur depuis l’Appstore
+
+Si vous ne pouvez pas ou ne voulez pas activer les options pour les développeurs, certains lecteurs IPTV sont proposés directement dans l’Appstore d’Amazon. Recherchez « IPTV player » avec la loupe et choisissez une application bien notée qui accepte les connexions Xtream Codes ou M3U. Les fonctions sont parfois plus limitées que TiviMate, mais l’installation se fait en un clic. Si vous hésitez, écrivez-nous : nous vous indiquons l’application qui fonctionne le mieux sur votre modèle.
+
+## Optimiser votre Fire TV pour l’IPTV
+
+Ces réglages améliorent nettement la fluidité, en particulier sur les modèles d’entrée de gamme :
+
+- **Utilisez l’adaptateur Ethernet** ou rapprochez la box internet : le Wi-Fi est la première cause de coupures.
+- **Désactivez la surveillance des données** : Paramètres, puis Préférences, puis Surveillance des données. Cette option peut limiter la qualité vidéo.
+- **Videz le cache** de l’application de temps en temps : Paramètres, puis Applications, puis Gérer les applications installées, puis l’application, puis Vider le cache.
+- **Désinstallez les applications inutiles** pour libérer de la mémoire et de l’espace de stockage.
+- **Redémarrez le Fire TV** une fois par semaine : Paramètres, puis Ma Fire TV, puis Redémarrer.
+- **Réglez la résolution** sur Automatique dans Paramètres, puis Affichage et sons, pour que l’appareil s’adapte à votre téléviseur.
+
+## Sécurité : refermer la porte après l’installation
+
+Une fois votre lecteur IPTV installé, vous pouvez retourner dans **Options pour les développeurs**, puis **Installer des applications inconnues**, et désactiver Downloader. Votre application IPTV continue de fonctionner normalement. Vous réactiverez l’autorisation uniquement le jour où vous aurez besoin d’une mise à jour manuelle.
+
+## Utiliser l’IPTV au quotidien sur Fire TV
+
+Une fois l’installation terminée, quelques habitudes rendent l’utilisation beaucoup plus agréable.
+
+### Zapper rapidement
+
+Dans TiviMate, les flèches haut et bas de la télécommande changent de chaîne pendant la lecture, comme sur une box classique. Le bouton central affiche la liste des chaînes du groupe en cours, et un appui long ouvre le menu de la chaîne : ajout aux favoris, guide, replay. Avec IPTV Smarters, revenez à la liste avec le bouton Retour et choisissez une autre chaîne.
+
+### Créer vos favoris
+
+Plutôt que de faire défiler des milliers de chaînes, regroupez celles que vous regardez vraiment dans un groupe Favoris. Dans TiviMate, un appui long sur une chaîne, puis « Ajouter aux favoris » suffit. Vous pouvez ensuite placer ce groupe en premier pour qu’il s’affiche dès l’ouverture.
+
+### Profiter du replay
+
+Les chaînes marquées d’une petite horloge proposent le replay (catch-up). Ouvrez le guide des programmes, revenez en arrière sur la ligne de la chaîne et sélectionnez une émission déjà diffusée : elle démarre depuis le début. Pratique pour rattraper un match ou le journal de la veille.
+
+### Masquer ce que vous ne regardez pas
+
+Les listes IPTV contiennent des chaînes du monde entier. Dans les réglages de votre application, masquez les groupes de pays ou de langues qui ne vous intéressent pas : la navigation devient plus rapide et le guide des programmes plus lisible.
+
+## Mettre à jour votre application IPTV
+
+Les applications installées avec Downloader ne passent pas par l’Appstore et ne se mettent donc pas à jour toutes seules. Certaines, comme TiviMate, vous signalent elles-mêmes qu’une nouvelle version est disponible. Pour la mettre à jour, il suffit de réactiver temporairement Downloader dans les options pour les développeurs, de refaire l’étape 4 avec le lien de la nouvelle version, puis d’installer par-dessus l’ancienne. Vos playlists, vos favoris et vos réglages sont conservés. Inutile de mettre à jour à chaque nouvelle version : faites-le surtout si vous rencontrez un problème ou si une nouveauté vous intéresse.
+
+## Problèmes fréquents et solutions
+
+### Le menu « Options pour les développeurs » n’apparaît pas
+
+Vérifiez que vous avez bien appuyé sept fois sur le nom de l’appareil dans À propos, et non sur une autre ligne. Si le menu reste introuvable, votre appareil fonctionne peut-être sous Vega OS : utilisez alors un lecteur de l’Appstore.
+
+### Downloader affiche une erreur de téléchargement
+
+Vérifiez l’adresse saisie, sans espace, et testez votre connexion en ouvrant une autre application. Si l’erreur persiste, redémarrez le Fire TV et réessayez.
+
+### « Application non installée »
+
+L’espace de stockage est probablement plein. Supprimez des applications inutilisées et le fichier d’installation précédent, puis relancez l’installation.
+
+### Les chaînes coupent ou chargent en boucle
+
+Passez en Ethernet si possible, redémarrez la box internet et le Fire TV, puis changez de lecteur vidéo dans les réglages de l’application. Notre guide [panne IPTV]({R}panne-iptv/) détaille toutes les solutions.
+
+Q: Est-ce que l’installation abîme ou bloque mon Fire TV ?
+R: Non. Activer les options pour les développeurs et installer une application avec Downloader ne modifie pas le système. Vous pouvez tout annuler à tout moment, et une réinitialisation d’usine remet l’appareil à zéro.
+
+Q: Quel Fire TV acheter pour l’IPTV ?
+R: Le Fire TV Stick 4K Max est le meilleur compromis : rapide, compatible 4K et doté d’un Wi-Fi performant. Le Fire TV Cube est idéal si vous voulez le câble Ethernet intégré.
+
+Q: TiviMate est-il gratuit ?
+R: TiviMate s’utilise gratuitement pour regarder les chaînes. La version Premium, payante, ajoute l’enregistrement, plusieurs playlists, les rappels et d’autres fonctions pratiques.
+
+Q: Mes applications IPTV se mettent-elles à jour toutes seules ?
+R: Les applications installées avec Downloader ne se mettent pas à jour automatiquement. Lorsqu’une nouvelle version utile sort, nous vous envoyons le lien et il suffit de refaire l’étape 4.
+
+Q: Puis-je utiliser le même abonnement sur un autre Fire TV ?
+R: Oui, vous pouvez installer votre abonnement sur plusieurs appareils et les utiliser à tour de rôle. Une connexion simultanée est incluse ; pour regarder sur plusieurs écrans en même temps, demandez une offre multi-connexions.

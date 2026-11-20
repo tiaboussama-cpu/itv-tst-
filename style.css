@@ -281,6 +281,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .f-247 { display: inline-block; background: var(--red); color: #fff; font: 800 10px/1 var(--font-body); padding: 5px 7px; border-radius: 3px; margin-left: 6px; }
 .f-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 0; border-top: 1px solid #1d1d1d; margin-top: 30px; color: var(--muted); font-size: 12px; }
 .f-chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.f-chips a.dev-chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #262626; border-radius: 4px; padding: 6px 10px; color: #bfc2c8; font-weight: 600; text-decoration: none; transition: border-color .15s ease, color .15s ease; }
+.f-chips a.dev-chip .ico { width: 15px; height: 15px; color: var(--red); }
+.f-chips a.dev-chip:hover { border-color: var(--red); color: #fff; }
 .f-chips span.c { border: 1px solid #262626; border-radius: 4px; padding: 6px 10px; color: #bfc2c8; font-weight: 600; }
 .f-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 18px; border-top: 1px solid #1d1d1d; color: #666; font-size: 12px; }
 

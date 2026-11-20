@@ -41,6 +41,7 @@ ICONS = {
     "phone": '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
     "box": '<rect x="3" y="8" width="18" height="10" rx="2"/><path d="M7 13h.01M11 13h6"/>',
     "stick": '<rect x="9" y="2" width="6" height="16" rx="2"/><path d="M12 18v4"/>',
+    "android": '<path d="M6 11h12v7a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-7Z"/><path d="M6 11a6 6 0 0 1 12 0"/><path d="m8 4 1.5 2.5M16 4l-1.5 2.5M9.5 8.5h.01M14.5 8.5h.01"/>',
     "apple": '<path d="M16 3c0 2-1.5 3.5-3.5 3.5C12.5 4.5 14 3 16 3Z"/><path d="M12 8c-1-.6-2-1-3-1-3 0-5 2.5-5 6 0 4 3 8 5 8 1 0 2-.5 3-.5s2 .5 3 .5c1.6 0 3.4-2.6 4.4-5-2-.8-3.2-2.6-3.2-4.6 0-1.7.9-3.1 2.2-4C17.5 6.5 16.2 7 15 7c-1 0-2 .4-3 1Z"/>',
     "laptop": '<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>',
     "wrench": '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5Z"/>',
@@ -264,7 +265,7 @@ def footer(r):
     </div>
     <div class="f-row">
       <div class="f-chips"><span>Paiement :</span><span class="pay">{PAY_LOGOS}</span></div>
-      <div class="f-chips"><span>Appareils :</span><span class="c">Smart TV</span><span class="c">Fire TV</span><span class="c">Android</span><span class="c">iOS</span><span class="c">MAG</span></div>
+      <div class="f-chips"><span>Appareils :</span>{device_chips(r)}</div>
     </div>
     <div class="f-bottom">
       <span>© <span id="year">{SITE["year"]}</span> {SITE["brand"]}. Tous droits réservés.</span>
@@ -297,7 +298,7 @@ def page(path, title, desc, body, active="", depth=None):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=8">
+<link rel="stylesheet" href="{r}style.css?v=9">
 </head>
 <body id="top">
 {header(r, active)}
@@ -552,6 +553,106 @@ def build_home():
          body, active="Accueil", depth=0)
 
 # ---------------------------------------------------------------- article générique
+# ---------------------------------------------------------------- guides par appareil
+# Le texte de chaque guide est dans _build/appareils/<slug>.txt (format décrit dans parse_guide).
+DEVICE_GUIDES = [
+    # slug, libellé, icône, titre H1 (HTML), titre court, image, résumé
+    ("installer-iptv-smart-tv", "Smart TV", "tv",
+     'Installer l’IPTV sur <span class="red">Smart TV</span>', "Installer l’IPTV sur Smart TV Samsung, LG et Android TV",
+     "hero-sunday-iptv-photo.jpg",
+     "Samsung, LG, Sony, Philips, TCL : le guide complet pour installer une application IPTV sur votre téléviseur, ajouter votre abonnement et régler l’EPG, sans boîtier."),
+    ("installer-iptv-fire-tv", "Fire TV", "stick",
+     'Installer l’IPTV sur <span class="red">Fire TV Stick</span>', "Installer l’IPTV sur Amazon Fire TV Stick",
+     "guide-iptv-fire-stick.jpg",
+     "Options pour les développeurs, Downloader, installation de l’application et connexion : toutes les étapes pour regarder l’IPTV sur Fire TV Stick et Fire TV Cube."),
+    ("installer-iptv-android", "Android", "android",
+     'Installer l’IPTV sur <span class="red">Android</span>', "Installer l’IPTV sur Android : smartphone, tablette et box",
+     "guide-iptv-android-box.jpg",
+     "Smartphone, tablette, box Android ou Android TV : quelle application choisir, comment l’installer et comment configurer votre abonnement IPTV pas à pas."),
+    ("installer-iptv-ios", "iOS", "apple",
+     'Installer l’IPTV sur <span class="red">iPhone, iPad</span> et Apple TV', "Installer l’IPTV sur iPhone, iPad et Apple TV",
+     "contact-sunday-iptv.jpg",
+     "Les applications IPTV de l’App Store, la configuration sur iPhone, iPad et Apple TV, et la diffusion sur votre télé avec AirPlay."),
+    ("installer-iptv-mag", "MAG", "box",
+     'Configurer l’IPTV sur un <span class="red">boîtier MAG</span>', "Configurer l’IPTV sur un boîtier MAG",
+     "guide-boitier-iptv.jpg",
+     "Adresse MAC, URL du portail, réglages vidéo et dépannage : le guide complet pour configurer un boîtier MAG (Infomir) avec votre abonnement IPTV."),
+]
+
+def device_chips(r):
+    return "".join(f'<a class="c dev-chip" href="{r}{slug}/">{ico(icon)}{label}</a>'
+                   for slug, label, icon, *_ in DEVICE_GUIDES)
+
+def _inline(t):
+    import re as _re
+    t = html.escape(t, quote=False)
+    t = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+    t = _re.sub(r"\[(.+?)\]\((.+?)\)", r'<a href="\2">\1</a>', t)
+    return t.replace("{brand}", SITE["brand"])
+
+def parse_guide(text):
+    """Format simple :
+    ## Titre de section      -> nouvelle section (H2, dans le sommaire)
+    ### Sous-titre           -> H3
+    - élément / 1. élément   -> listes à puces / numérotées
+    > texte                  -> encadré
+    Q: question / R: réponse -> FAQ (n'importe où)
+    ligne vide               -> sépare les paragraphes
+    **gras** et [lien](url) sont acceptés ; {brand} et {R} sont remplacés."""
+    sections, faq_items, cur, buf = [], [], None, []
+    para, ul, ol = [], [], []
+    def flush():
+        nonlocal para, ul, ol
+        if para: buf.append("<p>" + _inline(" ".join(para)) + "</p>"); para = []
+        if ul: buf.append("<ul>" + "".join(f"<li>{_inline(x)}</li>" for x in ul) + "</ul>"); ul = []
+        if ol: buf.append("<ol>" + "".join(f"<li>{_inline(x)}</li>" for x in ol) + "</ol>"); ol = []
+    def close():
+        nonlocal buf
+        flush()
+        if cur is not None: sections.append((cur, "".join(buf)))
+        buf = []
+    import re as _re
+    q = None
+    for raw in text.splitlines():
+        line = raw.strip()
+        if line.startswith("## "):
+            close(); cur = _inline(line[3:])
+        elif line.startswith("### "):
+            flush(); buf.append(f"<h3>{_inline(line[4:])}</h3>")
+        elif line.startswith("Q: "):
+            flush(); q = _inline(line[3:])
+        elif line.startswith("R: ") and q:
+            faq_items.append((q, _inline(line[3:]))); q = None
+        elif line.startswith("> "):
+            flush(); buf.append(f'<div class="callout">{_inline(line[2:])}</div>')
+        elif line.startswith("- "):
+            if para or ol: flush()
+            ul.append(line[2:])
+        elif _re.match(r"\d+\. ", line):
+            if para or ul: flush()
+            ol.append(line.split(". ", 1)[1])
+        elif not line:
+            flush()
+        else:
+            if ul or ol: flush()
+            para.append(line)
+    close()
+    return sections, faq_items
+
+def build_device_guides():
+    folder = Path(__file__).resolve().parent / "appareils"
+    for slug, label, icon, h1, short, image, summary in DEVICE_GUIDES:
+        sections, faq_items = parse_guide((folder / f"{slug}.txt").read_text(encoding="utf-8"))
+        words = sum(len(_re_words(x)) for _, x in sections) + sum(len(_re_words(q + " " + a)) for q, a in faq_items)
+        mins = max(5, round(words / 220))
+        article(f"{slug}/index.html", f"Installation {label}", h1, summary, sections,
+                faq_items=faq_items or None, read=f"{mins} min", image=image)
+        print(f"   guide {slug}: {words} mots")
+
+def _re_words(htm):
+    import re as _re
+    return _re.sub(r"<[^>]+>", " ", htm).split()
+
 def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min", crumb="Blog", active="Blog", image=None):
     toc_items = [(f"s{i}", s[0]) for i, s in enumerate(sections, 1)]
     if faq_items:
@@ -617,6 +718,12 @@ def build_trial():
                 ("Puis-je tester sur plusieurs appareils ?", "L’essai permet une connexion à la fois, mais vous pouvez changer d’appareil pendant la période de test."),
             ], crumb="Blog", active="", image="essai-gratuit-iptv.jpg")
 
+def device_cards(r="{R}"):
+    return "".join(
+        f'<a class="post" href="{r}{slug}/"><div class="g-img">{img(image, "thumb-img")}</div>'
+        f'<div class="p-body"><span class="p-cat">Installation · {label}</span><h3>{short}</h3><p>{summary}</p></div></a>'
+        for slug, label, icon, h1, short, image, summary in DEVICE_GUIDES)
+
 def build_blog():
     body = f"""
 <section class="section">
@@ -632,6 +739,7 @@ def build_blog():
     <div class="post-grid">
       <a class="post" href="{{R}}essai-gratuit/"><div class="g-img">{img("essai-gratuit-iptv.jpg", "thumb-img")}</div><div class="p-body"><span class="p-cat">Essai</span><h3>Essai IPTV gratuit sans risque</h3><p>Comment tester l’IPTV pendant 24 heures et ce qu’il faut vérifier avant de choisir.</p></div></a>
       {guide_cards(cls="post")}
+      {device_cards()}
     </div>
   </div>
 </section>"""
@@ -851,8 +959,10 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=8"', f'href="{BASE}style.css?v=8"').replace('src="script.js?v=2"', f'src="{BASE}script.js?v=2"')
+    txt = txt.replace('href="style.css?v=9"', f'href="{BASE}style.css?v=9"').replace('src="script.js?v=2"', f'src="{BASE}script.js?v=2"')
     txt = txt.replace('href="./', f'href="{BASE}')
+    for slug, *_ in DEVICE_GUIDES:
+        txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')
     for f in ("favicon.svg", "favicon-32.png", "apple-touch-icon.png"):
         txt = txt.replace(f'href="{f}"', f'href="{BASE}{f}"')
     for prefix in ["blog/", "a-propos/", "contact/", "essai-gratuit/"] + [f"{s}/" for s, *_ in GUIDES] + [f"{s}/" for s, _ in CITIES] + [f"{s}/" for s, _ in LEGAL]:
@@ -895,7 +1005,7 @@ def build_seo_files():
 
 if __name__ == "__main__":
     build_home(); build_trial(); build_blog(); build_contact(); build_about()
-    build_guides(); build_cities(); build_legal(); build_404()
+    build_guides(); build_device_guides(); build_cities(); build_legal(); build_404()
     cname = ROOT / "CNAME"
     if SITE["domain"]:
         cname.write_text(SITE["domain"] + "\n", encoding="utf-8")
