@@ -173,6 +173,7 @@ IMG_SIZES = {
     "hero-photo": "100vw",
     "poster-img": "(min-width: 860px) 270px, 50vw",
     "thumb-img": "(min-width: 980px) 360px, (min-width: 640px) 50vw, 100vw",
+    "body-img": "(min-width: 1180px) 760px, (min-width: 960px) calc(100vw - 420px), 100vw",
     "article-img": "(min-width: 1180px) 760px, (min-width: 960px) calc(100vw - 420px), 100vw",
     "wide-img": "(min-width: 840px) 800px, 100vw",
 }
@@ -366,7 +367,7 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=15">
+<link rel="stylesheet" href="{r}style.css?v=16">
 </head>
 <body id="top">
 {header(r, active)}
@@ -671,6 +672,8 @@ def parse_guide(text):
     - élément / 1. élément   -> listes à puces / numérotées
     > texte                  -> encadré
     Q: question / R: réponse -> FAQ (n'importe où)
+    [[cta]]                  -> encadré avec bouton WhatsApp (demande d'essai)
+    ![nom-image.jpg]         -> image dans le texte (déclarer son alt dans IMG_ALT)
     ligne vide               -> sépare les paragraphes
     **gras** et [lien](url) sont acceptés ; {brand} et {R} sont remplacés."""
     sections, faq_items, cur, buf = [], [], None, []
@@ -697,6 +700,13 @@ def parse_guide(text):
             flush(); q = _inline(line[3:])
         elif line.startswith("R: ") and q:
             faq_items.append((q, _inline(line[3:]))); q = None
+        elif line == "[[cta]]":
+            flush()
+            buf.append(f'<div class="callout cta-inline"><p><strong>Envie de tester ?</strong> Essai gratuit de 24 h, '
+                       f'activation rapide et aide à l’installation sur WhatsApp.</p>'
+                       f'<a class="btn btn-red btn-sm" href="#" {wa_attr(msg_trial())}>Demander mon essai gratuit</a></div>')
+        elif line.startswith("![") and line.endswith("]"):
+            flush(); buf.append(img(line[2:-1].strip(), "page-img body-img"))
         elif line.startswith("> "):
             flush(); buf.append(f'<div class="callout">{_inline(line[2:])}</div>')
         elif line.startswith("<"):
@@ -1043,7 +1053,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=15"', f'href="{BASE}style.css?v=15"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
+    txt = txt.replace('href="style.css?v=16"', f'href="{BASE}style.css?v=16"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')
