@@ -166,11 +166,44 @@ IMG_ALT = {
 }
 IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "hero-sunday-iptv-photo.jpg": (1920, 1280), "poster-action.jpg": (560, 1120), "poster-science-fiction.jpg": (560, 1120), "poster-series.jpg": (560, 1120), "poster-sport.jpg": (560, 1120), "blog-hero-iptv.jpg": (1920, 640), "a-propos-sunday-iptv.jpg": (1200, 600), "choisir-fournisseur-iptv.jpg": (1952, 806)}
 
+# Versions WebP plus légères (générées automatiquement dans images/) pour les téléphones.
+RESP_WIDTHS = (480, 800, 1200, 1920)
+# largeur affichée de l'image selon sa classe (attribut sizes)
+IMG_SIZES = {
+    "hero-photo": "100vw",
+    "poster-img": "(min-width: 860px) 270px, 50vw",
+    "thumb-img": "(min-width: 980px) 360px, (min-width: 640px) 50vw, 100vw",
+    "article-img": "(min-width: 1180px) 760px, (min-width: 960px) calc(100vw - 420px), 100vw",
+    "wide-img": "(min-width: 840px) 800px, 100vw",
+}
+
+def responsive_set(name, w):
+    """Crée (si besoin) les variantes WebP de images/<name> et renvoie la liste srcset."""
+    try:
+        from PIL import Image
+    except ImportError:          # Pillow absent : on garde simplement le JPG
+        return ""
+    src = ROOT / "images" / name
+    stem = src.stem
+    parts = []
+    for rw in [x for x in RESP_WIDTHS if x < w] + [w]:
+        out = ROOT / "images" / f"{stem}-{rw}.webp"
+        if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
+            im = Image.open(src).convert("RGB")
+            if rw < im.width:
+                im = im.resize((rw, round(im.height * rw / im.width)), Image.LANCZOS)
+            im.save(out, "WEBP", quality=78, method=6)
+        parts.append(f"{{R}}images/{stem}-{rw}.webp {rw}w")
+    return ", ".join(parts)
+
 def img(name, cls="page-img", lazy=True):
     w, h = IMG_SIZE.get(name, (1200, 800))
     alt = html.escape(IMG_ALT[name].format(brand=SITE["brand"]), quote=True)
     load = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"'
-    return f'<img class="{cls}" src="{{R}}images/{name}" alt="{alt}" width="{w}" height="{h}"{load}>'
+    srcset = responsive_set(name, w)
+    sizes = next((v for k, v in IMG_SIZES.items() if k in cls.split()), "(min-width: 1140px) 1100px, 100vw")
+    resp = f' srcset="{srcset}" sizes="{sizes}"' if srcset else ""
+    return f'<img class="{cls}" src="{{R}}images/{name}"{resp} alt="{alt}" width="{w}" height="{h}"{load}>'
 
 def gsv_meta():
     v = SITE.get("google_verification")
@@ -204,8 +237,8 @@ def wa_attr(msg):
     return f'data-wa="{html.escape(msg, quote=True)}"'
 
 def logo(r, big=False):
-    return (f'<a class="logo" href="{r}index.html" aria-label="{SITE["brand"]}, accueil">'
-            f'<span class="logo-stack"><span class="logo-word">{SITE["brand_a"]}</span>'
+    return (f'<a class="logo" href="{r}index.html" aria-label="{SITE["brand"]} – accueil">'
+            f'<span class="logo-stack"><span class="logo-word">{SITE["brand_a"]}</span> '
             f'<span class="logo-sub">{SITE["brand_b"]}</span></span></a>')
 
 def header(r, active):
@@ -246,20 +279,20 @@ def footer(r):
       <p>Abonnement IPTV pour la France, la Belgique et la Suisse. Formules dès 5 € par mois, sans engagement.</p>
     </div>
     <div class="f-cols">
-      <div><h4>Pages</h4><ul>
+      <div><h3>Pages</h3><ul>
         <li><a href="{r}index.html">Accueil</a></li>
         <li><a href="{r}essai-gratuit/">Essai gratuit</a></li>
         <li><a href="{r}index.html#offres">Offres</a></li>
         <li><a href="{r}blog/">Blog IPTV</a></li>
       </ul></div>
-      <div><h4>Guides</h4><ul>{g}</ul></div>
-      <div><h4>Villes</h4><ul>{c}</ul></div>
-      <div><h4>Société</h4><ul>
+      <div><h3>Guides</h3><ul>{g}</ul></div>
+      <div><h3>Villes</h3><ul>{c}</ul></div>
+      <div><h3>Société</h3><ul>
         <li><a href="{r}a-propos/">À propos</a></li>
         <li><a href="{r}contact/">Contact</a></li>
         {l}
       </ul></div>
-      <div><h4>Contact</h4><ul>
+      <div><h3>Contact</h3><ul>
         <li><a href="#" {wa_attr(msg_question())}>WhatsApp</a><span class="f-247">24/7</span></li>
         <li><a href="mailto:{SITE["email"]}">{SITE["email"]}</a></li>
         <li style="color:#8d929b">Réponse rapide, 7 j/7</li>
@@ -328,11 +361,12 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 <meta name="twitter:image" content="{og_image_url()}">{head_extra}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap"></noscript>
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=14">
+<link rel="stylesheet" href="{r}style.css?v=15">
 </head>
 <body id="top">
 {header(r, active)}
@@ -1009,7 +1043,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=14"', f'href="{BASE}style.css?v=14"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
+    txt = txt.replace('href="style.css?v=15"', f'href="{BASE}style.css?v=15"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')

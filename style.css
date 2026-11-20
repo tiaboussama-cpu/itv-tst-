@@ -276,7 +276,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .f-top p { color: var(--muted); max-width: 360px; margin: 0; }
 .f-cols { display: grid; gap: 30px; grid-template-columns: repeat(2, 1fr); padding-top: 34px; border-top: 1px solid #1d1d1d; }
 @media (min-width: 900px) { .f-cols { grid-template-columns: repeat(5, 1fr); } }
-.f-cols h4 { font: 800 11px/1 var(--font-body); letter-spacing: .14em; color: #fff; margin-bottom: 18px; text-transform: uppercase; }
+.f-cols h3 { font: 800 11px/1 var(--font-body); letter-spacing: .14em; color: #fff; margin-bottom: 18px; text-transform: uppercase; }
 .f-cols ul { display: grid; gap: 10px; }
 .f-cols a { color: var(--muted); text-decoration: none; }
 .f-cols a:hover { color: #fff; }
