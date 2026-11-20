@@ -61,7 +61,7 @@
   var form = document.getElementById("contact-form");
   if (form) form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var msg = "Bonjour, je suis " + form.name.value + ".\nSujet : " + form.subject.value + "\n\n" + form.message.value;
+    var msg = "Bonjour Sunday IPTV 👋\nJe m’appelle " + form.name.value + ".\nSujet : " + form.subject.value + "\n\n" + form.message.value;
     var url = waLink(msg);
     if (url) window.open(url, "_blank", "noopener");
     else alert("Numéro WhatsApp à configurer (SITE['whatsapp'] dans _build/build.py).");

@@ -13,8 +13,8 @@ SITE = {
     "brand": "Sunday IPTV",        # nom de marque
     "brand_a": "Sunday",           # partie rouge du logo
     "brand_b": "IPTV",             # partie blanche du logo
-    "email": "contact@example.com",
-    "whatsapp": "",                # ex. "33612345678" (chiffres uniquement)
+    "email": "contact@sundayiptv.com",
+    "whatsapp": "212727866871",    # format international, chiffres uniquement
     "year": "2026",
     # domaine personnalisé ; laissez vide pour servir le site sur tiaboussama-cpu.github.io/itv-tst-/
     "domain": "sundayiptv.com",
@@ -178,6 +178,25 @@ def og_image_url():
     return base + "images/hero-sunday-iptv.jpg"
 
 # ---------------------------------------------------------------- gabarit
+# ---------------------------------------------------------------- messages WhatsApp pré-remplis
+DEVICE_LINE = "Mon appareil : (Smart TV, Fire Stick, box Android, iPhone…)"
+
+def msg_order(dur, price):
+    return (f"Bonjour {SITE['brand']} 👋\n"
+            f"Je souhaite commander l’abonnement {dur} à {price} €.\n\n"
+            f"{DEVICE_LINE}\n"
+            "Application utilisée : (si vous en avez déjà une)\n\n"
+            "Merci de m’envoyer le lien de paiement.")
+
+def msg_trial():
+    return (f"Bonjour {SITE['brand']} 👋\n"
+            "Je souhaite profiter de l’essai gratuit de 24 h avant de m’abonner.\n\n"
+            f"{DEVICE_LINE}\n\n"
+            "Merci !")
+
+def msg_question():
+    return f"Bonjour {SITE['brand']} 👋\nJ’ai une question : "
+
 def wa_attr(msg):
     return f'data-wa="{html.escape(msg, quote=True)}"'
 
@@ -238,7 +257,7 @@ def footer(r):
         {l}
       </ul></div>
       <div><h4>Contact</h4><ul>
-        <li><a href="#" {wa_attr("Bonjour,")}>WhatsApp</a><span class="f-247">24/7</span></li>
+        <li><a href="#" {wa_attr(msg_question())}>WhatsApp</a><span class="f-247">24/7</span></li>
         <li><a href="mailto:{SITE["email"]}">{SITE["email"]}</a></li>
         <li style="color:#8d929b">Réponse rapide, 7 j/7</li>
       </ul></div>
@@ -253,7 +272,7 @@ def footer(r):
     </div>
   </div>
 </footer>
-<a class="wa-float" href="#" {wa_attr("Bonjour,")} aria-label="Nous écrire sur WhatsApp">{WA_SVG}</a>"""
+<a class="wa-float" href="#" {wa_attr(msg_question())} aria-label="Nous écrire sur WhatsApp">{WA_SVG}</a>"""
 
 def page(path, title, desc, body, active="", depth=None):
     depth = path.count("/") if depth is None else depth
@@ -285,7 +304,7 @@ def page(path, title, desc, body, active="", depth=None):
 </main>
 {footer(r)}
 <script>window.SITE_WHATSAPP = "{SITE["whatsapp"]}";</script>
-<script src="{r}script.js"></script>
+<script src="{r}script.js?v=2"></script>
 </body>
 </html>
 """
@@ -312,7 +331,7 @@ def plan_cards(prefix="Abonnement"):
         <p class="p-per">{per}</p>
         <ul>{feats}</ul>
         <div class="pay">{PAY_LOGOS}</div>
-        <a class="btn {'btn-white' if hot else 'btn-red'} btn-sm" href="#" {wa_attr(f"Bonjour, je souhaite commander l’abonnement {dur} ({price} €).")}>Commander</a>
+        <a class="btn {'btn-white' if hot else 'btn-red'} btn-sm" href="#" {wa_attr(msg_order(dur, price))}>Commander</a>
       </article>""")
     return "".join(cards)
 
@@ -543,7 +562,7 @@ def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min"
       <div class="end-cta">
         <h2 class="h-md">Testez {SITE["brand"]} gratuitement</h2>
         <p>Essai gratuit de 24 heures, activation rapide et support 24/7 sur WhatsApp.</p>
-        <a class="btn btn-white" href="#" {wa_attr("Bonjour, je souhaite un essai gratuit de 24 h.")}>Demander mon essai</a>
+        <a class="btn btn-white" href="#" {wa_attr(msg_trial())}>Demander mon essai</a>
       </div>"""
     body = f"""
 <section class="page-hero">
@@ -636,8 +655,8 @@ def build_contact():
       </form>
       <aside>
         <div class="side-box"><h2>Moyens de contact</h2>
-          <div class="method">{ico("chat")}<div><b>WhatsApp</b><span class="pill">Recommandé</span><small>Réponse la plus rapide, 24/7</small></div></div>
-          <div class="method">{ico("mail")}<div><b>E-mail</b><small>{SITE["email"]}</small><small>Réponse dans la journée</small></div></div>
+          <div class="method">{ico("chat")}<div><b>WhatsApp</b><span class="pill">Recommandé</span><small>+{SITE["whatsapp"][:3]} {SITE["whatsapp"][3:6]} {SITE["whatsapp"][6:9]} {SITE["whatsapp"][9:]}</small><small>Réponse la plus rapide, 24/7</small></div></div>
+          <div class="method">{ico("mail")}<div><b>E-mail</b><small><a href="mailto:{SITE["email"]}">{SITE["email"]}</a></small><small>Réponse dans la journée</small></div></div>
         </div>
         <div class="side-box"><h2>Disponibilité</h2>
           <div class="hours"><div><span>Lundi – vendredi</span><span>24 h/24</span></div><div><span>Samedi – dimanche</span><span>24 h/24</span></div><div><span>Jours fériés</span><span>24 h/24</span></div></div>
@@ -830,7 +849,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=8"', f'href="{BASE}style.css?v=8"').replace('src="script.js"', f'src="{BASE}script.js"')
+    txt = txt.replace('href="style.css?v=8"', f'href="{BASE}style.css?v=8"').replace('src="script.js?v=2"', f'src="{BASE}script.js?v=2"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for prefix in ["blog/", "a-propos/", "contact/", "essai-gratuit/"] + [f"{s}/" for s, *_ in GUIDES] + [f"{s}/" for s, _ in CITIES] + [f"{s}/" for s, _ in LEGAL]:
         txt = txt.replace(f'href="{prefix}', f'href="{BASE}{prefix}')
