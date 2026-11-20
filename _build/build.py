@@ -289,6 +289,8 @@ def page(path, title, desc, body, active="", depth=None):
 </body>
 </html>
 """
+    # liens propres : "../" ou "./" plutôt que ".../index.html" (pas de index.html dans l'adresse)
+    doc = doc.replace(f'href="{r}index.html', f'href="{r or "./"}')
     out = ROOT / path
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
@@ -829,7 +831,7 @@ def build_404():
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
     txt = txt.replace('href="style.css?v=8"', f'href="{BASE}style.css?v=8"').replace('src="script.js"', f'src="{BASE}script.js"')
-    txt = txt.replace('href="index.html', f'href="{BASE}index.html')
+    txt = txt.replace('href="./', f'href="{BASE}')
     for prefix in ["blog/", "a-propos/", "contact/", "essai-gratuit/"] + [f"{s}/" for s, *_ in GUIDES] + [f"{s}/" for s, _ in CITIES] + [f"{s}/" for s, _ in LEGAL]:
         txt = txt.replace(f'href="{prefix}', f'href="{BASE}{prefix}')
     out.write_text(txt, encoding="utf-8")
