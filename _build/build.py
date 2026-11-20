@@ -398,7 +398,7 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=19">
+<link rel="stylesheet" href="{r}style.css?v=20">
 </head>
 <body id="top">
 {header(r, active)}
@@ -424,17 +424,18 @@ def plan_cards(prefix="Abonnement"):
     for name, dur, price, per, tag in PLANS:
         hot = tag == "Le plus choisi"
         feats = "".join(f"<li>{ico(i)}<span>{t}</span></li>" for i, t in PLAN_FEATURES)
-        tag_html = f'<span class="tag">{tag}</span>' if tag else ""
+        ribbon = f'<span class="ribbon">{tag}</span>' if hot else ""
+        badge = f'<span class="badge">{tag}</span>' if tag and not hot else ""
+        cta = "Commander 12 mois" if hot else "Commander"
         cards.append(f"""
       <article class="plan{' hot' if hot else ''}">
-        {tag_html}
+        {ribbon}
         <p class="p-name">{prefix} {name}</p>
-        <p class="p-dur">{dur}</p>
-        <p class="p-price">€{price}</p>
-        <p class="p-per">{per}</p>
+        <div class="p-head"><p class="p-dur">{dur}</p>{badge}</div>
+        <div class="p-cost"><p class="p-price">{price} €</p><p class="p-per">{per}</p></div>
         <ul>{feats}</ul>
         <div class="pay">{PAY_LOGOS}</div>
-        <a class="btn {'btn-white' if hot else 'btn-red'} btn-sm" href="#" {wa_attr(msg_order(dur, price))} data-order-dur="{dur}" data-order-price="{price}">Commander</a>
+        <a class="btn {'btn-white' if hot else 'btn-red'}" href="#" {wa_attr(msg_order(dur, price))} data-order-dur="{dur}" data-order-price="{price}">{cta}</a>
       </article>""")
     return "".join(cards)
 
@@ -1137,7 +1138,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=19"', f'href="{BASE}style.css?v=19"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
+    txt = txt.replace('href="style.css?v=20"', f'href="{BASE}style.css?v=20"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')
