@@ -54,6 +54,25 @@ def ico(name, cls="ico"):
 
 WA_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>')
 
+# ---------------------------------------------------------------- logos de paiement (SVG)
+PAY_VISA = ('<svg class="pay-logo" viewBox="0 0 60 38" role="img" aria-label="Visa">'
+            '<rect width="60" height="38" rx="5" fill="#fff" stroke="#d9d9d9"/>'
+            '<text x="30" y="25.5" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" '
+            'font-style="italic" font-size="15" letter-spacing="-.5" fill="#1a1f71">VISA</text>'
+            '<path d="M8 30h44" stroke="#f7b600" stroke-width="2.4" stroke-linecap="round"/></svg>')
+PAY_MC = ('<svg class="pay-logo" viewBox="0 0 60 38" role="img" aria-label="Mastercard">'
+          '<rect width="60" height="38" rx="5" fill="#fff" stroke="#d9d9d9"/>'
+          '<circle cx="24" cy="19" r="10.5" fill="#eb001b"/><circle cx="36" cy="19" r="10.5" fill="#f79e1b"/>'
+          '<path d="M30 10.4a10.5 10.5 0 0 1 0 17.2 10.5 10.5 0 0 1 0-17.2Z" fill="#ff5f00"/></svg>')
+PAY_CB = ('<svg class="pay-logo" viewBox="0 0 60 38" role="img" aria-label="Carte Bancaire (CB)">'
+          '<defs><linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">'
+          '<stop offset="0" stop-color="#1fa64a"/><stop offset=".55" stop-color="#1b6fb8"/><stop offset="1" stop-color="#173b8c"/>'
+          '</linearGradient></defs>'
+          '<rect width="60" height="38" rx="5" fill="url(#cbg)"/>'
+          '<text x="30" y="26" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" '
+          'font-size="17" fill="#fff">CB</text></svg>')
+PAY_LOGOS = PAY_VISA + PAY_MC + PAY_CB
+
 # ---------------------------------------------------------------- données partagées
 PLANS = [
     ("Essentiel", "1 mois", "12", "12,00 € / mois", None),
@@ -181,7 +200,7 @@ def footer(r):
       </ul></div>
     </div>
     <div class="f-row">
-      <div class="f-chips"><span>Paiement :</span><span class="c">Visa</span><span class="c">Mastercard</span><span class="c">CB</span></div>
+      <div class="f-chips"><span>Paiement :</span><span class="pay">{PAY_LOGOS}</span></div>
       <div class="f-chips"><span>Appareils :</span><span class="c">Smart TV</span><span class="c">Fire TV</span><span class="c">Android</span><span class="c">iOS</span><span class="c">MAG</span></div>
     </div>
     <div class="f-bottom">
@@ -244,7 +263,7 @@ def plan_cards(prefix="Abonnement"):
         <p class="p-price">€{price}</p>
         <p class="p-per">{per}</p>
         <ul>{feats}</ul>
-        <div class="pay"><span class="pay-chip">VISA</span><span class="pay-chip mc">Mastercard</span><span class="pay-chip cb">CB</span></div>
+        <div class="pay">{PAY_LOGOS}</div>
         <a class="btn {'btn-white' if hot else 'btn-red'} btn-sm" href="#" {wa_attr(f"Bonjour, je souhaite commander l’abonnement {dur} ({price} €).")}>Commander</a>
       </article>""")
     return "".join(cards)
