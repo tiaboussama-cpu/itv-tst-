@@ -828,6 +828,38 @@ def build_404():
 
 BASE = "/" if SITE["domain"] else "/itv-tst-/"
 
+def site_url():
+    return f"https://{SITE['domain']}/" if SITE["domain"] else "https://tiaboussama-cpu.github.io/itv-tst-/"
+
+def build_seo_files():
+    """robots.txt + sitemap.xml (toutes les pages sauf la 404)."""
+    import datetime
+    base = site_url()
+    today = datetime.date.today().isoformat()
+    urls = []
+    for p in sorted(ROOT.rglob("index.html")):
+        if "_build" in p.parts:
+            continue
+        rel = p.parent.relative_to(ROOT).as_posix()
+        loc = base if rel == "." else f"{base}{rel}/"
+        if rel == ".":
+            prio = "1.0"
+        elif rel in ("essai-gratuit", "blog"):
+            prio = "0.8"
+        elif rel in {s for s, _ in LEGAL}:
+            prio = "0.3"
+        else:
+            prio = "0.6"
+        urls.append((loc, prio))
+    urls.sort(key=lambda u: (-float(u[1]), u[0]))
+    body = "".join(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>{prio}</priority>\n  </url>\n"
+                   for loc, prio in urls)
+    (ROOT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n", encoding="utf-8")
+    (ROOT / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\nDisallow: /_build/\n\n" f"Sitemap: {base}sitemap.xml\n", encoding="utf-8")
+
 if __name__ == "__main__":
     build_home(); build_trial(); build_blog(); build_contact(); build_about()
     build_guides(); build_cities(); build_legal(); build_404()
@@ -836,6 +868,7 @@ if __name__ == "__main__":
         cname.write_text(SITE["domain"] + "\n", encoding="utf-8")
     elif cname.exists():
         cname.unlink()
+    build_seo_files()
     pages = sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*.html") if "_build" not in p.parts)
     print(f"{len(pages)} pages générées :")
     for p in pages:
