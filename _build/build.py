@@ -330,7 +330,7 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=11">
+<link rel="stylesheet" href="{r}style.css?v=12">
 </head>
 <body id="top">
 {header(r, active)}
@@ -338,8 +338,8 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 {body.replace("{R}", r)}
 </main>
 {footer(r)}
-<script>window.SITE_WHATSAPP = "{SITE["whatsapp"]}";</script>
-<script src="{r}script.js?v=2"></script>
+<script>window.SITE_WHATSAPP = "{SITE["whatsapp"]}"; window.SITE_BRAND = "{SITE["brand"]}";</script>
+<script src="{r}script.js?v=3"></script>
 </body>
 </html>
 """
@@ -366,7 +366,7 @@ def plan_cards(prefix="Abonnement"):
         <p class="p-per">{per}</p>
         <ul>{feats}</ul>
         <div class="pay">{PAY_LOGOS}</div>
-        <a class="btn {'btn-white' if hot else 'btn-red'} btn-sm" href="#" {wa_attr(msg_order(dur, price))}>Commander</a>
+        <a class="btn {'btn-white' if hot else 'btn-red'} btn-sm" href="#" {wa_attr(msg_order(dur, price))} data-order-dur="{dur}" data-order-price="{price}">Commander</a>
       </article>""")
     return "".join(cards)
 
@@ -1002,7 +1002,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=11"', f'href="{BASE}style.css?v=11"').replace('src="script.js?v=2"', f'src="{BASE}script.js?v=2"')
+    txt = txt.replace('href="style.css?v=12"', f'href="{BASE}style.css?v=12"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')

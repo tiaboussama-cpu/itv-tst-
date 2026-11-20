@@ -16,6 +16,75 @@
     }
   });
 
+  // Fenêtre de commande : le client remplit appareil + application, puis WhatsApp s'ouvre
+  var brand = window.SITE_BRAND || "Sunday IPTV";
+  var DEVICES = ["Smart TV Samsung", "Smart TV LG", "Autre Smart TV", "Fire TV Stick", "Box Android", "iPhone / iPad", "Téléphone Android", "Boîtier MAG", "PC / Mac", "Autre"];
+  var orderBtns = document.querySelectorAll("[data-order-dur]");
+  if (orderBtns.length && typeof HTMLDialogElement === "function") {
+    var dlg = document.createElement("dialog");
+    dlg.className = "order-dlg";
+    dlg.setAttribute("aria-labelledby", "od-title");
+    dlg.innerHTML =
+      '<form class="od-form" method="dialog" novalidate>' +
+        '<button type="button" class="od-close" aria-label="Fermer">✕</button>' +
+        '<p class="od-kicker">Votre commande</p>' +
+        '<h2 id="od-title" class="od-title"></h2>' +
+        '<label class="od-field"><span>Votre appareil <b class="red">*</b></span>' +
+          '<select name="device" required><option value="">Choisissez votre appareil…</option>' +
+          DEVICES.map(function (d) { return "<option>" + d + "</option>"; }).join("") +
+          '</select><small class="od-err" hidden>Merci d’indiquer votre appareil.</small></label>' +
+        '<label class="od-field"><span>Application utilisée <em>(facultatif)</em></span>' +
+          '<input name="app" type="text" maxlength="60" placeholder="ex. IPTV Smarters, TiviMate…" autocomplete="off"></label>' +
+        '<p class="od-label">Aperçu du message</p>' +
+        '<pre class="od-preview"></pre>' +
+        '<button type="submit" class="btn btn-red od-send">Envoyer sur WhatsApp</button>' +
+        '<p class="od-note">Vous recevrez le lien de paiement sécurisé directement sur WhatsApp.</p>' +
+      '</form>';
+    document.body.appendChild(dlg);
+
+    var f = dlg.querySelector("form"), current = null;
+    var buildMsg = function () {
+      var dev = f.device.value || "(Smart TV, Fire Stick, box Android, iPhone…)";
+      var app = f.app.value.trim() || "aucune pour le moment";
+      return "Bonjour " + brand + " 👋\n" +
+        "Je souhaite commander l’abonnement " + current.dur + " à " + current.price + " €.\n\n" +
+        "Mon appareil : " + dev + "\n" +
+        "Application utilisée : " + app + "\n\n" +
+        "Merci de m’envoyer le lien de paiement.";
+    };
+    var refresh = function () { dlg.querySelector(".od-preview").textContent = buildMsg(); };
+    f.device.addEventListener("change", function () { dlg.querySelector(".od-err").hidden = true; f.device.classList.remove("invalid"); refresh(); });
+    f.app.addEventListener("input", refresh);
+    dlg.querySelector(".od-close").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+
+    orderBtns.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        current = { dur: btn.getAttribute("data-order-dur"), price: btn.getAttribute("data-order-price") };
+        dlg.querySelector(".od-title").textContent = "Abonnement " + current.dur + " — " + current.price + "\u00a0€";
+        dlg.querySelector(".od-err").hidden = true;
+        f.device.classList.remove("invalid");
+        refresh();
+        dlg.showModal();
+      });
+    });
+
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!f.device.value) {
+        dlg.querySelector(".od-err").hidden = false;
+        f.device.classList.add("invalid");
+        f.device.focus();
+        return;
+      }
+      var url = waLink(buildMsg());
+      if (url) window.open(url, "_blank", "noopener");
+      else alert("Numéro WhatsApp à configurer (SITE['whatsapp'] dans _build/build.py).");
+      dlg.close();
+    });
+  }
+
   // Bandeau d'information
   var notice = document.getElementById("notice");
   try { if (notice && localStorage.getItem("notice-closed") === "1") notice.remove(); } catch (e) {}
