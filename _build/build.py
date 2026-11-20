@@ -154,8 +154,14 @@ IMG_ALT = {
     "essai-gratuit-iptv.jpg": "Essai IPTV gratuit 24 heures — tester {brand} sans engagement",
     "a-propos-sunday-iptv.jpg": "À propos de {brand} — fournisseur IPTV pour la France",
     "contact-sunday-iptv.jpg": "Contact {brand} — support WhatsApp 24/7",
+    "hero-sunday-iptv-photo.jpg": "Abonnement IPTV France — famille regardant la télévision avec l’interface {brand}",
+    "poster-action.jpg": "Films d’action — les blockbusters de l’année",
+    "poster-science-fiction.jpg": "Films de science-fiction — sagas et univers étendus",
+    "poster-series.jpg": "Séries — saisons complètes en VOD",
+    "poster-sport.jpg": "Sport — matchs et compétitions en direct",
+    "chaines-tv.jpg": "Plus de 32 000 chaînes TV en direct — grille des chaînes {brand}",
 }
-IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "blog-hero-iptv.jpg": (1920, 640), "a-propos-sunday-iptv.jpg": (1200, 600)}
+IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "hero-sunday-iptv-photo.jpg": (1920, 1280), "poster-action.jpg": (560, 1120), "poster-science-fiction.jpg": (560, 1120), "poster-series.jpg": (560, 1120), "poster-sport.jpg": (560, 1120), "blog-hero-iptv.jpg": (1920, 640), "a-propos-sunday-iptv.jpg": (1200, 600)}
 
 def img(name, cls="page-img", lazy=True):
     w, h = IMG_SIZE.get(name, (1200, 800))
@@ -271,7 +277,7 @@ def page(path, title, desc, body, active="", depth=None):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e63946'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='19' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="{r}style.css?v=5">
+<link rel="stylesheet" href="{r}style.css?v=6">
 </head>
 <body id="top">
 {header(r, active)}
@@ -338,20 +344,19 @@ def faq(items):
 
 # ---------------------------------------------------------------- accueil
 POSTER_TILES = [
-    ("Action", "Les blockbusters de l’année", "linear-gradient(160deg,#ff8a00,#7a1d00 55%,#1a0600)"),
-    ("Science-fiction", "Sagas et univers étendus", "linear-gradient(160deg,#2bc0e4,#1a2a6c 55%,#05070f)"),
-    ("Séries", "Saisons complètes en VOD", "linear-gradient(160deg,#c471ed,#5b1a7a 55%,#12051a)"),
-    ("Sport", "Matchs et compétitions en direct", "linear-gradient(160deg,#56ab2f,#174d12 55%,#041205)"),
+    ("Action", "Les blockbusters de l’année", "linear-gradient(160deg,#ff8a00,#7a1d00 55%,#1a0600)", "poster-action.jpg"),
+    ("Science-fiction", "Sagas et univers étendus", "linear-gradient(160deg,#2bc0e4,#1a2a6c 55%,#05070f)", "poster-science-fiction.jpg"),
+    ("Séries", "Saisons complètes en VOD", "linear-gradient(160deg,#c471ed,#5b1a7a 55%,#12051a)", "poster-series.jpg"),
+    ("Sport", "Matchs et compétitions en direct", "linear-gradient(160deg,#56ab2f,#174d12 55%,#041205)", "poster-sport.jpg"),
 ]
 
 def build_home():
-    posters = "".join(f'<a class="poster" href="#offres" style="--g:{g}"><span class="genre">{gname}</span><strong>{gname}</strong><small>{sub}</small></a>'
-                      for gname, sub, g in POSTER_TILES)
-    tv_rows = "".join("<i></i>" for _ in range(6))
+    posters = "".join(f'<a class="poster" href="#offres" style="--g:{g}">{img(pic, "poster-img")}<span class="genre">{gname}</span><strong>{gname}</strong><small>{sub}</small></a>'
+                      for gname, sub, g, pic in POSTER_TILES)
     body = f"""
 <section class="hero hero-has-photo">
   <div class="hero-bg">
-    {img("hero-sunday-iptv.jpg", "hero-photo", lazy=False)}
+    {img("hero-sunday-iptv-photo.jpg", "hero-photo", lazy=False)}
   </div>
   <div class="wrap hero-content">
     <h1>Abonnement IPTV : la meilleure offre IPTV en France</h1>
@@ -382,11 +387,7 @@ def build_home():
 
 <section class="section">
   <div class="wrap split">
-    <div class="tv-mock" aria-hidden="true">
-      <div class="tv-brand"><span>{SITE["brand"]}</span><span>20:45</span></div>
-      <div class="apps"><i style="background:#e63946"></i><i style="background:#1a73e8"></i><i style="background:#f5b82e"></i><i style="background:#2e7d32"></i><i style="background:#6a1b9a"></i><i style="background:#00897b"></i><i style="background:#455a64"></i></div>
-      <div class="tiles"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    </div>
+    {img("chaines-tv.jpg", "page-img tv-photo")}
     <div class="split-text">
       <h2 class="h-md">Quelles chaînes TV trouver avec l’IPTV en France ?</h2>
       <p>Votre abonnement IPTV donne accès à plus de 32 000 chaînes en direct dans le monde, plus de 220 000 films et séries à la demande et un guide des programmes (EPG) complet sur tous vos appareils. Commandez aujourd’hui et regardez votre première chaîne en moins d’une heure.</p>
@@ -826,7 +827,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=5"', f'href="{BASE}style.css?v=5"').replace('src="script.js"', f'src="{BASE}script.js"')
+    txt = txt.replace('href="style.css?v=6"', f'href="{BASE}style.css?v=6"').replace('src="script.js"', f'src="{BASE}script.js"')
     txt = txt.replace('href="index.html', f'href="{BASE}index.html')
     for prefix in ["blog/", "a-propos/", "contact/", "essai-gratuit/"] + [f"{s}/" for s, *_ in GUIDES] + [f"{s}/" for s, _ in CITIES] + [f"{s}/" for s, _ in LEGAL]:
         txt = txt.replace(f'href="{prefix}', f'href="{BASE}{prefix}')
