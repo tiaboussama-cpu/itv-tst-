@@ -55,7 +55,8 @@ Presque tous les écrans connectés sont compatibles. Voici nos guides d’insta
 - [Amazon Fire TV Stick]({R}installer-iptv-fire-tv/) : le moyen le plus simple et le moins cher de rendre n’importe quelle télé compatible ;
 - [Android : smartphone, tablette et box]({R}installer-iptv-android/) : la plateforme la plus souple, avec le plus grand choix d’applications ;
 - [iPhone, iPad et Apple TV]({R}installer-iptv-ios/) : des applications de l’App Store et la diffusion AirPlay ;
-- [Boîtier MAG]({R}installer-iptv-mag/) : un décodeur dédié qui démarre directement sur vos chaînes.
+- [Boîtier MAG]({R}installer-iptv-mag/) : un décodeur dédié qui démarre directement sur vos chaînes ;
+- [PC Windows]({R}installer-iptv-windows/) : l’application IPTV Smarters Pro sur votre ordinateur, à relier à la télé en HDMI si besoin.
 
 ## Les avantages et les limites de l’IPTV
 

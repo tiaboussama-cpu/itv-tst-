@@ -21,6 +21,7 @@ Pour profiter pleinement des 24 heures, installez l’application avant de recev
 - [Android : smartphone, tablette et box]({R}installer-iptv-android/)
 - [iPhone, iPad et Apple TV]({R}installer-iptv-ios/)
 - [Boîtier MAG]({R}installer-iptv-mag/)
+- [PC Windows]({R}installer-iptv-windows/)
 
 Vous hésitez sur l’application ? Notre sélection des [meilleures applications IPTV]({R}meilleures-applications-iptv/) vous aide à choisir.
 

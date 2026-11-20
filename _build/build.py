@@ -160,6 +160,7 @@ IMG_ALT = {
     "poster-science-fiction.jpg": "Films de science-fiction — sagas et univers étendus",
     "poster-series.jpg": "Séries — saisons complètes en VOD",
     "poster-sport.jpg": "Sport — matchs et compétitions en direct",
+    "installer-windows.jpg": "Installer l'IPTV sur Windows — ordinateur portable avec l'interface IPTV",
     "chaines-tv.jpg": "Plus de 32 000 chaînes TV en direct — grille des chaînes {brand}",
 }
 IMG_SIZE = {"hero-sunday-iptv.jpg": (1920, 1280), "hero-sunday-iptv-photo.jpg": (1920, 1280), "poster-action.jpg": (560, 1120), "poster-science-fiction.jpg": (560, 1120), "poster-series.jpg": (560, 1120), "poster-sport.jpg": (560, 1120), "blog-hero-iptv.jpg": (1920, 640), "a-propos-sunday-iptv.jpg": (1200, 600)}
@@ -525,7 +526,7 @@ def build_home():
   <div class="wrap split rev">
     <div class="dev-icons">
       <a href="{{R}}installer-iptv-smart-tv/">{ico("tv")}Smart TV</a><a href="{{R}}installer-iptv-fire-tv/">{ico("stick")}Fire TV Stick</a><a href="{{R}}iptv-android-box/">{ico("box")}Box Android</a><a href="{{R}}installer-iptv-ios/">{ico("apple")}Apple TV</a>
-      <a href="{{R}}installer-iptv-android/">{ico("phone")}Smartphone</a><a href="{{R}}meilleures-applications-iptv/">{ico("laptop")}PC &amp; Mac</a><a href="{{R}}installer-iptv-mag/">{ico("box")}Boîtier MAG</a><a href="{{R}}meilleures-applications-iptv/">{ico("play")}Kodi</a>
+      <a href="{{R}}installer-iptv-android/">{ico("phone")}Smartphone</a><a href="{{R}}installer-iptv-windows/">{ico("laptop")}PC Windows</a><a href="{{R}}installer-iptv-mag/">{ico("box")}Boîtier MAG</a><a href="{{R}}meilleures-applications-iptv/">{ico("play")}Kodi</a>
     </div>
     <div class="split-text">
       <h2 class="h-md">Sur quels appareils fonctionne l’IPTV ?</h2>
@@ -611,6 +612,10 @@ DEVICE_GUIDES = [
      'Configurer l’IPTV sur un <span class="red">boîtier MAG</span>', "Configurer l’IPTV sur un boîtier MAG",
      "guide-boitier-iptv.jpg",
      "Adresse MAC, URL du portail, réglages vidéo et dépannage : le guide complet pour configurer un boîtier MAG (Infomir) avec votre abonnement IPTV."),
+    ("installer-iptv-windows", "Windows", "laptop",
+     'Installer l’IPTV sur <span class="red">Windows</span>', "Installer l’IPTV sur un PC Windows",
+     "installer-windows.jpg",
+     "Téléchargement d’IPTV Smarters Pro sur le site officiel, connexion Xtream Codes, réglages recommandés et dépannage : regarder l’IPTV sur un ordinateur Windows."),
 ]
 
 def device_chips(r):
@@ -707,6 +712,7 @@ RELATED = {
     "installer-iptv-android": ["iptv-android-box", "guide-tivimate", "iptv-smarters-pro"],
     "installer-iptv-ios": ["iptv-smarters-pro", "meilleures-applications-iptv", "essai-gratuit"],
     "installer-iptv-mag": ["boitier-iptv", "panne-iptv", "qu-est-ce-que-iptv"],
+    "installer-iptv-windows": ["iptv-smarters-pro", "panne-iptv", "qu-est-ce-que-iptv"],
 }
 
 def related_block(slug):

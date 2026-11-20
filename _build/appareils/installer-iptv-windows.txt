@@ -1,0 +1,103 @@
+## L’IPTV sur Windows : votre ordinateur devient une télé
+
+Un ordinateur portable ou un PC de bureau sous Windows suffit pour regarder l’IPTV : chaînes en direct, films, séries et guide des programmes, sans boîtier ni décodeur. C’est la solution idéale pour regarder un match dans votre bureau, profiter de votre abonnement {brand} dans une chambre sans télévision, ou relier l’ordinateur au téléviseur avec un simple câble HDMI.
+
+Ce guide vous explique comment télécharger IPTV Smarters Pro depuis son site officiel, comment l’installer sur Windows, comment vous connecter avec vos identifiants Xtream Codes et quels réglages choisir pour une lecture fluide.
+
+> Besoin d’aide pendant l’installation ? Écrivez-nous sur WhatsApp : nous vous guidons étape par étape, 24 h/24.
+
+## Ce qu’il vous faut avant de commencer
+
+- un ordinateur sous **Windows à jour** (lancez Windows Update avant l’installation) ;
+- une connexion internet : environ **10 Mb/s** pour la HD et environ **25 Mb/s** pour la 4K ;
+- vos **identifiants {brand}** au format Xtream Codes : **nom d’utilisateur**, **mot de passe** et **URL du serveur** ;
+- si possible, une **connexion Ethernet** (câble réseau) plutôt que le Wi-Fi, pour une stabilité maximale.
+
+> Un abonnement {brand} fonctionne sur **un appareil à la fois**. Vous pouvez l’installer sur votre PC et sur d’autres appareils, mais vous ne regardez que sur un seul écran à la fois.
+
+## Télécharger IPTV Smarters Pro sur le site officiel
+
+La version Windows d’IPTV Smarters Pro se télécharge **uniquement sur le site officiel** [iptvsmarters.com](https://iptvsmarters.com/). Ne la récupérez pas sur un site tiers ou un forum : un fichier modifié peut contenir un logiciel malveillant ou ne pas fonctionner correctement.
+
+1. Ouvrez votre navigateur (Edge, Chrome ou Firefox) et allez sur **iptvsmarters.com**.
+2. Rendez-vous dans la rubrique des téléchargements et choisissez la **version Windows**.
+3. Enregistrez le fichier d’installation : il arrive en général dans le dossier **Téléchargements**.
+
+## Installer l’application sur Windows
+
+1. Ouvrez le dossier **Téléchargements** et double-cliquez sur le fichier d’installation.
+2. Si Windows affiche le message **« Windows a protégé votre ordinateur »** (SmartScreen), vérifiez que le fichier vient bien du site officiel, puis cliquez sur **Informations complémentaires** et sur **Exécuter quand même**.
+3. Suivez les étapes de l’assistant d’installation jusqu’au bout.
+4. Lancez IPTV Smarters Pro depuis le raccourci créé sur le bureau ou depuis le menu **Démarrer**.
+5. Si le **pare-feu Windows** vous demande l’autorisation, autorisez l’application sur les **réseaux privés** : sans accès réseau, elle ne peut pas charger vos chaînes.
+
+## Se connecter avec Xtream Codes API
+
+1. Au premier lancement, acceptez les conditions d’utilisation.
+2. Choisissez **Login with Xtream Codes API**.
+3. Remplissez les champs : un **nom** de votre choix (par exemple « {brand} »), votre **nom d’utilisateur**, votre **mot de passe** et l’**URL du serveur**, avec http:// ou https:// et le numéro de port s’il y en a un.
+4. Cliquez sur **Add User** : l’application vérifie vos identifiants et charge votre catalogue.
+5. Depuis l’écran d’accueil, accédez à **Live TV** pour les chaînes en direct, à **Movies** pour les films et à **Series** pour les séries.
+
+> Copiez-collez vos identifiants depuis WhatsApp ou depuis l’e-mail reçu plutôt que de les retaper : une seule lettre en trop, un espace ou une majuscule oubliée suffit à bloquer la connexion.
+
+Retrouvez toutes les fonctions de l’application dans notre [guide IPTV Smarters Pro]({R}iptv-smarters-pro/).
+
+## Réglages recommandés
+
+- **Connexion filaire** : branchez l’ordinateur en Ethernet, ou installez-vous près de la box internet si vous restez en Wi-Fi.
+- **Mettez à jour le guide des programmes** après la première connexion, puis de temps en temps : le premier chargement peut prendre quelques minutes.
+- **Vérifiez la date, l’heure et le fuseau horaire de Windows** (Paramètres, puis Heure et langue) : un mauvais fuseau décale tout le guide des programmes.
+- **Format du flux** : si les chaînes coupent ou démarrent mal, essayez l’autre format de flux (par exemple MPEGTS ou HLS) lorsque votre version de l’application propose ce réglage.
+- **Branchez le portable sur secteur** pendant la lecture : le mode économie de batterie peut réduire les performances et provoquer des saccades.
+- **Libérez la connexion** : mettez en pause les gros téléchargements, les sauvegardes en ligne et les mises à jour pendant que vous regardez un match.
+- **Activez le contrôle parental** dans les réglages de l’application si des enfants utilisent l’ordinateur.
+- **Gardez l’application à jour** en téléchargeant les nouvelles versions depuis le site officiel.
+
+## Regarder sur la télé depuis votre PC
+
+Votre ordinateur peut aussi afficher l’IPTV sur le grand écran du salon :
+
+1. Reliez le PC au téléviseur avec un **câble HDMI**.
+2. Sur la télécommande, sélectionnez l’entrée **HDMI** correspondante.
+3. Sur le PC, appuyez sur **Windows + P** et choisissez **Dupliquer** ou **Deuxième écran uniquement**.
+4. Lancez IPTV Smarters Pro et passez la vidéo en plein écran.
+
+Si vous préférez une solution sans ordinateur branché en permanence, consultez nos guides pour [Smart TV]({R}installer-iptv-smart-tv/) et [Fire TV Stick]({R}installer-iptv-fire-tv/).
+
+## Problèmes fréquents et solutions
+
+### Windows bloque l’installation
+
+Le message SmartScreen apparaît souvent pour les applications téléchargées hors du Microsoft Store. Si le fichier vient bien de iptvsmarters.com, cliquez sur **Informations complémentaires**, puis sur **Exécuter quand même**. Si votre antivirus bloque le fichier, supprimez-le et téléchargez-le à nouveau depuis le site officiel.
+
+### « Identifiants incorrects » ou connexion impossible
+
+Vérifiez chaque caractère du nom d’utilisateur et du mot de passe, ainsi que l’URL du serveur avec http:// ou https:// et le numéro de port. Vérifiez aussi que le pare-feu Windows autorise l’application à accéder au réseau.
+
+### Les chaînes coupent ou saccadent
+
+Testez votre débit : il faut environ 10 Mb/s pour la HD et environ 25 Mb/s pour la 4K. Passez en Ethernet, fermez les téléchargements en cours, essayez l’autre format de flux, puis redémarrez l’ordinateur et la box internet. Si le problème persiste, consultez notre guide [panne IPTV]({R}panne-iptv/) ou écrivez au support.
+
+### Le guide des programmes est vide ou décalé
+
+Lancez une mise à jour du guide dans l’application, puis vérifiez la date, l’heure et le fuseau horaire de Windows.
+
+### Ça fonctionnait sur un autre appareil et plus sur le PC
+
+Un abonnement fonctionne sur un appareil à la fois. Fermez l’application sur votre télé, votre box ou votre téléphone, puis relancez la lecture sur l’ordinateur.
+
+Q: Où télécharger IPTV Smarters Pro pour Windows ?
+R: Uniquement sur le site officiel iptvsmarters.com. Évitez les fichiers proposés sur d’autres sites : ils peuvent être modifiés ou contenir un logiciel malveillant.
+
+Q: Quel débit faut-il pour regarder l’IPTV sur un PC ?
+R: Environ 10 Mb/s pour la HD et environ 25 Mb/s pour la 4K. Une connexion Ethernet donne la lecture la plus stable.
+
+Q: Puis-je regarder sur mon PC et sur ma télé en même temps ?
+R: Non, un abonnement fonctionne sur un appareil à la fois. Vous pouvez l’installer sur plusieurs appareils et passer de l’un à l’autre. Si vous avez besoin de plusieurs écrans en même temps, écrivez-nous sur WhatsApp.
+
+Q: Où trouver mon URL de serveur, mon nom d’utilisateur et mon mot de passe ?
+R: Ils vous sont envoyés par WhatsApp ou par e-mail après l’activation de votre abonnement. Pensez à vérifier vos spams.
+
+Q: Puis-je afficher l’IPTV de mon ordinateur sur ma télévision ?
+R: Oui : reliez le PC à la télé avec un câble HDMI, puis appuyez sur Windows + P pour dupliquer l’écran.
