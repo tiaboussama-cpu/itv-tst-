@@ -1,0 +1,71 @@
+## Pourquoi un Fire TV Stick ralentit avec le temps
+
+Le Fire TV Stick est excellent pour l’IPTV, mais c’est un petit appareil avec une mémoire limitée. Au fil des semaines, les applications s’accumulent, le stockage se remplit, des services tournent en arrière-plan et la navigation devient moins réactive. Pour l’IPTV, cela se traduit par un zapping plus lent, un guide des programmes qui met du temps à s’afficher et parfois des coupures pendant le direct.
+
+Bonne nouvelle : quelques réglages et bonnes habitudes suffisent à retrouver un appareil rapide. Ce guide suppose que votre application IPTV est déjà installée ; si ce n’est pas le cas, commencez par notre tutoriel complet [installer l’IPTV sur Fire TV Stick]({R}installer-iptv-fire-tv/).
+
+## Le réseau : la première source de coupures
+
+Avant de toucher aux réglages de l’appareil, regardez votre connexion. La grande majorité des coupures IPTV sur Fire TV viennent du Wi-Fi.
+
+- **Testez votre débit** depuis le Fire TV : Paramètres, puis Réseau, puis appuyez sur le bouton lecture/pause sur votre réseau pour vérifier la connexion. Comptez 10 Mb/s pour la HD et 40 Mb/s pour la 4K.
+- **Utilisez l’adaptateur Ethernet** officiel d’Amazon : c’est l’amélioration la plus efficace, surtout si la box internet est loin.
+- **Rapprochez la box** ou ajoutez un répéteur Wi-Fi de qualité, ou un système Wi-Fi maillé.
+- **Choisissez la bande 5 GHz** de votre box, plus rapide et moins encombrée que le 2,4 GHz, si le Fire TV est à proximité.
+- **Utilisez la rallonge HDMI** fournie : derrière la télé, le Stick est entouré de métal qui affaiblit le signal Wi-Fi.
+
+## Libérer de l’espace et de la mémoire
+
+### Désinstaller ce que vous n’utilisez pas
+
+Allez dans **Paramètres**, puis **Applications**, puis **Gérer les applications installées**. Désinstallez les applications et les jeux que vous n’utilisez jamais. Gardez au moins 1 Go d’espace libre.
+
+### Vider le cache de l’application IPTV
+
+Dans la même rubrique, sélectionnez votre application IPTV, puis **Vider le cache**. Ne choisissez pas « Effacer les données », qui supprimerait vos playlists et vos réglages. Répétez l’opération toutes les deux ou trois semaines.
+
+### Supprimer les fichiers d’installation
+
+Si vous avez installé des applications avec Downloader, ouvrez-le et supprimez les fichiers téléchargés restants. Ils occupent inutilement de la place.
+
+## Les réglages cachés qui font la différence
+
+- **Désactiver la surveillance des données** : Paramètres, puis Préférences, puis Surveillance des données. Cette option peut brider la qualité vidéo.
+- **Désactiver la lecture automatique des vidéos et des sons** sur l’écran d’accueil : Paramètres, puis Préférences, puis Contenu mis en avant. L’accueil devient plus léger.
+- **Désactiver la collecte de données d’utilisation** : Paramètres, puis Préférences, puis Paramètres de confidentialité. Moins de tâches de fond, un peu plus de réactivité.
+- **Régler la résolution sur Automatique** et activer la **correspondance de la fréquence d’images** dans Paramètres, puis Affichage et sons, pour un sport plus fluide.
+
+## Choisir les bons réglages dans l’application
+
+Votre lecteur IPTV a lui aussi son importance :
+
+- Dans **TiviMate**, essayez les différents décodeurs vidéo et activez le décodage matériel. Notre [guide TiviMate]({R}guide-tivimate/) détaille ces options.
+- Dans **IPTV Smarters**, changez de lecteur dans les réglages si une chaîne saccade. Voir notre [guide IPTV Smarters Pro]({R}iptv-smarters-pro/).
+- Masquez les groupes de chaînes inutiles : le guide se charge plus vite.
+- Réduisez la durée de conservation du guide des programmes si votre Fire TV est un ancien modèle.
+
+## Les bonnes habitudes au quotidien
+
+- **Redémarrez le Fire TV une fois par semaine** : Paramètres, puis Ma Fire TV, puis Redémarrer. Cela vide la mémoire bien mieux que la mise en veille.
+- **Fermez les applications** que vous n’utilisez plus, en particulier les applications de streaming qui restent en arrière-plan.
+- **Installez les mises à jour de Fire OS** : elles corrigent régulièrement des problèmes de performance.
+- **Évitez les nettoyeurs « miracles »** : les applications de nettoyage tierces consomment elles-mêmes des ressources et apportent rarement un gain réel.
+
+## Quand changer de modèle ?
+
+Si votre Fire TV Stick a plusieurs années, qu’il reste lent malgré ces réglages, ou que vous voulez profiter de la 4K, un modèle plus récent comme le **Fire TV Stick 4K Max** ou le **Fire TV Cube** apportera un vrai gain. Notre comparatif [quel boîtier IPTV choisir]({R}boitier-iptv/) présente les alternatives, dont les box Android TV et l’Apple TV.
+
+## Utiliser un VPN sur Fire TV
+
+Certains fournisseurs d’accès internet ralentissent le streaming aux heures de pointe. Un VPN peut contourner ce ralentissement et protéger votre vie privée. Choisissez un service réputé, avec une application officielle sur l’Appstore d’Amazon, et connectez-vous à un serveur proche de chez vous pour limiter la perte de débit. Un VPN est inclus avec votre abonnement {brand} : demandez-nous les instructions sur WhatsApp.
+
+Si malgré tout les coupures persistent, notre guide [panne IPTV]({R}panne-iptv/) vous aide à identifier précisément la cause.
+
+Q: Le Fire TV Stick de base suffit-il pour l’IPTV ?
+R: Oui pour la HD et la Full HD. Pour la 4K et une navigation plus fluide dans de grandes listes de chaînes, le Fire TV Stick 4K Max est nettement plus confortable.
+
+Q: Faut-il réinitialiser le Fire TV pour le rendre plus rapide ?
+R: C’est rarement nécessaire. Essayez d’abord les réglages de ce guide. La réinitialisation d’usine efface tout et vous obligerait à réinstaller vos applications.
+
+Q: L’adaptateur Ethernet est-il vraiment utile ?
+R: Oui, c’est l’amélioration la plus efficace contre les coupures, surtout pendant les matchs en direct et si la box internet est éloignée.

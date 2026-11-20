@@ -1,0 +1,95 @@
+## Pourquoi choisir TiviMate ?
+
+TiviMate est l’un des lecteurs IPTV les plus appréciés sur grand écran. Il transforme votre abonnement en une véritable interface de télévision : liste des chaînes à gauche, aperçu en direct, guide des programmes en grille, zapping instantané avec les flèches de la télécommande. Pour ceux qui regardent surtout le direct et le sport, c’est souvent le meilleur choix, comme nous l’expliquons dans notre sélection des [meilleures applications IPTV]({R}meilleures-applications-iptv/).
+
+TiviMate fonctionne sur **Android TV**, **Google TV** et **Fire TV**. Il n’existe pas sur iPhone, iPad, Apple TV, ni sur les Smart TV Samsung et LG. Si votre téléviseur n’est pas compatible, un Fire TV Stick ou une box Android TV fera l’affaire : voir notre comparatif [quel boîtier IPTV choisir]({R}boitier-iptv/).
+
+## Installer TiviMate
+
+### Sur une box ou une télé Android TV / Google TV
+
+1. Ouvrez le **Google Play Store**.
+2. Recherchez **TiviMate IPTV Player** et sélectionnez **Installer**.
+3. Ouvrez l’application depuis l’écran d’accueil.
+
+Toutes les étapes de préparation d’une box sont détaillées dans [installer l’IPTV sur Android]({R}installer-iptv-android/).
+
+### Sur Amazon Fire TV Stick
+
+Sur Fire TV, TiviMate s’installe avec l’application Downloader, après avoir activé les options pour les développeurs. Notre guide [installer l’IPTV sur Fire TV Stick]({R}installer-iptv-fire-tv/) décrit chaque étape avec précision.
+
+## Ajouter votre playlist
+
+1. À la première ouverture, sélectionnez **Ajouter une playlist**.
+2. Choisissez **Code Xtream** (recommandé) ou **Playlist M3U**.
+3. Pour Xtream Codes, entrez l’**adresse du serveur**, votre **nom d’utilisateur** et votre **mot de passe** reçus de {brand}.
+4. Sélectionnez **Suivant** : TiviMate vérifie la connexion et affiche le nombre de chaînes, de films et de séries.
+5. Donnez un nom à la playlist, par exemple « {brand} », puis sélectionnez **Terminé**.
+
+> Saisissez l’adresse du serveur exactement comme elle vous a été envoyée, avec http:// ou https:// et le numéro de port éventuel. C’est la cause numéro un des erreurs de connexion.
+
+## Configurer le guide des programmes (EPG)
+
+Avec une connexion Xtream Codes, TiviMate récupère automatiquement le guide. Le premier chargement peut prendre quelques minutes. Pour vérifier ou ajuster :
+
+1. Ouvrez les **Paramètres** (icône en forme d’engrenage).
+2. Allez dans **EPG** : la source fournie par la playlist doit apparaître.
+3. Réglez la **fréquence de mise à jour** (une fois par jour suffit) et la durée de conservation du guide.
+4. Si le guide est décalé, vérifiez le **fuseau horaire** de l’appareil et, si besoin, ajustez le décalage EPG dans les paramètres.
+
+## Organiser vos chaînes
+
+### Masquer les groupes inutiles
+
+Une liste complète contient des milliers de chaînes. Dans **Paramètres**, puis **Playlists**, sélectionnez votre playlist et ouvrez **Gérer les groupes** : décochez les pays et catégories qui ne vous intéressent pas. La navigation devient bien plus rapide.
+
+### Créer vos favoris
+
+Pendant la lecture ou depuis la liste, faites un **appui long** sur une chaîne et choisissez **Ajouter aux favoris**. Le groupe Favoris apparaît en tête de liste. Vous pouvez en réorganiser l’ordre pour retrouver vos chaînes préférées dans l’ordre de votre choix.
+
+### Renuméroter et renommer
+
+En version Premium, vous pouvez renuméroter les chaînes, les renommer et changer leur logo. Pratique pour retrouver la numérotation habituelle d’une box opérateur.
+
+## Les fonctions Premium
+
+TiviMate est gratuit pour regarder les chaînes. La version **Premium**, proposée sous forme d’abonnement ou d’achat définitif selon les offres de l’éditeur, débloque notamment :
+
+- l’**enregistrement** des programmes, immédiat ou programmé depuis le guide ;
+- les **rappels** avant le début d’une émission ;
+- la gestion de **plusieurs playlists** ;
+- le **replay** (catch-up) sur les chaînes compatibles ;
+- la personnalisation avancée : renommage, numérotation, logos, apparence ;
+- la reprise de lecture et l’historique.
+
+Le paiement de TiviMate Premium revient à l’éditeur de l’application ; il est indépendant de votre abonnement {brand}.
+
+## Réglages pour une lecture parfaite
+
+- **Lecteur vidéo** : dans Paramètres, puis Lecture, essayez les différents décodeurs si une chaîne saccade. Le décodage **matériel** est généralement le plus efficace.
+- **Mémoire tampon** : augmentez-la légèrement si votre connexion est irrégulière.
+- **Adapter la fréquence d’images** : activez l’option correspondante si votre appareil la propose, pour un sport plus fluide.
+- **Lancement automatique** : choisissez d’ouvrir TiviMate au démarrage de la box et de reprendre la dernière chaîne regardée.
+
+Si les coupures persistent, la cause est souvent le réseau : consultez notre guide [panne IPTV]({R}panne-iptv/). Sur Fire TV, appliquez aussi nos [astuces pour un Fire TV Stick fluide]({R}iptv-fire-stick/).
+
+## Utiliser le replay et l’enregistrement
+
+Les chaînes compatibles affichent une petite icône d’horloge. Dans le guide, revenez en arrière sur la ligne de la chaîne et sélectionnez une émission déjà diffusée : elle démarre depuis le début. Pour enregistrer, sélectionnez une émission future dans le guide et choisissez **Enregistrer**. Les enregistrements sont stockés sur l’appareil ou sur une clé USB, selon votre configuration.
+
+## Les raccourcis à connaître
+
+- **Flèches haut et bas** pendant la lecture : chaîne suivante ou précédente.
+- **OK** pendant la lecture : liste des chaînes du groupe.
+- **Flèche gauche** : accès rapide aux groupes et au menu.
+- **Appui long sur OK** : menu de la chaîne (favoris, guide, enregistrement).
+- **Bouton Retour deux fois** : dernière chaîne regardée.
+
+Q: TiviMate est-il gratuit ?
+R: Oui pour regarder les chaînes. Les fonctions avancées comme l’enregistrement, les rappels ou plusieurs playlists nécessitent la version Premium.
+
+Q: Puis-je utiliser TiviMate sur mon iPhone ?
+R: Non. Sur iPhone et iPad, utilisez IPTV Smarters Player Lite ou GSE Smart IPTV ; voir notre guide [IPTV sur iPhone et Apple TV]({R}installer-iptv-ios/).
+
+Q: Mes favoris sont-ils conservés après une mise à jour ?
+R: Oui, une mise à jour installée par-dessus l’ancienne version conserve vos playlists, favoris et réglages. TiviMate Premium permet aussi de sauvegarder la configuration.

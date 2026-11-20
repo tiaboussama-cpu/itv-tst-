@@ -1,0 +1,101 @@
+## IPTV Smarters Pro en bref
+
+IPTV Smarters Pro est l’une des applications IPTV les plus connues. Son interface en grandes tuiles sépare clairement le **direct**, les **films**, les **séries** et le **replay**, ce qui la rend très accessible aux débutants. Elle est disponible sur de nombreuses plateformes : smartphones et tablettes Android, box Android, Fire TV, certaines Smart TV, ordinateurs Windows et, sous le nom **IPTV Smarters Player Lite**, sur iPhone et iPad.
+
+Comme tous les lecteurs IPTV, Smarters ne fournit aucun contenu : il affiche l’abonnement que vous lui indiquez. Si vous comparez encore les lecteurs, notre article sur les [meilleures applications IPTV]({R}meilleures-applications-iptv/) vous aidera à choisir.
+
+## Installation
+
+### Sur Android (smartphone, tablette, box)
+
+Recherchez **IPTV Smarters Pro** dans le Google Play Store et installez-la. Si elle n’apparaît pas sur votre appareil, nous vous envoyons un lien d’installation fiable. Les détails sont dans notre guide [installer l’IPTV sur Android]({R}installer-iptv-android/).
+
+### Sur Fire TV Stick
+
+Installez Smarters avec l’application Downloader après avoir activé les options pour les développeurs : toutes les étapes sont dans [installer l’IPTV sur Fire TV Stick]({R}installer-iptv-fire-tv/).
+
+### Sur iPhone et iPad
+
+Recherchez **IPTV Smarters Player Lite** dans l’App Store. La configuration est identique. Voir notre guide [IPTV sur iPhone, iPad et Apple TV]({R}installer-iptv-ios/).
+
+### Sur Smart TV
+
+Sur certaines Smart TV Samsung et LG, Smarters est proposé dans la boutique d’applications. Sa disponibilité varie selon les pays et les modèles ; notre guide [installer l’IPTV sur Smart TV]({R}installer-iptv-smart-tv/) présente les alternatives.
+
+## Connexion avec Xtream Codes
+
+1. Ouvrez l’application et acceptez les conditions d’utilisation.
+2. Choisissez **Login with Xtream Codes API**.
+3. Remplissez les quatre champs décrits ci-dessous.
+4. Touchez **Add User** : l’application télécharge les chaînes, les films, les séries et le guide.
+
+Les champs à remplir :
+
+- **Any Name** : un nom libre, par exemple « {brand} » ;
+- **Username** : votre nom d’utilisateur ;
+- **Password** : votre mot de passe ;
+- **URL** : l’adresse du serveur, avec http:// ou https:// et le port éventuel.
+
+> Sur smartphone, copiez-collez vos identifiants depuis WhatsApp plutôt que de les retaper : vous éviterez la plupart des erreurs de connexion.
+
+### Et avec un lien M3U ?
+
+Choisissez **Load Your Playlist or File/URL**, sélectionnez **M3U URL**, puis collez le lien reçu. La méthode Xtream Codes reste préférable, car elle charge mieux le guide des programmes et les catégories.
+
+## Découvrir l’interface
+
+- **Live TV** : les chaînes en direct, classées par catégories. Sélectionnez une catégorie, puis une chaîne.
+- **Movies** et **Series** : la vidéo à la demande, avec affiches, résumés et reprise de lecture.
+- **Catch Up** : le replay des chaînes compatibles.
+- **EPG** : le guide des programmes en grille.
+- **Settings** : les réglages du lecteur, du format d’heure, du contrôle parental et de l’EPG.
+
+## Les réglages recommandés
+
+### Le lecteur vidéo
+
+Dans **Settings**, puis **Player Selection**, vous pouvez choisir le lecteur utilisé pour le direct, les films et les séries. Si une chaîne saccade ou affiche un écran noir, essayez un autre lecteur : selon l’appareil, l’un ou l’autre gère mieux certains formats.
+
+### Le guide des programmes
+
+Dans les réglages EPG, lancez une **mise à jour** si le guide est vide et vérifiez le **fuseau horaire**. Le premier chargement peut prendre quelques minutes.
+
+### Le contrôle parental
+
+Dans **Settings**, puis **Parental Control**, définissez un code et verrouillez les catégories de votre choix. Indispensable si des enfants utilisent l’appareil.
+
+### Le format de l’heure et l’apparence
+
+Passez l’heure au format 24 heures et choisissez la disposition qui vous convient. Ces détails rendent l’utilisation quotidienne plus agréable.
+
+## Astuces pour une lecture fluide
+
+- Branchez les box et les télés en **Ethernet** si possible.
+- Fermez les autres applications sur les appareils peu puissants.
+- Videz le **cache** de l’application de temps en temps depuis les réglages Android.
+- En 4G ou 5G, choisissez les versions HD plutôt que 4K pour économiser vos données.
+
+Si les coupures persistent malgré tout, consultez notre guide [panne IPTV]({R}panne-iptv/) : il passe en revue toutes les causes possibles, du Wi-Fi à l’appareil.
+
+## Erreurs fréquentes
+
+### « Invalid username or password »
+
+Vérifiez chaque caractère, les majuscules et les espaces. Copiez-collez vos identifiants depuis le message reçu.
+
+### « No internet connection » alors que le réseau fonctionne
+
+L’adresse du serveur est probablement mal saisie : vérifiez le préfixe http:// et le port.
+
+### L’application se ferme au lancement
+
+Mettez-la à jour, videz le cache, puis redémarrez l’appareil. Sur une ancienne box, une autre application comme TiviMate peut être plus stable : voir notre [guide TiviMate]({R}guide-tivimate/).
+
+Q: IPTV Smarters Pro est-elle gratuite ?
+R: Oui, l’application est gratuite. Certaines versions proposent des options payantes, mais elles ne sont pas nécessaires pour regarder votre abonnement.
+
+Q: Smarters ou TiviMate : lequel choisir ?
+R: TiviMate est plus confortable sur une télé avec télécommande, notamment pour le direct. Smarters est plus simple et disponible sur davantage d’appareils, dont l’iPhone.
+
+Q: Puis-je ajouter plusieurs comptes ?
+R: Oui. L’écran de sélection des utilisateurs permet d’enregistrer plusieurs profils et de passer de l’un à l’autre.

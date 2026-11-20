@@ -1,0 +1,70 @@
+## Pourquoi une box Android pour l’IPTV ?
+
+Une box Android branchée en HDMI transforme n’importe quel téléviseur en écran IPTV complet. Elle donne accès aux meilleurs lecteurs, dont **TiviMate**, souvent à un port Ethernet, et à toutes les applications de streaming. C’est la solution la plus polyvalente, à condition de bien choisir son modèle : entre une box certifiée et une box générique à bas prix, l’écart de qualité est énorme.
+
+Ce guide vous aide à choisir la bonne box, puis à la préparer correctement avant d’installer votre application IPTV. Pour l’installation de l’application elle-même, suivez ensuite notre guide [installer l’IPTV sur Android]({R}installer-iptv-android/).
+
+## Box certifiée ou box générique ?
+
+C’est le premier critère, et le plus important.
+
+- Une box **certifiée Android TV ou Google TV** (Nvidia Shield, Xiaomi Mi Box, Chromecast avec Google TV, box d’opérateurs, etc.) dispose du vrai Google Play Store, d’une interface pensée pour la télécommande, de mises à jour de sécurité et d’une bonne compatibilité avec les applications.
+- Une box **générique** vendue à très bas prix utilise souvent une version d’Android pour tablette. L’interface est mal adaptée à la télécommande, les mises à jour sont rares ou inexistantes, la puissance annoncée est parfois exagérée et certaines sont livrées avec des applications douteuses.
+
+Pour l’IPTV, une box certifiée est presque toujours le meilleur investissement, même si elle coûte un peu plus cher.
+
+## Les caractéristiques à vérifier
+
+- **Mémoire vive (RAM)** : 2 Go minimum, 3 ou 4 Go pour une navigation vraiment fluide.
+- **Stockage** : 8 Go minimum, 16 Go ou plus si vous installez plusieurs applications ou enregistrez des programmes.
+- **Codecs** : la prise en charge du **HEVC (H.265)** est indispensable pour la 4K ; l’**AV1** est un plus sur les modèles récents.
+- **Sortie vidéo** : 4K et HDR si votre téléviseur est compatible.
+- **Réseau** : un **port Ethernet** est un vrai atout ; sinon, un Wi-Fi 5 ou 6.
+- **Ports USB** : utiles pour un adaptateur Ethernet, une clé USB d’enregistrement ou un clavier.
+- **Télécommande** : idéalement avec boutons de navigation clairs et télécommande vocale.
+
+Pour comparer la box Android aux autres solutions (Fire TV, Apple TV, MAG), consultez notre comparatif [quel boîtier IPTV choisir]({R}boitier-iptv/).
+
+## Préparer votre box avant d’installer l’IPTV
+
+### 1. Brancher correctement
+
+Branchez la box sur un port HDMI du téléviseur, de préférence un port compatible 4K/HDR si vous en avez un. Reliez-la à la box internet par un **câble Ethernet** si possible, puis branchez l’alimentation fournie : une alimentation trop faible provoque des redémarrages aléatoires.
+
+### 2. Mettre à jour le système
+
+Avant toute chose, ouvrez **Paramètres**, puis **Préférences de l’appareil**, puis **À propos**, puis **Mise à jour du système**. Installez toutes les mises à jour proposées, puis mettez à jour les applications depuis le Play Store.
+
+### 3. Régler l’affichage
+
+Dans **Paramètres**, puis **Affichage et son**, choisissez la résolution de votre téléviseur et activez, si l’option existe, l’**adaptation de la fréquence d’images**. Le sport et les films seront plus fluides.
+
+### 4. Faire le ménage
+
+Les box arrivent parfois avec des applications préinstallées inutiles. Désinstallez ou désactivez celles que vous n’utiliserez pas, pour libérer de la mémoire.
+
+### 5. Autoriser l’installation si nécessaire
+
+Si votre application IPTV n’est pas disponible sur le Play Store, installez **Downloader** et autorisez-le dans les paramètres de sécurité, comme expliqué dans [installer l’IPTV sur Android]({R}installer-iptv-android/).
+
+## Installer et configurer l’application IPTV
+
+Sur une box Android TV, nous recommandons **TiviMate** pour son interface proche d’une box opérateur. L’installation se fait depuis le Play Store, puis vous ajoutez vos identifiants {brand} en Xtream Codes. Toutes les étapes et les réglages avancés sont dans notre [guide TiviMate]({R}guide-tivimate/). Si vous préférez une interface en tuiles, **IPTV Smarters Pro** est aussi un bon choix : voir notre [guide IPTV Smarters Pro]({R}iptv-smarters-pro/).
+
+## Garder votre box rapide
+
+- **Redémarrez-la régulièrement**, surtout si elle reste allumée en permanence.
+- **Videz le cache** de l’application IPTV de temps en temps.
+- **Évitez d’installer trop d’applications** sur les modèles à 8 Go.
+- **Laissez de l’air autour** : une box qui chauffe ralentit. Évitez de l’enfermer dans un meuble sans ventilation.
+
+En cas de coupures, notre guide [panne IPTV]({R}panne-iptv/) vous aide à trouver la cause.
+
+Q: Une box Android à 30 euros suffit-elle ?
+R: Elle peut fonctionner, mais elle sera souvent lente, rarement mise à jour et limitée sur les applications. Une box certifiée Android TV ou Google TV offre une bien meilleure expérience pour un surcoût modéré.
+
+Q: Box Android ou Fire TV Stick ?
+R: Le Fire TV Stick est plus compact et moins cher ; la box Android offre souvent un port Ethernet, plus de ports et plus de liberté. Les deux font tourner TiviMate.
+
+Q: Puis-je enregistrer des programmes avec une box Android ?
+R: Oui, avec TiviMate Premium par exemple. Prévoyez un stockage suffisant ou une clé USB.

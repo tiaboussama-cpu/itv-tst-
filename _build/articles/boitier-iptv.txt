@@ -1,0 +1,85 @@
+## Faut-il vraiment un boîtier pour l’IPTV ?
+
+Pas forcément. Si votre téléviseur est une Smart TV récente, une application installée directement dessus peut suffire : c’est ce que nous expliquons dans notre guide [installer l’IPTV sur Smart TV]({R}installer-iptv-smart-tv/). Un boîtier devient pourtant intéressant dans plusieurs cas :
+
+- votre téléviseur n’est **pas connecté**, ou il est trop ancien pour recevoir les applications récentes ;
+- votre Smart TV est **lente**, se fige ou ferme les applications ;
+- l’application que vous voulez, comme **TiviMate**, n’existe pas sur le système de votre télé ;
+- vous voulez une **connexion Ethernet** alors que votre télé n’en a pas, ou un Wi-Fi plus performant ;
+- vous souhaitez un appareil **transportable** pour les vacances.
+
+Un boîtier coûte entre 40 et 200 euros selon le modèle, et il est généralement beaucoup plus fluide que les applications intégrées aux téléviseurs.
+
+## Les critères qui comptent vraiment
+
+Avant de comparer les modèles, voici ce qui fait la différence pour l’IPTV :
+
+- **La puissance et la mémoire vive** : au moins 2 Go de RAM pour une navigation fluide dans un guide de milliers de chaînes.
+- **Le stockage** : 8 Go minimum, 16 Go ou plus pour être tranquille avec plusieurs applications.
+- **Les codecs vidéo** : la prise en charge du **HEVC (H.265)** est indispensable pour la 4K et utile pour la Full HD à faible débit.
+- **Le réseau** : un port **Ethernet** ou au moins un **Wi-Fi 5 ou 6** de bonne qualité.
+- **Le système** : un système certifié et mis à jour (Android TV, Google TV, Fire OS, tvOS) donne accès aux meilleures applications et aux correctifs de sécurité.
+- **La télécommande** : simple, avec des touches de navigation claires, et si possible un bouton de raccourci personnalisable.
+
+## Amazon Fire TV Stick : le meilleur rapport qualité-prix
+
+Le **Fire TV Stick 4K** et le **Fire TV Stick 4K Max** sont les appareils les plus utilisés pour l’IPTV. Ils se branchent directement sur un port HDMI, se pilotent avec une télécommande vocale et donnent accès à TiviMate et IPTV Smarters. Le **Fire TV Cube**, plus puissant, ajoute un port Ethernet intégré.
+
+- **Pour** : prix contenu, très bonne fluidité, 4K HDR, format compact et transportable.
+- **Contre** : Wi-Fi uniquement sur les Sticks (adaptateur Ethernet en option), installation des applications un peu plus technique ; certains modèles récents sous Vega OS limitent les applications à l’Appstore.
+
+Suivez notre guide [installer l’IPTV sur Fire TV Stick]({R}installer-iptv-fire-tv/), puis nos [astuces pour un Fire TV Stick fluide]({R}iptv-fire-stick/).
+
+## Box Android TV et Google TV : la plus polyvalente
+
+Les box certifiées **Android TV** ou **Google TV** (Nvidia Shield, Xiaomi Mi Box, Chromecast avec Google TV, etc.) donnent accès au Google Play Store et à toutes les applications IPTV, y compris TiviMate. Elles servent aussi pour YouTube, les plateformes de streaming et les jeux.
+
+- **Pour** : grand choix d’applications, souvent un port Ethernet, mises à jour régulières sur les modèles certifiés.
+- **Contre** : qualité très variable sur les box génériques non certifiées, qu’il vaut mieux éviter.
+
+Notre guide [box Android IPTV : bien la choisir et la préparer]({R}iptv-android-box/) détaille les points à vérifier, et [installer l’IPTV sur Android]({R}installer-iptv-android/) explique l’installation des applications.
+
+## Apple TV 4K : le haut de gamme
+
+L’**Apple TV 4K** est l’appareil le plus fluide et le plus soigné. Son interface est rapide, sa télécommande précise et sa qualité d’image excellente, avec un réglage automatique de la fréquence d’images qui rend le sport particulièrement net.
+
+- **Pour** : fluidité, qualité d’image, durée de vie, port Ethernet sur certains modèles, intégration avec l’iPhone.
+- **Contre** : prix plus élevé, applications limitées à l’App Store (pas de TiviMate).
+
+Toutes les étapes sont dans notre guide [IPTV sur iPhone, iPad et Apple TV]({R}installer-iptv-ios/).
+
+## Boîtier MAG : la simplicité d’une box opérateur
+
+Les boîtiers **MAG** d’Infomir sont conçus uniquement pour l’IPTV. Il n’y a pas d’application à installer : le boîtier se connecte à un portail qui affiche directement vos chaînes, avec une télécommande dédiée.
+
+- **Pour** : extrême simplicité au quotidien, robustesse, idéal pour un parent ou une résidence secondaire.
+- **Contre** : pas d’autres applications (YouTube, streaming), interface dépendante du portail.
+
+La configuration est expliquée dans notre guide [configurer l’IPTV sur un boîtier MAG]({R}installer-iptv-mag/).
+
+## Comparatif des boîtiers IPTV
+
+<table><tr><th>Boîtier</th><th>Prix indicatif</th><th>Atout principal</th><th>Pour qui ?</th></tr><tr><td>Fire TV Stick 4K / 4K Max</td><td>40–70 €</td><td>Rapport qualité-prix</td><td>La plupart des foyers</td></tr><tr><td>Fire TV Cube</td><td>130–150 €</td><td>Puissance et Ethernet</td><td>Les exigeants</td></tr><tr><td>Box Android TV / Google TV</td><td>50–200 €</td><td>Polyvalence, TiviMate</td><td>Ceux qui veulent tout faire</td></tr><tr><td>Apple TV 4K</td><td>150–200 €</td><td>Fluidité, qualité d’image</td><td>Les utilisateurs Apple</td></tr><tr><td>Boîtier MAG</td><td>60–150 €</td><td>Simplicité</td><td>La télé sans prise de tête</td></tr></table>
+
+Les prix sont indicatifs et varient selon les promotions et les générations de produits.
+
+## Notre recommandation
+
+Pour la grande majorité des foyers, un **Fire TV Stick 4K Max** ou une **box Google TV** récente offre le meilleur équilibre entre prix, fluidité et compatibilité avec TiviMate. Choisissez l’**Apple TV 4K** si vous êtes déjà équipé Apple et voulez le meilleur confort, et un **boîtier MAG** si la priorité absolue est la simplicité.
+
+Quel que soit votre choix, branchez l’appareil en **Ethernet** si possible : c’est le réglage qui améliore le plus la stabilité. Et avant d’acheter, profitez de notre [essai gratuit de 24 heures]({R}essai-gratuit/) sur l’appareil que vous avez déjà : vous verrez s’il suffit.
+
+## Les erreurs à éviter
+
+- **Les box génériques à très bas prix** : souvent sous-dimensionnées, rarement mises à jour, parfois livrées avec des applications douteuses.
+- **Acheter sans vérifier le HEVC** si vous visez la 4K.
+- **Négliger le réseau** : le meilleur boîtier du monde coupera avec un Wi-Fi faible. Notre guide [panne IPTV]({R}panne-iptv/) explique comment améliorer votre connexion.
+
+Q: Un boîtier améliore-t-il la qualité d’image ?
+R: Il n’améliore pas la source, mais il la décode souvent mieux et plus vite qu’une Smart TV ancienne. Le résultat est une image plus stable, un zapping plus rapide et moins de coupures.
+
+Q: Puis-je utiliser un boîtier sur plusieurs téléviseurs ?
+R: Oui, il suffit de le débrancher et de le brancher sur un autre téléviseur. Un Fire TV Stick tient même dans une poche et vous suit en vacances.
+
+Q: Quel boîtier pour la 4K ?
+R: Fire TV Stick 4K Max, Fire TV Cube, box Google TV récente, Apple TV 4K ou boîtier MAG de la série 4xx ou 5xx. Vérifiez la prise en charge du HEVC et prévoyez au moins 40 Mb/s de connexion.

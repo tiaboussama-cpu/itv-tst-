@@ -99,14 +99,14 @@ GUIDES = [
      "Comment fonctionne la télévision par internet, ce qu’il faut pour la regarder et en quoi elle diffère du satellite ou de la box."),
     ("meilleures-applications-iptv", "Les meilleures applications IPTV en 2026", "Applications", "play",
      "TiviMate, IPTV Smarters, IBO Player et les autres : quelle application choisir selon votre appareil."),
-    ("iptv-android-box", "Installer l’IPTV sur une box Android", "Installation", "box",
-     "Le pas-à-pas complet pour configurer une box Android et ajouter vos identifiants en quelques minutes."),
+    ("iptv-android-box", "Box Android IPTV : bien la choisir et la préparer", "Matériel", "box",
+     "Certification, mémoire, codecs, réseau : comment choisir une box Android pour l’IPTV, puis la préparer avant d’installer votre application."),
     ("guide-tivimate", "Guide TiviMate : installation et configuration", "Applications", "monitor",
      "Ajouter une playlist, régler l’EPG, créer des favoris et profiter des fonctions Premium de TiviMate."),
     ("iptv-smarters-pro", "IPTV Smarters Pro : installer et configurer", "Applications", "phone",
      "Connexion Xtream Codes, réglages du lecteur et astuces pour une lecture fluide sur IPTV Smarters Pro."),
-    ("iptv-fire-stick", "IPTV sur Amazon Fire TV Stick", "Installation", "stick",
-     "Activer les sources inconnues, installer Downloader et votre application IPTV sur Fire Stick."),
+    ("iptv-fire-stick", "Fire TV Stick et IPTV : astuces pour une lecture fluide", "Optimisation", "stick",
+     "Mémoire, réseau, réglages cachés et bonnes habitudes : comment rendre votre Fire TV Stick rapide et stable pour l’IPTV."),
     ("panne-iptv", "Panne IPTV : résoudre les coupures et le buffering", "Dépannage", "wrench",
      "Les causes les plus fréquentes des coupures et la méthode pour les corriger soi-même."),
     ("boitier-iptv", "Quel boîtier IPTV choisir en 2026 ?", "Matériel", "box",
@@ -298,7 +298,7 @@ def page(path, title, desc, body, active="", depth=None):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=9">
+<link rel="stylesheet" href="{r}style.css?v=10">
 </head>
 <body id="top">
 {header(r, active)}
@@ -492,8 +492,8 @@ def build_home():
 <section class="section" id="appareils">
   <div class="wrap split rev">
     <div class="dev-icons">
-      <div>{ico("tv")}Smart TV</div><div>{ico("stick")}Fire TV Stick</div><div>{ico("box")}Box Android</div><div>{ico("apple")}Apple TV</div>
-      <div>{ico("phone")}Smartphone</div><div>{ico("laptop")}PC &amp; Mac</div><div>{ico("box")}Boîtier MAG</div><div>{ico("play")}Kodi</div>
+      <a href="{{R}}installer-iptv-smart-tv/">{ico("tv")}Smart TV</a><a href="{{R}}installer-iptv-fire-tv/">{ico("stick")}Fire TV Stick</a><a href="{{R}}iptv-android-box/">{ico("box")}Box Android</a><a href="{{R}}installer-iptv-ios/">{ico("apple")}Apple TV</a>
+      <a href="{{R}}installer-iptv-android/">{ico("phone")}Smartphone</a><a href="{{R}}meilleures-applications-iptv/">{ico("laptop")}PC &amp; Mac</a><a href="{{R}}installer-iptv-mag/">{ico("box")}Boîtier MAG</a><a href="{{R}}meilleures-applications-iptv/">{ico("play")}Kodi</a>
     </div>
     <div class="split-text">
       <h2 class="h-md">Sur quels appareils fonctionne l’IPTV ?</h2>
@@ -534,6 +534,8 @@ def build_home():
     <div><h2>Quelle est la meilleure application IPTV sur Android ?</h2><p>TiviMate est souvent considérée comme la plus complète sur Android TV, tandis qu’IPTV Smarters Pro est simple à prendre en main. Comparez-les dans notre guide des <a href="{{R}}meilleures-applications-iptv/">meilleures applications IPTV</a>.</p></div>
     <div><h2>Quel boîtier IPTV choisir en 2026 ?</h2><p>Fire TV Stick 4K, box Android, Apple TV ou boîtier MAG : chacun a ses avantages selon votre budget et votre télé. Notre <a href="{{R}}boitier-iptv/">comparatif des boîtiers</a> vous aide à trancher.</p></div>
     <div><h2>Que faire en cas de panne IPTV ?</h2><p>Une coupure vient le plus souvent de la connexion, du Wi-Fi ou du cache de l’application. Redémarrez votre appareil, passez en Ethernet si possible et suivez notre guide <a href="{{R}}panne-iptv/">panne IPTV</a>. Le support reste joignable 24/7.</p></div>
+    <div><h2>L’IPTV partout en France</h2><p>{SITE["brand"]} fonctionne dans toute la France, en fibre comme en ADSL, et vous suit en déplacement. Découvrez nos pages dédiées à l’<a href="{{R}}iptv-paris/">IPTV à Paris</a>, à l’<a href="{{R}}iptv-lyon/">IPTV à Lyon</a> et à l’<a href="{{R}}iptv-marseille/">IPTV à Marseille</a>.</p></div>
+    <div><h2>Optimiser son appareil pour l’IPTV</h2><p>Un appareil bien réglé fait toute la différence : consultez nos <a href="{{R}}iptv-fire-stick/">astuces pour un Fire TV Stick fluide</a>, notre guide pour <a href="{{R}}iptv-android-box/">bien choisir sa box Android</a> et les réglages de <a href="{{R}}guide-tivimate/">TiviMate</a> et d’<a href="{{R}}iptv-smarters-pro/">IPTV Smarters Pro</a>.</p></div>
   </div>
 </section>
 
@@ -625,6 +627,9 @@ def parse_guide(text):
             faq_items.append((q, _inline(line[3:]))); q = None
         elif line.startswith("> "):
             flush(); buf.append(f'<div class="callout">{_inline(line[2:])}</div>')
+        elif line.startswith("<"):
+            # HTML brut (tableaux) : copié tel quel, {brand}/{R} remplacés
+            flush(); buf.append(line.replace("{brand}", SITE["brand"]))
         elif line.startswith("- "):
             if para or ol: flush()
             ul.append(line[2:])
@@ -639,21 +644,72 @@ def parse_guide(text):
     close()
     return sections, faq_items
 
+TRIAL_ARTICLE = ("essai-gratuit", "Essai IPTV gratuit sans risque", "Essai", "essai-gratuit-iptv.jpg",
+                 "Comment tester l’IPTV pendant 24 heures, ce qu’il faut vérifier et comment choisir ensuite la bonne formule.")
+
+def article_meta(slug):
+    """slug -> (titre court, catégorie, image, résumé) pour tous les articles du blog."""
+    if slug == TRIAL_ARTICLE[0]:
+        return TRIAL_ARTICLE[1:]
+    for s, title, cat, icon, summary in GUIDES:
+        if s == slug:
+            return title, cat, GUIDE_IMAGES.get(s), summary
+    for s, label, icon, h1, short, image, summary in DEVICE_GUIDES:
+        if s == slug:
+            return short, f"Installation · {label}", image, summary
+    raise KeyError(slug)
+
+# Maillage interne : 3 articles liés par page (affichés en fin d’article).
+RELATED = {
+    "essai-gratuit": ["qu-est-ce-que-iptv", "meilleures-applications-iptv", "panne-iptv"],
+    "qu-est-ce-que-iptv": ["meilleures-applications-iptv", "boitier-iptv", "essai-gratuit"],
+    "meilleures-applications-iptv": ["guide-tivimate", "iptv-smarters-pro", "installer-iptv-smart-tv"],
+    "iptv-android-box": ["installer-iptv-android", "guide-tivimate", "boitier-iptv"],
+    "guide-tivimate": ["installer-iptv-fire-tv", "iptv-android-box", "meilleures-applications-iptv"],
+    "iptv-smarters-pro": ["installer-iptv-ios", "installer-iptv-android", "meilleures-applications-iptv"],
+    "iptv-fire-stick": ["installer-iptv-fire-tv", "guide-tivimate", "panne-iptv"],
+    "panne-iptv": ["iptv-fire-stick", "boitier-iptv", "qu-est-ce-que-iptv"],
+    "boitier-iptv": ["iptv-android-box", "installer-iptv-mag", "iptv-fire-stick"],
+    "installer-iptv-smart-tv": ["meilleures-applications-iptv", "boitier-iptv", "panne-iptv"],
+    "installer-iptv-fire-tv": ["iptv-fire-stick", "guide-tivimate", "panne-iptv"],
+    "installer-iptv-android": ["iptv-android-box", "guide-tivimate", "iptv-smarters-pro"],
+    "installer-iptv-ios": ["iptv-smarters-pro", "meilleures-applications-iptv", "essai-gratuit"],
+    "installer-iptv-mag": ["boitier-iptv", "panne-iptv", "qu-est-ce-que-iptv"],
+}
+
+def related_block(slug):
+    cards = []
+    for s in RELATED.get(slug, []):
+        title, cat, image, summary = article_meta(s)
+        thumb = f'<div class="g-img">{img(image, "thumb-img")}</div>' if image else ""
+        cards.append(f'<a class="post" href="{{R}}{s}/">{thumb}<div class="p-body"><span class="p-cat">{cat}</span>'
+                     f'<h3>{title}</h3><p>{summary}</p></div></a>')
+    if not cards:
+        return ""
+    return f'<div class="related"><h2 class="h-md">À lire aussi</h2><div class="post-grid related-grid">{"".join(cards)}</div></div>'
+
+def device_sidebar(slug):
+    items = "".join(f'<li><a href="{{R}}{s}/">{ico(icon)}{label}</a></li>'
+                    for s, label, icon, *_ in DEVICE_GUIDES if s != slug)
+    return f'<div class="toc-devices"><h4>Guides par appareil</h4><ul>{items}</ul></div>'
+
+def build_txt_article(slug, kicker, h1, summary, image, folder):
+    sections, faq_items = parse_guide((Path(__file__).resolve().parent / folder / f"{slug}.txt").read_text(encoding="utf-8"))
+    words = sum(len(_re_words(x)) for _, x in sections) + sum(len(_re_words(q + " " + a)) for q, a in faq_items)
+    mins = max(4, round(words / 220))
+    article(f"{slug}/index.html", kicker, h1, summary, sections,
+            faq_items=faq_items or None, read=f"{mins} min", image=image, slug=slug)
+    print(f"   article {slug}: {words} mots")
+
 def build_device_guides():
-    folder = Path(__file__).resolve().parent / "appareils"
     for slug, label, icon, h1, short, image, summary in DEVICE_GUIDES:
-        sections, faq_items = parse_guide((folder / f"{slug}.txt").read_text(encoding="utf-8"))
-        words = sum(len(_re_words(x)) for _, x in sections) + sum(len(_re_words(q + " " + a)) for q, a in faq_items)
-        mins = max(5, round(words / 220))
-        article(f"{slug}/index.html", f"Installation {label}", h1, summary, sections,
-                faq_items=faq_items or None, read=f"{mins} min", image=image)
-        print(f"   guide {slug}: {words} mots")
+        build_txt_article(slug, f"Installation {label}", h1, summary, image, "appareils")
 
 def _re_words(htm):
     import re as _re
     return _re.sub(r"<[^>]+>", " ", htm).split()
 
-def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min", crumb="Blog", active="Blog", image=None):
+def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min", crumb="Blog", active="Blog", image=None, slug=None):
     toc_items = [(f"s{i}", s[0]) for i, s in enumerate(sections, 1)]
     if faq_items:
         toc_items.append(("faq", "Questions fréquentes"))
@@ -667,6 +723,8 @@ def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min"
         <p>Essai gratuit de 24 heures, activation rapide et support 24/7 sur WhatsApp.</p>
         <a class="btn btn-white" href="#" {wa_attr(msg_trial())}>Demander mon essai</a>
       </div>"""
+    if slug:
+        content += related_block(slug)
     body = f"""
 <section class="page-hero">
   <div class="wrap">
@@ -683,6 +741,7 @@ def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min"
       <aside class="toc">
         <h4>Sommaire</h4>
         <ol>{toc}</ol>
+        {device_sidebar(slug) if slug else ""}
         <div class="cta-box"><p>Envie d’essayer ? Essai gratuit 24 h, sans engagement.</p><a class="btn btn-red btn-sm" href="{{R}}index.html#offres">Voir les offres</a></div>
       </aside>
     </div>
@@ -702,21 +761,10 @@ def OL(*items):
 
 # ---------------------------------------------------------------- pages
 def build_trial():
-    article("essai-gratuit/index.html", "Essai IPTV gratuit",
-            'Essai IPTV <span class="red">gratuit</span><br>sans risque',
-            f"Vous voulez savoir si l’IPTV vous convient avant de payer ? Avec un essai de 24 heures, vous testez la qualité, la stabilité et les chaînes sur votre propre connexion. {SITE['brand']} propose un essai complet, sans carte bancaire.",
-            [
-                ("Qu’est-ce qu’un essai IPTV ?", P("Un essai IPTV est un accès temporaire au service, identique à l’abonnement payant. Pendant 24 heures, vous profitez des chaînes en direct, du catalogue VOD et du guide des programmes.", "C’est le meilleur moyen de vérifier que le service fonctionne bien chez vous, avec votre connexion et votre appareil.")),
-                ("Comment fonctionne le test ?", OL("Envoyez-nous un message sur WhatsApp en indiquant votre appareil.", "Recevez vos identifiants d’essai en quelques minutes.", "Installez l’application conseillée et connectez-vous.", "Testez pendant 24 heures, puis choisissez une formule si vous êtes satisfait.")),
-                ("Avantages et limites d’un essai", '<div class="pros-cons"><div><h4>✓ Avantages</h4>' + UL("Aucun paiement demandé", "Test sur votre propre connexion", "Accès complet aux chaînes et à la VOD", "Aide à l’installation incluse") + '</div><div><h4>✗ Limites</h4>' + UL("Durée limitée à 24 heures", "Un essai par personne", "Une seule connexion à la fois") + "</div></div>"),
-                ("Que vérifier pendant l’essai ?", UL("La rapidité de démarrage des chaînes", "La stabilité pendant un match en direct", "La qualité d’image en Full HD et en 4K", "Le bon fonctionnement du guide des programmes (EPG)", "La réactivité du support sur WhatsApp")),
-                ("Conseils pour bien tester", "<h3>Testez sur votre appareil principal</h3>" + P("Faites l’essai sur la télé ou la box que vous utiliserez au quotidien. Les performances varient d’un appareil à l’autre.") + "<h3>Testez aux heures de pointe</h3>" + P("Regardez une chaîne en soirée ou pendant un grand match : c’est là que la stabilité d’un service se voit.") + "<h3>Privilégiez le câble</h3>" + P("Si votre appareil le permet, branchez-le en Ethernet. Vous jugerez le service, pas votre Wi-Fi.")),
-            ],
-            faq_items=[
-                ("L’essai est-il vraiment gratuit ?", "Oui. Aucun paiement ni aucune carte bancaire ne sont demandés pour l’essai de 24 heures."),
-                ("L’essai se transforme-t-il en abonnement payant ?", "Non. À la fin des 24 heures, l’accès s’arrête simplement. Vous choisissez ensuite une formule si vous le souhaitez."),
-                ("Puis-je tester sur plusieurs appareils ?", "L’essai permet une connexion à la fois, mais vous pouvez changer d’appareil pendant la période de test."),
-            ], crumb="Blog", active="", image="essai-gratuit-iptv.jpg")
+    slug, title, cat, image, summary = TRIAL_ARTICLE
+    build_txt_article(slug, "Essai IPTV gratuit", 'Essai IPTV <span class="red">gratuit</span><br>sans risque',
+                      f"Vous voulez savoir si l’IPTV vous convient avant de payer ? Avec un essai de 24 heures, vous testez la qualité, la stabilité et les chaînes sur votre propre connexion, avec l’aide du support {SITE['brand']}.",
+                      image, "articles")
 
 def device_cards(r="{R}"):
     return "".join(
@@ -772,7 +820,7 @@ def build_contact():
           <div class="hours"><div><span>Lundi – vendredi</span><span>24 h/24</span></div><div><span>Samedi – dimanche</span><span>24 h/24</span></div><div><span>Jours fériés</span><span>24 h/24</span></div></div>
         </div>
         <div class="side-box"><h2>Déjà une réponse ?</h2>
-          <p style="font-size:13px">Consultez notre <a class="red" href="{{R}}index.html#faq">FAQ</a> ou nos <a class="red" href="{{R}}blog/">guides d’installation</a>.</p>
+          <p style="font-size:13px">Consultez notre <a class="red" href="{{R}}index.html#faq">FAQ</a>, nos <a class="red" href="{{R}}blog/">guides d’installation</a> ou notre guide <a class="red" href="{{R}}panne-iptv/">panne IPTV</a>. Pour mieux nous connaître, lisez notre page <a class="red" href="{{R}}a-propos/">à propos</a>.</p>
         </div>
       </aside>
     </div>
@@ -804,63 +852,14 @@ def build_about():
     </div>
     <div class="prose" style="margin-top:50px">
       <h2>Transparence</h2>
-      {P("Le prix affiché est le prix payé. Pas de frais d’activation, pas de renouvellement automatique, et un essai gratuit de 24 heures pour juger avant de payer.", f'Une question ? <a href="{{R}}contact/">Contactez-nous</a>, nous répondons 24 h/24.')}
+      {P("Le prix affiché est le prix payé. Pas de frais d’activation, pas de renouvellement automatique, et un essai gratuit de 24 heures pour juger avant de payer.",
+         f'Nos engagements sont détaillés dans nos <a href="{{R}}conditions-generales/">conditions générales</a>, notre <a href="{{R}}remboursement/">politique de remboursement</a> et notre <a href="{{R}}confidentialite/">politique de confidentialité</a>.',
+         f'Une question ? <a href="{{R}}contact/">Contactez-nous</a>, nous répondons 24 h/24. Pour bien démarrer, consultez nos <a href="{{R}}blog/">guides d’installation</a> ou demandez un <a href="{{R}}essai-gratuit/">essai gratuit</a>.')}
     </div>
   </div>
 </section>"""
     page("a-propos/index.html", f"À propos de {SITE['brand']} | Fournisseur IPTV",
          "Qui sommes-nous : un service IPTV stable, des prix clairs et un support humain 24/7.", body, active="À propos")
-
-GUIDE_CONTENT = {
-    "qu-est-ce-que-iptv": [
-        ("Définition de l’IPTV", P("IPTV signifie Internet Protocol Television : la télévision transmise par internet. Au lieu de recevoir les chaînes par antenne, satellite ou câble, votre appareil reçoit des flux vidéo via votre connexion.", "Vous regardez ces flux dans une application IPTV, avec une interface proche de celle d’une box classique.")),
-        ("Comment fonctionne l’IPTV ?", OL("Le fournisseur reçoit et encode les chaînes.", "Les flux sont distribués par des serveurs.", "Votre application se connecte avec vos identifiants.", "La chaîne s’affiche en quelques secondes sur votre écran.")),
-        ("Ce dont vous avez besoin", UL("Une connexion internet de 10 Mb/s minimum (40 Mb/s pour la 4K)", "Un appareil compatible : Smart TV, Fire Stick, box Android, smartphone…", "Une application IPTV", "Un abonnement IPTV")),
-        ("IPTV, satellite ou box : les différences", '<table><tr><th></th><th>IPTV</th><th>Satellite</th><th>Box opérateur</th></tr><tr><td>Matériel</td><td>Aucun</td><td>Parabole + décodeur</td><td>Box</td></tr><tr><td>Multi-écrans</td><td>Oui</td><td>Limité</td><td>Limité</td></tr><tr><td>Engagement</td><td>Non</td><td>Souvent</td><td>Souvent</td></tr><tr><td>VOD incluse</td><td>Oui</td><td>En option</td><td>En option</td></tr></table>'),
-    ],
-    "meilleures-applications-iptv": [
-        ("Comment choisir une application IPTV ?", P("La bonne application dépend surtout de votre appareil. Regardez la compatibilité, la gestion de l’EPG, la rapidité de zapping et la facilité d’utilisation.")),
-        ("TiviMate", P("La référence sur Android TV et Fire Stick. Interface proche d’une box, EPG très lisible, enregistrement et favoris avec la version Premium.") + f'<p><a href="{{R}}guide-tivimate/">Lire notre guide TiviMate</a></p>'),
-        ("IPTV Smarters Pro", P("Simple et disponible sur presque toutes les plateformes : Android, iOS, Fire Stick, Windows. Idéale pour débuter.") + f'<p><a href="{{R}}iptv-smarters-pro/">Lire notre guide IPTV Smarters</a></p>'),
-        ("IBO Player et applications Smart TV", P("Sur Samsung (Tizen) et LG (webOS), des applications comme IBO Player permettent d’ajouter votre abonnement directement sur la télé, sans boîtier.")),
-        ("Notre comparatif", '<table><tr><th>Application</th><th>Appareils</th><th>Points forts</th></tr><tr><td>TiviMate</td><td>Android TV, Fire Stick</td><td>EPG, interface</td></tr><tr><td>IPTV Smarters Pro</td><td>Toutes plateformes</td><td>Simplicité</td></tr><tr><td>IBO Player</td><td>Smart TV</td><td>Sans boîtier</td></tr></table>'),
-    ],
-    "iptv-android-box": [
-        ("Avant de commencer", UL("Une box Android à jour", "Une connexion stable (idéalement en Ethernet)", "Vos identifiants IPTV")),
-        ("Installer l’application", OL("Ouvrez le Google Play Store sur votre box.", "Recherchez TiviMate ou IPTV Smarters Pro.", "Installez l’application puis ouvrez-la.")),
-        ("Ajouter votre abonnement", OL("Choisissez « Ajouter une playlist » ou « Xtream Codes ».", "Entrez l’adresse du serveur, votre nom d’utilisateur et votre mot de passe.", "Validez et patientez pendant le chargement des chaînes et de l’EPG.")),
-        ("Optimiser la lecture", UL("Activez le décodage matériel dans les réglages du lecteur.", "Videz le cache de l’application en cas de lenteur.", "Préférez le câble Ethernet au Wi-Fi.")),
-    ],
-    "guide-tivimate": [
-        ("Installer TiviMate", P("TiviMate est disponible sur le Google Play Store pour Android TV. Sur Fire Stick, utilisez l’application Downloader pour l’installer.")),
-        ("Ajouter une playlist", OL("Ouvrez TiviMate et choisissez « Ajouter une playlist ».", "Sélectionnez « Xtream Codes ».", "Entrez le serveur, l’identifiant et le mot de passe reçus.", "Donnez un nom à la playlist et validez.")),
-        ("Configurer l’EPG", P("Le guide des programmes se charge généralement automatiquement. Si ce n’est pas le cas, ajoutez l’URL EPG fournie par le support dans Paramètres › EPG.")),
-        ("Fonctions Premium", UL("Enregistrement des programmes", "Favoris et groupes personnalisés", "Catch-Up et rappel de programmes", "Plusieurs playlists")),
-    ],
-    "iptv-smarters-pro": [
-        ("Installation", P("IPTV Smarters Pro est disponible sur Android, iOS, Fire Stick et Windows. Téléchargez-la depuis la boutique d’applications de votre appareil.")),
-        ("Connexion avec Xtream Codes", OL("Ouvrez l’application et choisissez « Login with Xtream Codes API ».", "Entrez un nom, votre identifiant, votre mot de passe et l’URL du serveur.", "Appuyez sur « Add user » et patientez.")),
-        ("Réglages recommandés", UL("Lecteur : choisissez le lecteur interne ou VLC selon les performances.", "Format d’EPG : synchronisez au démarrage.", "Qualité : laissez sur automatique.")),
-        ("Problèmes fréquents", P(f'Écran noir ou chargement infini ? Vérifiez vos identifiants, redémarrez l’application et consultez notre guide <a href="{{R}}panne-iptv/">panne IPTV</a>.')),
-    ],
-    "iptv-fire-stick": [
-        ("Préparer votre Fire Stick", OL("Allez dans Paramètres › Ma Fire TV › Options pour les développeurs.", "Activez « Applications de sources inconnues ».", "Installez l’application Downloader depuis l’Amazon Appstore.")),
-        ("Installer l’application IPTV", P("Dans Downloader, entrez le lien de l’application recommandée (TiviMate ou IPTV Smarters), lancez le téléchargement puis l’installation.")),
-        ("Se connecter", P("Ouvrez l’application, choisissez Xtream Codes et entrez vos identifiants. Les chaînes apparaissent en quelques instants.")),
-        ("Astuces Fire Stick", UL("Utilisez le Fire TV Stick 4K pour les chaînes Ultra HD.", "Branchez l’adaptateur Ethernet Amazon pour plus de stabilité.", "Libérez de l’espace en supprimant les applications inutiles.")),
-    ],
-    "panne-iptv": [
-        ("Les causes les plus fréquentes", UL("Connexion internet instable ou trop lente", "Wi-Fi saturé ou trop éloigné", "Cache de l’application plein", "Appareil peu puissant", "Maintenance ponctuelle du serveur")),
-        ("Les solutions rapides", OL("Redémarrez votre appareil et votre box internet.", "Testez votre débit (10 Mb/s minimum pour la HD).", "Passez en câble Ethernet si possible.", "Videz le cache de l’application.", "Changez de lecteur dans les réglages.")),
-        ("Buffering pendant les matchs", P("Pendant les grands événements, choisissez la version HD plutôt que la 4K si votre connexion est juste. Un VPN peut aussi aider si votre fournisseur internet ralentit le streaming.")),
-        ("Toujours bloqué ?", P("Contactez notre support sur WhatsApp en précisant la chaîne, votre appareil et l’application. Nous répondons 24 h/24.")),
-    ],
-    "boitier-iptv": [
-        ("Faut-il un boîtier ?", P("Pas forcément : une Smart TV récente suffit souvent. Un boîtier apporte cependant plus de fluidité, plus d’applications et des mises à jour régulières.")),
-        ("Les principales options", '<table><tr><th>Boîtier</th><th>Prix indicatif</th><th>Pour qui ?</th></tr><tr><td>Fire TV Stick 4K</td><td>40–70 €</td><td>Le meilleur rapport qualité-prix</td></tr><tr><td>Box Android TV</td><td>50–150 €</td><td>Pour TiviMate et la flexibilité</td></tr><tr><td>Apple TV 4K</td><td>150–200 €</td><td>L’écosystème Apple</td></tr><tr><td>Boîtier MAG</td><td>60–120 €</td><td>Une interface type box opérateur</td></tr></table>'),
-        ("Notre recommandation", P("Pour la plupart des foyers, un Fire TV Stick 4K ou une box Android TV récente offre le meilleur équilibre entre prix, performances et compatibilité.")),
-    ],
-}
 
 GUIDE_IMAGES = {
     "qu-est-ce-que-iptv": "guide-qu-est-ce-que-iptv.jpg",
@@ -878,7 +877,7 @@ def build_guides():
         main = title.split(" (")[0]
         words = main.split(" ", 1)
         h1 = f'{words[0]} <span class="red">{words[1]}</span>' if len(words) > 1 else main
-        article(f"{slug}/index.html", cat, h1, summary, GUIDE_CONTENT[slug], read="5 min", image=GUIDE_IMAGES.get(slug))
+        build_txt_article(slug, cat, h1, summary, GUIDE_IMAGES.get(slug), "articles")
 
 def build_cities():
     for slug, city in CITIES:
@@ -898,6 +897,14 @@ def build_cities():
     <div class="prose" style="margin-top:50px">
       <h2>Regarder la télé par internet à {city}</h2>
       {P(f"Avec l’IPTV, plus besoin de parabole ni de décodeur : votre connexion internet suffit pour regarder les chaînes françaises et internationales, le sport en direct et un large catalogue de films et séries.", "Toutes nos formules incluent la 4K, le replay et le guide des programmes.")}
+      <h2>Installer l’IPTV à {city} : nos guides pas à pas</h2>
+      {P(f"Que vous habitiez un appartement en centre-ville ou une maison en périphérie de {city}, l’installation est la même : une application sur votre appareil, vos identifiants, et c’est parti. Choisissez le guide qui correspond à votre équipement :")}
+      <ul>{"".join(f'<li><a href="{{R}}{s}/">{short}</a></li>' for s, label, icon, h1, short, image, summary in DEVICE_GUIDES)}</ul>
+      {P(f'Vous ne savez pas encore quel appareil utiliser ? Notre comparatif <a href="{{R}}boitier-iptv/">quel boîtier IPTV choisir</a> vous aide à trancher. Et pour tester sans risque, demandez notre <a href="{{R}}essai-gratuit/">essai gratuit de 24 heures</a>.')}
+      <h2>Une connexion stable à {city}</h2>
+      {P(f"La plupart des logements de {city} sont éligibles à la fibre, idéale pour la 4K. En ADSL, la HD et la Full HD restent tout à fait confortables. Dans les deux cas, branchez si possible votre télé ou votre boîtier en Ethernet : c’est la meilleure protection contre les coupures. En cas de souci, consultez notre guide <a href=\"{{R}}panne-iptv/\">panne IPTV</a>.")}
+      <h2>IPTV dans d’autres villes</h2>
+      <ul>{"".join(f'<li><a href="{{R}}{s}/">IPTV {c}</a></li>' for s, c in CITIES if s != slug)}</ul>
     </div>
   </div>
 </section>
@@ -943,7 +950,11 @@ def build_legal():
     <p class="kicker kicker-red">Informations légales</p>
     <h1 class="h-lg">{title}</h1>
     <p style="color:#8d929b;font-size:13px;margin-top:12px">Dernière mise à jour : {SITE["year"]}</p>
-    <div class="prose" style="margin-top:36px">{content}</div>
+    <div class="prose" style="margin-top:36px">{content}
+      <h2>Autres informations légales</h2>
+      <ul>{"".join(f'<li><a href="{{R}}{s}/">{t}</a></li>' for s, t in LEGAL if s != slug)}</ul>
+      <p>Une question sur ces documents ? <a href="{{R}}contact/">Contactez-nous</a> ou découvrez <a href="{{R}}a-propos/">qui nous sommes</a>.</p>
+    </div>
   </div>
 </section>"""
         page(f"{slug}/index.html", f"{title} | {SITE['brand']}", f"{title} de {SITE['brand']}.", body)
@@ -959,7 +970,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=9"', f'href="{BASE}style.css?v=9"').replace('src="script.js?v=2"', f'src="{BASE}script.js?v=2"')
+    txt = txt.replace('href="style.css?v=10"', f'href="{BASE}style.css?v=10"').replace('src="script.js?v=2"', f'src="{BASE}script.js?v=2"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')
