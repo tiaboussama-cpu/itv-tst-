@@ -277,7 +277,7 @@ def page(path, title, desc, body, active="", depth=None):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e63946'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='19' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="{r}style.css?v=6">
+<link rel="stylesheet" href="{r}style.css?v=7">
 </head>
 <body id="top">
 {header(r, active)}
@@ -318,10 +318,12 @@ def plan_cards(prefix="Abonnement"):
 def guide_cards(r="{R}", cls="g-card"):
     out = []
     for slug, title, cat, icon, summary in GUIDES:
+        pic = GUIDE_IMAGES.get(slug)
+        thumb = img(pic, "thumb-img") if pic else ico(icon)
         if cls == "g-card":
-            out.append(f'<a class="g-card" href="{r}{slug}/"><div class="g-img">{ico(icon)}</div><span>{title}</span></a>')
+            out.append(f'<a class="g-card" href="{r}{slug}/"><div class="g-img">{thumb}</div><span>{title}</span></a>')
         else:
-            out.append(f'<a class="post" href="{r}{slug}/"><div class="g-img">{ico(icon)}</div>'
+            out.append(f'<a class="post" href="{r}{slug}/"><div class="g-img">{thumb}</div>'
                        f'<div class="p-body"><span class="p-cat">{cat}</span><h3>{title}</h3><p>{summary}</p></div></a>')
     return "".join(out)
 
@@ -606,7 +608,7 @@ def build_blog():
   <div class="wrap">
     <h2 class="h-md" style="margin-bottom:24px">Tous les articles</h2>
     <div class="post-grid">
-      <a class="post" href="{{R}}essai-gratuit/"><div class="g-img">{ico("clock")}</div><div class="p-body"><span class="p-cat">Essai</span><h3>Essai IPTV gratuit sans risque</h3><p>Comment tester l’IPTV pendant 24 heures et ce qu’il faut vérifier avant de choisir.</p></div></a>
+      <a class="post" href="{{R}}essai-gratuit/"><div class="g-img">{img("essai-gratuit-iptv.jpg", "thumb-img")}</div><div class="p-body"><span class="p-cat">Essai</span><h3>Essai IPTV gratuit sans risque</h3><p>Comment tester l’IPTV pendant 24 heures et ce qu’il faut vérifier avant de choisir.</p></div></a>
       {guide_cards(cls="post")}
     </div>
   </div>
@@ -827,7 +829,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=6"', f'href="{BASE}style.css?v=6"').replace('src="script.js"', f'src="{BASE}script.js"')
+    txt = txt.replace('href="style.css?v=7"', f'href="{BASE}style.css?v=7"').replace('src="script.js"', f'src="{BASE}script.js"')
     txt = txt.replace('href="index.html', f'href="{BASE}index.html')
     for prefix in ["blog/", "a-propos/", "contact/", "essai-gratuit/"] + [f"{s}/" for s, *_ in GUIDES] + [f"{s}/" for s, _ in CITIES] + [f"{s}/" for s, _ in LEGAL]:
         txt = txt.replace(f'href="{prefix}', f'href="{BASE}{prefix}')
