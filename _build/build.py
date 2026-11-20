@@ -397,7 +397,7 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{r}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="stylesheet" href="{r}style.css?v=17">
+<link rel="stylesheet" href="{r}style.css?v=18">
 </head>
 <body id="top">
 {header(r, active)}
@@ -888,27 +888,75 @@ def device_cards(r="{R}"):
         f'<div class="p-body"><span class="p-cat">Installation · {label}</span><h3>{short}</h3><p>{summary}</p></div></a>'
         for slug, label, icon, h1, short, image, summary in DEVICE_GUIDES)
 
+BLOG_PER_PAGE = 9   # articles par page du blog (pagination /blog/, /blog/page/2/, …)
+
+def blog_cards():
+    """Toutes les cartes d’articles du blog, dans l’ordre d’affichage."""
+    cards = ['<a class="post" href="{R}essai-gratuit/"><div class="g-img">' + img("essai-gratuit-iptv.jpg", "thumb-img") +
+             '</div><div class="p-body"><span class="p-cat">Essai</span><h3>Essai IPTV gratuit sans risque</h3>'
+             '<p>Comment tester l’IPTV pendant 24 heures et ce qu’il faut vérifier avant de choisir.</p></div></a>']
+    for html_cards in (guide_cards(cls="post"), device_cards()):
+        cards += ['<a class="post"' + c for c in html_cards.split('<a class="post"') if c]
+    return cards
+
+ARROW_L = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg>'
+ARROW_R = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>'
+
+def blog_url(n):
+    return "{R}blog/#articles" if n == 1 else f"{{R}}blog/page/{n}/"
+
+def pager(cur, total):
+    if total < 2:
+        return ""
+    def arrow(n, svg, label):
+        if 1 <= n <= total:
+            return f'<a class="pg pg-arrow" href="{blog_url(n)}" aria-label="{label}">{svg}</a>'
+        return f'<span class="pg pg-arrow is-disabled" aria-hidden="true">{svg}</span>'
+    nums = "".join(f'<span class="pg is-current" aria-current="page">{n}</span>' if n == cur
+                   else f'<a class="pg" href="{blog_url(n)}" aria-label="Page {n}">{n}</a>'
+                   for n in range(1, total + 1))
+    return (f'<nav class="pager" aria-label="Pages du blog">{arrow(cur - 1, ARROW_L, "Page précédente")}'
+            f'{nums}{arrow(cur + 1, ARROW_R, "Page suivante")}</nav>')
+
 def build_blog():
-    body = f"""
+    cards = blog_cards()
+    total = max(1, -(-len(cards) // BLOG_PER_PAGE))
+    for n in range(1, total + 1):
+        chunk = "".join(cards[(n - 1) * BLOG_PER_PAGE: n * BLOG_PER_PAGE])
+        if n == 1:
+            hero = f"""
 <section class="section">
   <div class="wrap center">
     <h1 class="h-xl">Blog IPTV : tout savoir sur l’IPTV en France</h1>
     <p class="lede" style="color:#fff;font-weight:600">Bienvenue sur le blog {SITE["brand"]}, le point de départ pour regarder la télé par internet. Guides d’installation, comparatifs d’applications et solutions aux problèmes courants : tout pour profiter pleinement de votre abonnement.</p>
     {img("blog-hero-iptv.jpg", "page-img banner-img", lazy=False)}
   </div>
-</section>
-<section class="section-tight" style="padding-bottom:80px">
+</section>"""
+            heading = '<h2 class="h-md" style="margin-bottom:24px">Tous les articles</h2>'
+        else:
+            hero = ""
+            heading = (f'<nav class="crumbs" aria-label="Fil d’Ariane"><a href="{{R}}index.html">⌂</a> / <a href="{{R}}blog/">Blog</a> / <span>Page {n}</span></nav>'
+                       f'<h1 class="h-lg" style="margin:14px 0 24px">Blog IPTV : tous les articles <span class="red">(page {n})</span></h1>')
+        body = f"""{hero}
+<section class="section-tight" id="articles" style="padding-bottom:80px{';padding-top:50px' if n > 1 else ''}">
   <div class="wrap">
-    <h2 class="h-md" style="margin-bottom:24px">Tous les articles</h2>
-    <div class="post-grid">
-      <a class="post" href="{{R}}essai-gratuit/"><div class="g-img">{img("essai-gratuit-iptv.jpg", "thumb-img")}</div><div class="p-body"><span class="p-cat">Essai</span><h3>Essai IPTV gratuit sans risque</h3><p>Comment tester l’IPTV pendant 24 heures et ce qu’il faut vérifier avant de choisir.</p></div></a>
-      {guide_cards(cls="post")}
-      {device_cards()}
-    </div>
+    {heading}
+    <div class="post-grid">{chunk}</div>
+    {pager(n, total)}
   </div>
 </section>"""
-    page("blog/index.html", f"Blog IPTV : guides, astuces et comparatifs (2026) | {SITE['brand']}",
-         "Guides d’installation IPTV, comparatifs d’applications et solutions aux pannes courantes.", body, active="Blog")
+        suffix = "" if n == 1 else f" – page {n}"
+        path = "blog/index.html" if n == 1 else f"blog/page/{n}/index.html"
+        page(path, f"Blog IPTV : guides, astuces et comparatifs (2026){suffix} | {SITE['brand']}",
+             "Guides d’installation IPTV, comparatifs d’applications et solutions aux pannes courantes." + (f" Page {n}." if n > 1 else ""),
+             body, active="Blog")
+    # retirer les pages devenues inutiles si le nombre d’articles diminue
+    import shutil
+    pdir = ROOT / "blog" / "page"
+    if pdir.exists():
+        for d in pdir.iterdir():
+            if d.is_dir() and (not d.name.isdigit() or int(d.name) > total or int(d.name) < 2):
+                shutil.rmtree(d)
 
 def build_contact():
     body = f"""
@@ -1086,7 +1134,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=17"', f'href="{BASE}style.css?v=17"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
+    txt = txt.replace('href="style.css?v=18"', f'href="{BASE}style.css?v=18"').replace('src="script.js?v=3"', f'src="{BASE}script.js?v=3"')
     txt = txt.replace('href="./', f'href="{BASE}')
     for slug, *_ in DEVICE_GUIDES:
         txt = txt.replace(f'href="{slug}/', f'href="{BASE}{slug}/')
