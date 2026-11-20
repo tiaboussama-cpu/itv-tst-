@@ -97,6 +97,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .scene-tv .r3 { top: 77%; }
 .hero-bg .scene-sofa { position: absolute; left: 0; right: 0; bottom: -40px; height: 180px; background: radial-gradient(60% 100% at 30% 100%, #050505, transparent 70%); }
 .hero-content { position: relative; z-index: 1; }
+.hero-has-photo { min-height: min(66.7vw, 900px); align-items: end; padding: 120px 0 48px; }
+.hero-has-photo .hero-bg { background: #0c0c0c; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.hero-has-photo .hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 48%, rgba(10,10,10,.85) 75%, #111 100%); }
+@media (max-width: 700px) { .hero-has-photo { min-height: 0; padding: 66vw 0 40px; } .hero-photo { height: 66.7vw; } .hero-has-photo .hero-bg::after { height: 66.7vw; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, #111 100%); } .hero-has-photo .hero-bg { background: #111; } }
+
+/* Content images */
+.page-img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid #222; background: #1a1a1a; }
+.article-img { margin-top: 34px; }
+.wide-img { max-width: 800px; margin: 40px auto 0; }
+.banner-img { max-width: 1100px; margin: 30px auto 0; border-radius: 14px; }
 .hero h1 { font: 800 clamp(30px, 4.4vw, 46px)/1.1 "Roboto", var(--font-head); text-shadow: 0 2px 20px rgba(0,0,0,.6); }
 .hero p { color: #fff; font-weight: 600; max-width: 760px; margin: 18px auto 0; font-size: 14px; text-shadow: 0 1px 10px rgba(0,0,0,.8); }
 .hero-badge { display: inline-flex; align-items: center; gap: 8px; margin: 22px auto 0; background: #fff; color: #222; font-size: 12px; font-weight: 700; padding: 8px 14px; border-radius: 6px; }

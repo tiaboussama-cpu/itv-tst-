@@ -134,6 +134,37 @@ NAV = [
     ("#faq", "FAQ"),
 ]
 
+# ---------------------------------------------------------------- images
+IMG_ALT = {
+    "hero-aurora-tv.jpg": "Abonnement IPTV France — famille regardant la télévision avec l’interface {brand}",
+    "blog-hero-iptv.jpg": "Blog IPTV {brand} — guides et astuces pour regarder l’IPTV en France",
+    "guide-qu-est-ce-que-iptv.jpg": "Qu’est-ce que l’IPTV ? — télévision avec des centaines de chaînes en streaming",
+    "guide-meilleures-applications-iptv.jpg": "Meilleures applications IPTV en 2026 — lecteurs IPTV sur TV",
+    "guide-iptv-android-box.jpg": "Installer l’IPTV sur une box Android — boîtier Android branché à la télévision",
+    "guide-tivimate.jpg": "Guide TiviMate — grille des programmes TV (EPG) avec les chaînes françaises",
+    "guide-iptv-smarters-pro.jpg": "IPTV Smarters Pro — installer et configurer le lecteur IPTV sur TV",
+    "guide-iptv-fire-stick.jpg": "IPTV sur Amazon Fire TV Stick — télécommande Fire Stick devant la télévision",
+    "guide-panne-iptv.jpg": "Panne IPTV — match de foot figé avec chargement en cours, que faire ?",
+    "guide-boitier-iptv.jpg": "Quel boîtier IPTV choisir en 2026 — boîtiers de streaming devant la télévision",
+    "ville-iptv-paris.jpg": "IPTV Paris — regarder la télévision par internet à Paris, tour Eiffel en arrière-plan",
+    "ville-iptv-lyon.jpg": "IPTV Lyon — abonnement IPTV à Lyon dès 5 € par mois",
+    "ville-iptv-marseille.jpg": "IPTV Marseille — abonnement IPTV à Marseille, Vieux-Port en arrière-plan",
+    "essai-gratuit-iptv.jpg": "Essai IPTV gratuit 24 heures — tester {brand} sans engagement",
+    "a-propos-aurora-tv.jpg": "À propos de {brand} — fournisseur IPTV pour la France",
+    "contact-aurora-tv.jpg": "Contact {brand} — support WhatsApp 24/7",
+}
+IMG_SIZE = {"hero-aurora-tv.jpg": (1920, 1280), "blog-hero-iptv.jpg": (1920, 640)}
+
+def img(name, cls="page-img", lazy=True):
+    w, h = IMG_SIZE.get(name, (1200, 800))
+    alt = html.escape(IMG_ALT[name].format(brand=SITE["brand"]), quote=True)
+    load = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"'
+    return f'<img class="{cls}" src="{{R}}images/{name}" alt="{alt}" width="{w}" height="{h}"{load}>'
+
+def og_image_url():
+    base = f"https://{SITE['domain']}/" if SITE["domain"] else "https://tiaboussama-cpu.github.io/itv-tst-/"
+    return base + "images/hero-aurora-tv.jpg"
+
 # ---------------------------------------------------------------- gabarit
 def wa_attr(msg):
     return f'data-wa="{html.escape(msg, quote=True)}"'
@@ -227,11 +258,14 @@ def page(path, title, desc, body, active="", depth=None):
 <meta property="og:title" content="{html.escape(title, quote=True)}">
 <meta property="og:description" content="{html.escape(desc, quote=True)}">
 <meta property="og:type" content="website">
+<meta property="og:image" content="{og_image_url()}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{og_image_url()}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e63946'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='19' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="{r}style.css?v=3">
+<link rel="stylesheet" href="{r}style.css?v=5">
 </head>
 <body id="top">
 {header(r, active)}
@@ -309,10 +343,9 @@ def build_home():
                       for gname, sub, g in POSTER_TILES)
     tv_rows = "".join("<i></i>" for _ in range(6))
     body = f"""
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="scene-tv"><div class="row r1"><i></i><i></i></div><div class="row r2">{tv_rows}</div><div class="row r3">{tv_rows}</div></div>
-    <div class="scene-sofa"></div>
+<section class="hero hero-has-photo">
+  <div class="hero-bg">
+    {img("hero-aurora-tv.jpg", "hero-photo", lazy=False)}
   </div>
   <div class="wrap hero-content">
     <h1>Abonnement IPTV : la meilleure offre IPTV en France</h1>
@@ -488,7 +521,7 @@ def build_home():
          body, active="Accueil", depth=0)
 
 # ---------------------------------------------------------------- article générique
-def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min", crumb="Blog", active="Blog"):
+def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min", crumb="Blog", active="Blog", image=None):
     toc_items = [(f"s{i}", s[0]) for i, s in enumerate(sections, 1)]
     if faq_items:
         toc_items.append(("faq", "Questions fréquentes"))
@@ -512,6 +545,7 @@ def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min"
         <h1>{h1_html}</h1>
         <p class="intro">{intro}</p>
         <div class="meta"><span>{SITE["year"]}</span><span>{read} de lecture</span><span>Équipe {SITE["brand"]}</span></div>
+        {img(image, "page-img article-img", lazy=False) if image else ""}
         <div class="prose" style="margin-top:50px">{content}</div>
       </div>
       <aside class="toc">
@@ -550,7 +584,7 @@ def build_trial():
                 ("L’essai est-il vraiment gratuit ?", "Oui. Aucun paiement ni aucune carte bancaire ne sont demandés pour l’essai de 24 heures."),
                 ("L’essai se transforme-t-il en abonnement payant ?", "Non. À la fin des 24 heures, l’accès s’arrête simplement. Vous choisissez ensuite une formule si vous le souhaitez."),
                 ("Puis-je tester sur plusieurs appareils ?", "L’essai permet une connexion à la fois, mais vous pouvez changer d’appareil pendant la période de test."),
-            ], crumb="Blog", active="")
+            ], crumb="Blog", active="", image="essai-gratuit-iptv.jpg")
 
 def build_blog():
     body = f"""
@@ -558,7 +592,7 @@ def build_blog():
   <div class="wrap center">
     <h1 class="h-xl">Blog IPTV : tout savoir sur l’IPTV en France</h1>
     <p class="lede" style="color:#fff;font-weight:600">Bienvenue sur le blog {SITE["brand"]}, le point de départ pour regarder la télé par internet. Guides d’installation, comparatifs d’applications et solutions aux problèmes courants : tout pour profiter pleinement de votre abonnement.</p>
-    <div class="blog-hero-frame" aria-hidden="true">{ico("play")}</div>
+    {img("blog-hero-iptv.jpg", "page-img banner-img", lazy=False)}
   </div>
 </section>
 <section class="section-tight" style="padding-bottom:80px">
@@ -580,6 +614,7 @@ def build_contact():
     <p class="kicker kicker-red">Contact</p>
     <h1 class="h-xl" style="max-width:520px">Comment pouvons-nous vous aider ?</h1>
     <p class="intro" style="color:#a9adb5;font-size:16px;margin-top:20px;max-width:520px">Remplissez le formulaire : votre message s’ouvre directement dans WhatsApp pour une réponse rapide, 24 h/24.</p>
+    {img("contact-aurora-tv.jpg", "page-img wide-img", lazy=False)}
     <div class="contact-grid" style="margin-top:50px">
       <form class="form" id="contact-form">
         <p class="kicker kicker-red">Envoyer un message</p>
@@ -614,6 +649,7 @@ def build_about():
     <p class="kicker kicker-red">À propos</p>
     <h1 class="h-xl" style="max-width:640px">Nous construisons une IPTV plus stable pour la France.</h1>
     <p style="color:#a9adb5;font-size:16px;margin-top:20px;max-width:560px">{SITE["brand"]} propose un service IPTV simple et fiable pour les foyers francophones. Notre priorité : la stabilité technique, des prix clairs et un service personnalisé.</p>
+    {img("a-propos-aurora-tv.jpg", "page-img wide-img", lazy=False)}
     <div class="stats4"><div><strong>32 000+</strong><span>Chaînes</span></div><div><strong>220 000+</strong><span>Films &amp; séries</span></div><div><strong>4K</strong><span>Ultra HD</span></div><div><strong>24/7</strong><span>Support</span></div></div>
 
     <div class="prose" style="margin-top:60px">
@@ -687,12 +723,23 @@ GUIDE_CONTENT = {
     ],
 }
 
+GUIDE_IMAGES = {
+    "qu-est-ce-que-iptv": "guide-qu-est-ce-que-iptv.jpg",
+    "meilleures-applications-iptv": "guide-meilleures-applications-iptv.jpg",
+    "iptv-android-box": "guide-iptv-android-box.jpg",
+    "guide-tivimate": "guide-tivimate.jpg",
+    "iptv-smarters-pro": "guide-iptv-smarters-pro.jpg",
+    "iptv-fire-stick": "guide-iptv-fire-stick.jpg",
+    "panne-iptv": "guide-panne-iptv.jpg",
+    "boitier-iptv": "guide-boitier-iptv.jpg",
+}
+
 def build_guides():
     for slug, title, cat, icon, summary in GUIDES:
         main = title.split(" (")[0]
         words = main.split(" ", 1)
         h1 = f'{words[0]} <span class="red">{words[1]}</span>' if len(words) > 1 else main
-        article(f"{slug}/index.html", cat, h1, summary, GUIDE_CONTENT[slug], read="5 min")
+        article(f"{slug}/index.html", cat, h1, summary, GUIDE_CONTENT[slug], read="5 min", image=GUIDE_IMAGES.get(slug))
 
 def build_cities():
     for slug, city in CITIES:
@@ -708,6 +755,7 @@ def build_cities():
       <div class="trust-card">{ico("clock")}<h3>Activation rapide</h3><p>Vos identifiants arrivent en général en moins d’une heure.</p></div>
       <div class="trust-card">{ico("headset")}<h3>Aide à l’installation</h3><p>Nous vous guidons pas à pas sur WhatsApp, quel que soit votre appareil.</p></div>
     </div>
+    {img(f"ville-{slug}.jpg", "page-img wide-img")}
     <div class="prose" style="margin-top:50px">
       <h2>Regarder la télé par internet à {city}</h2>
       {P(f"Avec l’IPTV, plus besoin de parabole ni de décodeur : votre connexion internet suffit pour regarder les chaînes françaises et internationales, le sport en direct et un large catalogue de films et séries.", "Toutes nos formules incluent la 4K, le replay et le guide des programmes.")}
@@ -772,7 +820,7 @@ def build_404():
     # 404.html est servi à n'importe quelle profondeur : liens absolus vers le site du projet
     out = page("404.html", f"Page introuvable | {SITE['brand']}", "Page introuvable.", body, depth=0)
     txt = out.read_text(encoding="utf-8")
-    txt = txt.replace('href="style.css?v=3"', f'href="{BASE}style.css?v=3"').replace('src="script.js"', f'src="{BASE}script.js"')
+    txt = txt.replace('href="style.css?v=5"', f'href="{BASE}style.css?v=5"').replace('src="script.js"', f'src="{BASE}script.js"')
     txt = txt.replace('href="index.html', f'href="{BASE}index.html')
     for prefix in ["blog/", "a-propos/", "contact/", "essai-gratuit/"] + [f"{s}/" for s, *_ in GUIDES] + [f"{s}/" for s, _ in CITIES] + [f"{s}/" for s, _ in LEGAL]:
         txt = txt.replace(f'href="{prefix}', f'href="{BASE}{prefix}')
