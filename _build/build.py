@@ -361,6 +361,14 @@ def _plain(htm):
     import re as _re
     return html.unescape(_re.sub(r"<[^>]+>", "", htm)).strip()
 
+def verified_date(sections):
+    """Date ISO tirée de la ligne « Dernière vérification : 20 novembre 2026 », ou None."""
+    import re as _re
+    m = _re.search(r"Dernière vérification : (\d{1,2}) ([a-zéû]+) (\d{4})", " ".join(_plain(c) for _, c in sections))
+    if m and m.group(2) in MOIS_FR:
+        return f"{m.group(3)}-{MOIS_FR[m.group(2)]:02d}-{int(m.group(1)):02d}"
+    return None
+
 def article_ld(slug, title, desc, image, sections, faq_items):
     """Article + fil d’Ariane + FAQ d’un guide. La date vient de la ligne « Dernière vérification »
     du texte ; sans elle, pas de date (rien d’inventé)."""
@@ -374,9 +382,9 @@ def article_ld(slug, title, desc, image, sections, faq_items):
            "author": {"@type": "Organization", "name": SITE["brand"], "url": base}, "publisher": org}
     if image:
         art["image"] = f"{base}images/{image}"
-    m = _re.search(r"Dernière vérification : (\d{1,2}) ([a-zéû]+) (\d{4})", " ".join(_plain(c) for _, c in sections))
-    if m and m.group(2) in MOIS_FR:
-        art["dateModified"] = f"{m.group(3)}-{MOIS_FR[m.group(2)]:02d}-{int(m.group(1)):02d}"
+    date = verified_date(sections)
+    if date:
+        art["dateModified"] = date
     objs = [art, breadcrumb_ld(("Accueil", base), ("Blog", base + "blog/"), (title, url))]
     if faq_items:
         objs.append({"@context": "https://schema.org", "@type": "FAQPage",
@@ -416,9 +424,32 @@ def home_jsonld():
     return "".join(f'\n<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>'
                    for x in (org, faq_ld, product))
 
-def page(path, title, desc, body, active="", depth=None, head_extra=""):
+TITLE_WARNINGS = []   # titres trop longs pour Google (affichés en fin de build)
+
+def page(path, title, desc, body, active="", depth=None, head_extra="", og_image=None, og_type="website", modified=None):
     depth = path.count("/") if depth is None else depth
     r = "../" * depth
+    base = site_url()
+    url = None if path == "404.html" else base + ("" if path == "index.html" else path[:-len("index.html")])
+    pic = og_image or "hero-sunday-iptv.jpg"
+    pw, ph = IMG_SIZE.get(pic, (1200, 800))
+    pic_alt = IMG_ALT.get(pic, SITE["brand"]).format(brand=SITE["brand"])
+    suffix = f" | {SITE['brand']}"
+    if len(title) > 60 and title.endswith(suffix):
+        title = title[:-len(suffix)]          # Google affiche déjà le nom du site à part
+    if len(title) > 60 and path != "404.html":
+        TITLE_WARNINGS.append((len(title), path, title))
+    seo = ""
+    if url:
+        seo += f'\n<link rel="canonical" href="{url}">\n<meta property="og:url" content="{url}">'
+    seo += (f'\n<meta property="og:site_name" content="{SITE["brand"]}">\n<meta property="og:locale" content="fr_FR">'
+            f'\n<meta property="og:image:width" content="{pw}">\n<meta property="og:image:height" content="{ph}">'
+            f'\n<meta property="og:image:alt" content="{html.escape(pic_alt, quote=True)}">'
+            f'\n<meta name="twitter:title" content="{html.escape(title, quote=True)}">'
+            f'\n<meta name="twitter:description" content="{html.escape(desc, quote=True)}">')
+    if modified:
+        seo += f'\n<meta property="article:modified_time" content="{modified}">'
+    og_img_url = base + "images/" + pic
     doc = f"""<!doctype html>
 <html lang="fr">
 <head>
@@ -429,10 +460,10 @@ def page(path, title, desc, body, active="", depth=None, head_extra=""):
 <meta name="theme-color" content="#111111">{gsv_meta()}
 <meta property="og:title" content="{html.escape(title, quote=True)}">
 <meta property="og:description" content="{html.escape(desc, quote=True)}">
-<meta property="og:type" content="website">
-<meta property="og:image" content="{og_image_url()}">
+<meta property="og:type" content="{og_type}">
+<meta property="og:image" content="{og_img_url}">{seo}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{og_image_url()}">{head_extra}
+<meta name="twitter:image" content="{og_img_url}">{head_extra}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -909,7 +940,8 @@ def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min"
 </section>"""
     title_txt = html.unescape(h1_html.replace('<span class="red">', "").replace("</span>", "").replace("<br>", " "))
     ld = article_ld(slug, title_txt, intro, image, sections, faq_items) if slug else ""
-    page(path, f"{title_txt} | {SITE['brand']}", intro, body, active=active, head_extra=ld)
+    page(path, f"{title_txt} | {SITE['brand']}", intro, body, active=active, head_extra=ld,
+         og_image=image, og_type="article", modified=verified_date(sections) if slug else None)
 
 def P(*paras):
     return "".join(f"<p>{p}</p>" for p in paras)
@@ -996,7 +1028,7 @@ def build_blog():
         path = "blog/index.html" if n == 1 else f"blog/page/{n}/index.html"
         page(path, f"Blog IPTV : guides, astuces et comparatifs (2026){suffix} | {SITE['brand']}",
              "Guides d’installation IPTV, comparatifs d’applications et solutions aux pannes courantes." + (f" Page {n}." if n > 1 else ""),
-             body, active="Blog",
+             body, active="Blog", og_image="blog-hero-salon.jpg",
              head_extra=ld_scripts(breadcrumb_ld(("Accueil", site_url()), ("Blog", site_url() + "blog/"),
                                                  *([(f"Page {n}", f"{site_url()}blog/page/{n}/")] if n > 1 else []))))
     # retirer les pages devenues inutiles si le nombre d’articles diminue
@@ -1040,7 +1072,7 @@ def build_contact():
   </div>
 </section>"""
     page("contact/index.html", f"Contact {SITE['brand']} | Support WhatsApp 24/7",
-         "Contactez le support IPTV par WhatsApp ou e-mail, 24 h/24 et 7 j/7.", body, active="Contact")
+         "Contactez le support IPTV par WhatsApp ou e-mail, 24 h/24 et 7 j/7.", body, active="Contact", og_image="contact-sunday-iptv.jpg")
 
 def build_about():
     body = f"""
@@ -1072,7 +1104,7 @@ def build_about():
   </div>
 </section>"""
     page("a-propos/index.html", f"À propos de {SITE['brand']} | Fournisseur IPTV",
-         "Qui sommes-nous : un service IPTV stable, des prix clairs et un support humain 24/7.", body, active="À propos")
+         "Qui sommes-nous : un service IPTV stable, des prix clairs et un support humain 24/7.", body, active="À propos", og_image="a-propos-sunday-iptv.jpg")
 
 GUIDE_IMAGES = {
     "qu-est-ce-que-iptv": "guide-qu-est-ce-que-iptv.jpg",
@@ -1123,7 +1155,7 @@ def build_cities():
 </section>
 <section class="section-tight" style="padding-bottom:80px"><div class="wrap"><div class="plans">{plan_cards()}</div></div></section>"""
         page(f"{slug}/index.html", f"IPTV {city} : abonnement IPTV dès 5 €/mois | {SITE['brand']}",
-             f"Abonnement IPTV à {city} : 32 000+ chaînes, 4K, essai gratuit 24 h, activation rapide.", body, head_extra=ld_scripts(breadcrumb_ld(("Accueil", site_url()), (f"IPTV {city}", f"{site_url()}{slug}/"))))
+             f"Abonnement IPTV à {city} : 32 000+ chaînes, 4K, essai gratuit 24 h, activation rapide.", body, head_extra=ld_scripts(breadcrumb_ld(("Accueil", site_url()), (f"IPTV {city}", f"{site_url()}{slug}/"))), og_image=f"ville-{slug}.jpg")
 
 LEGAL_CONTENT = {
     "conditions-generales": [
@@ -1236,6 +1268,8 @@ if __name__ == "__main__":
     elif cname.exists():
         cname.unlink()
     build_seo_files()
+    for n, pth, t in sorted(TITLE_WARNINGS, reverse=True):
+        print(f"   ⚠ titre trop long ({n} car.) : {pth} — {t}")
     pages = sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*.html") if "_build" not in p.parts)
     print(f"{len(pages)} pages générées :")
     for p in pages:
