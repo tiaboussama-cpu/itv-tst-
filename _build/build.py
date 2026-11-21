@@ -342,6 +342,48 @@ def footer(r):
 </footer>
 <a class="wa-float" href="#" {wa_attr(msg_question())} aria-label="Nous écrire sur WhatsApp">{WA_SVG}</a>"""
 
+# ---------------------------------------------------------------- données structurées (JSON-LD)
+MOIS_FR = {"janvier": 1, "février": 2, "mars": 3, "avril": 4, "mai": 5, "juin": 6, "juillet": 7,
+           "août": 8, "septembre": 9, "octobre": 10, "novembre": 11, "décembre": 12}
+
+def ld_scripts(*objs):
+    import json
+    return "".join('\n<script type="application/ld+json">'
+                   + json.dumps(o, ensure_ascii=False).replace("</", "<\\/") + "</script>" for o in objs)
+
+def breadcrumb_ld(*items):
+    """items : (nom, url absolue) du plus général au plus précis."""
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "item": u}
+                                for i, (n, u) in enumerate(items, 1)]}
+
+def _plain(htm):
+    import re as _re
+    return html.unescape(_re.sub(r"<[^>]+>", "", htm)).strip()
+
+def article_ld(slug, title, desc, image, sections, faq_items):
+    """Article + fil d’Ariane + FAQ d’un guide. La date vient de la ligne « Dernière vérification »
+    du texte ; sans elle, pas de date (rien d’inventé)."""
+    import re as _re
+    base = site_url()
+    url = f"{base}{slug}/"
+    org = {"@type": "Organization", "name": SITE["brand"], "url": base,
+           "logo": {"@type": "ImageObject", "url": base + "icon-512.png"}}
+    art = {"@context": "https://schema.org", "@type": "Article", "headline": title[:110],
+           "description": desc, "inLanguage": "fr-FR", "mainEntityOfPage": url,
+           "author": {"@type": "Organization", "name": SITE["brand"], "url": base}, "publisher": org}
+    if image:
+        art["image"] = f"{base}images/{image}"
+    m = _re.search(r"Dernière vérification : (\d{1,2}) ([a-zéû]+) (\d{4})", " ".join(_plain(c) for _, c in sections))
+    if m and m.group(2) in MOIS_FR:
+        art["dateModified"] = f"{m.group(3)}-{MOIS_FR[m.group(2)]:02d}-{int(m.group(1)):02d}"
+    objs = [art, breadcrumb_ld(("Accueil", base), ("Blog", base + "blog/"), (title, url))]
+    if faq_items:
+        objs.append({"@context": "https://schema.org", "@type": "FAQPage",
+                     "mainEntity": [{"@type": "Question", "name": _plain(q),
+                                     "acceptedAnswer": {"@type": "Answer", "text": _plain(a)}} for q, a in faq_items]})
+    return ld_scripts(*objs)
+
 def home_jsonld():
     """Données structurées de l'accueil, générées à partir des mêmes données que la page
     (SITE, PLANS, FAQ_HOME) : aucune note, aucun avis, rien d'inventé."""
@@ -866,7 +908,8 @@ def article(path, kicker, h1_html, intro, sections, faq_items=None, read="6 min"
   </div>
 </section>"""
     title_txt = html.unescape(h1_html.replace('<span class="red">', "").replace("</span>", "").replace("<br>", " "))
-    page(path, f"{title_txt} | {SITE['brand']}", intro, body, active=active)
+    ld = article_ld(slug, title_txt, intro, image, sections, faq_items) if slug else ""
+    page(path, f"{title_txt} | {SITE['brand']}", intro, body, active=active, head_extra=ld)
 
 def P(*paras):
     return "".join(f"<p>{p}</p>" for p in paras)
@@ -953,7 +996,9 @@ def build_blog():
         path = "blog/index.html" if n == 1 else f"blog/page/{n}/index.html"
         page(path, f"Blog IPTV : guides, astuces et comparatifs (2026){suffix} | {SITE['brand']}",
              "Guides d’installation IPTV, comparatifs d’applications et solutions aux pannes courantes." + (f" Page {n}." if n > 1 else ""),
-             body, active="Blog")
+             body, active="Blog",
+             head_extra=ld_scripts(breadcrumb_ld(("Accueil", site_url()), ("Blog", site_url() + "blog/"),
+                                                 *([(f"Page {n}", f"{site_url()}blog/page/{n}/")] if n > 1 else []))))
     # retirer les pages devenues inutiles si le nombre d’articles diminue
     import shutil
     pdir = ROOT / "blog" / "page"
@@ -1078,7 +1123,7 @@ def build_cities():
 </section>
 <section class="section-tight" style="padding-bottom:80px"><div class="wrap"><div class="plans">{plan_cards()}</div></div></section>"""
         page(f"{slug}/index.html", f"IPTV {city} : abonnement IPTV dès 5 €/mois | {SITE['brand']}",
-             f"Abonnement IPTV à {city} : 32 000+ chaînes, 4K, essai gratuit 24 h, activation rapide.", body)
+             f"Abonnement IPTV à {city} : 32 000+ chaînes, 4K, essai gratuit 24 h, activation rapide.", body, head_extra=ld_scripts(breadcrumb_ld(("Accueil", site_url()), (f"IPTV {city}", f"{site_url()}{slug}/"))))
 
 LEGAL_CONTENT = {
     "conditions-generales": [
